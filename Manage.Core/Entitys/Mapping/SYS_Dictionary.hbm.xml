@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Manage.Core.Entitys.Sys_DictionaryEntity,Manage.Core" table="SYS_Dictionary" lazy="false">
+    <!--ID必须要有，column可以不是ID，但是name一定要设置为ID-->
+    <id name="ID" column="ID" type="string" length="36">
+      <generator class="assigned"/>
+    </id>
+    <property type="string" length="36" name="ParDictID" column="ParDictID" />
+    <property type="string" name="DictType" column="DictType" />
+    <property type="string" name="DictName" column="DictName" />
+    <property type="string" name="DictCode" column="DictCode" />
+    <property type="string" name="DictDesc" column="DictDesc" />
+    <property type="int" name="LevelNO" column="LevelNO" />
+    <property type="int" name="DictOrder" column="DictOrder" />
+    <property type="int" name="IsCache" column="IsCache" />
+  </class>
+</hibernate-mapping>

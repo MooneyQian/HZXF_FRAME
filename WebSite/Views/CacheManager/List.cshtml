@@ -1,0 +1,73 @@
+﻿@model Manage.Core.Models.Role_S
+@{
+    ViewBag.Title = "角色管理";
+    Layout = "~/Views/Shared/_List.cshtml";
+    ViewBag.Modules = "CacheManager";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "List";
+}
+@*@section HeadContent
+{
+    <script type="text/javascript">
+        var FUNC = { Search: null, Show: null, Add: null, Edit: null, Del: null };
+        var CTRL = { SearchBar: null, TollBar: null, Grid: null, Dialog: null };
+        $(function () {
+            //清理全部
+            $("#ClearAll").click(function () {
+                var url = '@Url.Action("_ClearAll")';
+                $.post(url, { n: Math.random() }).done(function (res) {
+                    $.dialog.alert(res.Message);
+                });
+            });
+
+            //清理
+            $("[name=clearBtn]").click(function () {
+                var url = '@Url.Action("_ClearCache")';
+                $.post(url, { name: $(this).attr("rel"), n: Math.random() }).done(function (res) {
+                    $.dialog.alert(res.Message);
+                });
+            });
+        });
+    </script>
+}
+
+<div class="pop-page">
+    <div class="formtitle">缓存管理</div>
+    <table class="tableread" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="table-title" style="width: 40%; text-align: center; font-weight: bold;">缓存值
+            </td>
+            <td class="table-title" style="width: 40%; text-align: center; font-weight: bold;">缓存名
+            </td>
+            <td class="table-title" style="width: 20%; text-align: center;">
+                <a href="#" id="ClearAll" class="CssBtn_blue">重置全部</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="secondtitle" style="text-align: center;" colspan="3">系统缓存</td>
+        </tr>
+        @foreach (dynamic c in ViewBag.sysCaches)
+        { 
+            <tr>
+                <td class="table-value">@(c.name)</td>
+                <td class="table-value">@(c.value)</td>
+                <td class="table-value" style="text-align: center;">
+                    <a href="#" name="clearBtn" class="CssBtn_blue" rel="@(c.name)" >重置</a>
+            </tr>
+        }
+        @if (ViewBag.otherCaches.Count > 0)
+        {
+            <tr>
+                <td class="secondtitle" style="text-align: center;" colspan="3">用户缓存</td>
+            </tr>
+            foreach (var c in ViewBag.otherCaches)
+            { 
+            <tr>
+                <td class="table-value" colspan="2">@(c)</td>
+                <td class="table-value" style="text-align: center;">
+                    <input type="button" name="clearBtn" value="重置" rel="@(c)" /></td>
+            </tr>
+            }
+        }
+    </table>
+</div>*@

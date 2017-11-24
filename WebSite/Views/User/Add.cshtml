@@ -1,0 +1,146 @@
+﻿@model Manage.Core.Models.User_S
+@{
+    ViewBag.Title = "编辑";
+    Layout = "~/Views/Shared/_Add.cshtml";
+
+    ViewBag.Modules = "Role";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "Add";
+}
+
+@if (ViewBag.OperType == "Edit")
+{
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>编辑用户</legend>
+    </fieldset>
+}
+else
+{
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>添加用户</legend>
+    </fieldset>
+}
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">登录名</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.UserLoginName,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入登陆名",
+                lay_verify = "q-required"
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">用户姓名</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.UserDisplayName,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入登陆名",
+                lay_verify = "q-required||q-two"
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">类型</label>
+    <div class="layui-input-inline add-v">
+        @Html.DropDownListFor(c => c.UserType, new SelectList(ViewBag.UserTypes, "Value", "Text"),
+              new
+              {
+                  lay_verify = "q-required"
+              }
+
+              )
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">分组</label>
+    <div class="layui-input-inline add-v">
+        @*   @Html.TextBoxFor(c => c.UserDeptID,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请选择用户分组",
+
+            })*@
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">手机号</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.UserPhone,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入手机号码",
+
+            })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">员工编号</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Extend1,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入员工编号",
+
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">E-Mail</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Extend2,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入员工邮箱",
+
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">短号</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Extend3,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入员工短号",
+
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">座机</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Extend4,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入员工座机",
+
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">状态</label>
+    <div class="layui-input-inline add-v border-v">
+        <input type="checkbox" id="RecordStatus" name="RecordStatus" 
+            lay-skin="switch" lay-text = "启用|禁用" value = "@(Model.RecordStatus)" />
+    </div>
+</div>
+@* 隐藏域*@
+@section HiddenArea {
+    @Html.HiddenFor(c => c.ID)
+}

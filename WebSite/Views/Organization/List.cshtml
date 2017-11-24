@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "部门管理";
+    Layout = "~/Views/Shared/_TreeList.cshtml";
+
+    ViewBag.Modules = "Organization";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "List";
+}
+@section HeadContent {
+    <script>
+        var listObj = null;
+
+        function updateNode(type, data) {
+            if (listObj) {
+                listObj.updateNode(type, data);
+            }
+        }
+
+    </script>
+}
+
+

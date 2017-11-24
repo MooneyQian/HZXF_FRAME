@@ -1,0 +1,5066 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HS.MVCFramework.Core</name>
+    </assembly>
+    <members>
+        <member name="T:HS.MVCFramework.Core.Cache.DictionaryCacheStorage">
+            <summary>
+            数据字典缓存服务
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.DictionaryCacheStorage.Set(System.String,System.Collections.Generic.List{HS.MVCFramework.Core.Models.SysDictionary})">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.DictionaryCacheStorage.Get(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.DictionaryCacheStorage.ClearDictionary(System.String)">
+            <summary>
+            重置登录用户缓存
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.DictionaryCacheStorage.Current">
+            <summary>
+            数据字典缓存服务
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.DictionaryCacheStorage.CacheArea">
+            <summary>
+            缓存空间名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.DictionaryCacheStorage.KEYID">
+            <summary>
+            缓存类型键名
+            </summary>
+        </member>
+        <member name="T:System.UserType">
+            <summary>
+            登录用户类型
+            </summary>
+        </member>
+        <member name="F:System.UserType.Administrators">
+            <summary>
+            超级管理员
+            </summary>
+        </member>
+        <member name="F:System.UserType.Users">
+            <summary>
+            普通用户
+            </summary>
+        </member>
+        <member name="F:System.UserType.GeneralManagers">
+            <summary>
+            普通管理员
+            </summary>
+        </member>
+        <member name="F:System.UserType.Guest">
+            <summary>
+            匿名用户
+            </summary>
+        </member>
+        <member name="T:System.UserType_ZH">
+            <summary>
+            登录用户类型(中文)
+            </summary>
+        </member>
+        <member name="F:System.UserType_ZH.超级管理员">
+            <summary>
+            超级管理员
+            </summary>
+        </member>
+        <member name="F:System.UserType_ZH.用户">
+            <summary>
+            普通用户
+            </summary>
+        </member>
+        <member name="F:System.UserType_ZH.管理员">
+            <summary>
+            普通管理员
+            </summary>
+        </member>
+        <member name="F:System.UserType_ZH.匿名用户">
+            <summary>
+            匿名用户
+            </summary>
+        </member>
+        <member name="T:System.YesNo">
+            <summary>
+            是否
+            </summary>
+        </member>
+        <member name="T:System.RecordStatus">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:System.RecordStatus_ZH">
+            <summary>
+            状态(中文)
+            </summary>
+        </member>
+        <member name="T:System.MenuType">
+            <summary>
+            菜单类型
+            </summary>
+        </member>
+        <member name="T:System.MenuType_ZH">
+            <summary>
+            菜单类型(中文)
+            </summary>
+        </member>
+        <member name="T:System.HomeStyle">
+            <summary>
+            页面风格
+            </summary>
+        </member>
+        <member name="T:System.SSOType">
+            <summary>
+            单点登录类型
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeExcelHelper.OutputExcel(System.Data.DataTable,System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            生成Excel
+            </summary>
+            <param name="dataTable">数据源,TableName为标题(为空不输出)；ColumnName为列名（列名以[_right]、[_center]、[_left]结尾可以控制单元格对其方向）；单元格值以$span$结尾表示不填值，以_$rowspan$2$或_$colspan$2$表示合并单元格 </param>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeExcelHelper.GetWorkbook(System.Data.DataTable,System.Collections.Generic.List{System.Double},System.String)">
+            <summary>
+            生成excel通用方法
+            </summary>
+            <param name="dataTable"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeExcelHelper.FillingExcel(System.Data.DataTable,System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.Collections.Generic.List{System.Double})">
+            <summary>
+            填充Excel模版
+            </summary>
+            <param name="dataTable">数据源,TableName为标题(为空不输出)；ColumnName为列名（列名以_right、_center、_left结尾可以控制单元格对其方向）；单元格值以$span$结尾表示不填值，以_$rowspan$2$或_$colspan$2$表示合并单元格</param>
+            <param name="TemplateFilePath">模版路径</param>
+            <param name="StartRowIndex">开始填充行序号(从0开始)</param>
+            <param name="StartColumnIndex">开始填充列序号(从0开始)</param>
+            <param name="isFillColumnName">是否生成列名行</param>
+            <param name="titleRowNum">标题行号(从0开始)[可空]</param>
+            <param name="titleColumnNum">标题列号(从0开始)[可空]</param>
+            <param name="secondTitleRowNum">副标题行号(从0开始)[可空]</param>
+            <param name="secondTitleColumnNum">副标题列号(从0开始)[可空]</param>
+            <param name="secondTitle">副标题[可空]</param>
+            <param name="columnWidths">列宽[可空]</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeExcelHelper.InputExcelToDataSet(System.String,System.Boolean)">
+            <summary>
+            读取excel文件到DataSet中
+            </summary>
+            <param name="excelPath">文件路径</param>
+            <param name="hasTitle">首行是否为标题</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeWordHelper.GenerateWord(System.String,System.String,System.Data.DataTable)">
+            <summary>
+            生成word
+            </summary>
+            <param name="templatePath">模版路径</param>
+            <param name="dataTable">数据源</param>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeWordHelper.GenerateWord(System.String,System.Data.DataTable,System.Data.DataSet)">
+            <summary>
+            生成word
+            </summary>
+            <param name="templatePath">模版路径</param>
+            <param name="dataTable">数据源</param>
+            <param name="dataSet">生成表格数据源，每个DataTable的TableName为表格的名称</param>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeWordHelper.GenerateWordWithBookmark(System.String,System.String,System.Data.DataTable,System.Data.DataSet,System.Collections.Generic.List{System.Double})">
+            <summary>
+            生成word with BookMark
+            </summary>
+            <param name="templatePath">模版路径</param>
+            <param name="filePath">生成文件路径</param>
+            <param name="dataTable">数据源</param>
+            <param name="tables">需要生成表格的数据源，每个DataTable的TableName为对应的书签名</param>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeWordHelper.GeneratePdf(System.String,System.String)">
+            <summary>
+            将word导出成pdf
+            </summary>
+            <param name="WordFilePath"></param>
+            <param name="PdfFilePath"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeWordHelper.GenerateWordWithBookmarkMultiple(System.String,System.String,System.Data.DataSet,System.Boolean)">
+            <summary>
+            生成多个模版内容合并的文档
+            </summary>
+            <param name="templatePath">模版路径</param>
+            <param name="filePath">生成文件路径</param>
+            <param name="dataSet">每个模版对应的数据，每个DataTable的列名对应模版签名名</param>
+            <param name="insertPageBreak">每段内容间是否插入分页符</param>
+        </member>
+        <member name="M:HS.MVCFramework.Helpers.AsposeWordHelper.InsertDocument(Aspose.Words.Node,Aspose.Words.Document)">
+            <summary>
+            Inserts content of the external document after the specified node.
+            Section breaks and section formatting of the inserted document are ignored.
+            </summary>
+            <param name="insertAfterNode">Node in the destination document after which the content 
+            should be inserted. This node should be a block level node (paragraph or table).</param>
+            <param name="srcDoc">The document to insert.</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Common.Helpers.ValidateCode.CreateValidateGraphic(System.String@,System.Int32)">
+            <summary>
+            创建验证码的图片
+            </summary>
+            <param name="chkCode">传出的验证码</param>
+            <param name="length">验证码长度</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Common.Helpers.ValidateCode.CreateValidateGraphic2(System.String@,System.Int32)">
+            <summary>
+            创建验证码的图片
+            </summary>
+            <param name="chkCode">传出的验证码</param>
+            <param name="length">验证码长度</param>
+        </member>
+        <member name="T:HS.MVCFramework.Core.CustomSOAPHeader">
+            <summary>
+            自定义Soap头
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.CustomSOAPHeader.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.CustomSOAPHeader.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.CustomSOAPHeader.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.CustomSOAPHeader.MachineIndenty">
+            <summary>
+            机器标识（可传机器名、Mac地址或IP地址等）
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SecuritySoapHeader">
+            <summary>
+            安全Soap头, 可用来做WS的加密及验签等
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SecuritySoapHeader.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SecuritySoapHeader.VerifySignature(System.String)">
+            <summary>
+            验签方法
+            </summary>
+            <param name="a_OrignalText">原文信息</param>
+            <returns>验签是否成功</returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SecuritySoapHeader.ProcessNullSignatureProvider">
+            <summary>
+            处理签名器为空的情况
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SecuritySoapHeader.SignText(System.String,System.String@)">
+            <summary>
+            签名方法
+            </summary>
+            <param name="a_OriginalText">待签名原文</param>
+            <param name="o_SignedText">签名后的摘要信息</param>
+            <returns>签名是否成功</returns>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SecuritySoapHeader.SignedText">
+            <summary>
+            摘要内容
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SecuritySoapHeader.SignType">
+            <summary>
+            设置签名类型
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Logging.BootLoger">
+            <summary>
+            启动日志书写器
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Logging.BootLoger.WriteLog(System.DateTime,System.String,System.Boolean)">
+            <summary>
+            写入启动日志
+            </summary>
+            <param name="happenTime">发生时间</param>
+            <param name="error">错误信息</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Logging.BootLoger.Dispose">
+            <summary>
+            关闭日志读写器
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Logging.Log4netLog">
+            <summary>
+            请写类说明
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Logging.Log4netLog.#ctor">
+            <summary>
+            Create a new instance of this trace manager
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Logging.Log4netLogFactory">
+            <summary>
+            请写类说明
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Logging.TraceSourceLog">
+            <summary>
+            Implementation of contract <see cref="!:Microsoft.Samples.NLayerApp.Infrastructure.Crosscutting.Logging.ILogger"/>
+            using System.Diagnostics API.
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Logging.TraceSourceLog.#ctor">
+            <summary>
+            Create a new instance of this trace manager
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Logging.TraceSourceLog.TraceInternal(System.Diagnostics.TraceEventType,System.String)">
+            <summary>
+            Trace internal message in configured listeners
+            </summary>
+            <param name="eventType">Event type to trace</param>
+            <param name="message">Message of event</param>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Logging.TraceSourceLogFactory">
+            <summary>
+            A Trace Source base, log factory
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Logging.TraceSourceLogFactory.Create">
+            <summary>
+            Create the trace source log
+            </summary>
+            <returns>New ILog based on Trace Source infrastructure</returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Controllers.CacheManagerController">
+            <summary>
+            缓存管理
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.BaseController.appConfig">
+            <summary>
+            应用系统配置信息
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.BaseController.exceptionLogger">
+            <summary>
+            异常日志记录器
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.BaseController.operationLogger">
+            <summary>
+            操作日志记录器
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.BaseController.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            重载执行中
+            </summary>
+            <param name="filterContext">过滤器上下文</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.BaseController.LockLogin(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            锁定登录。作用：重载直接return treu可以实现非登录调用Action
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.BaseController.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            重载执行后
+            </summary>
+            <param name="filterContext">过滤器上下文</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.BaseController.OnException(System.Web.Mvc.ExceptionContext)">
+            <summary>
+            重载例外
+            </summary>
+            <param name="filterContext">过滤器上下文</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.BaseController.WriteLog(System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="message">日志信息</param>
+        </member>
+        <member name="P:HS.MVCFramework.Core.BaseController.CurrentUserContext">
+            <summary>
+            登录用户上下文
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.CacheManagerController.List">
+            <summary>
+            【视图】列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.CacheManagerController._ClearAll">
+            <summary>
+            清理所有缓存
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.CacheManagerController._ClearCache(System.String)">
+            <summary>
+            清理指定缓存
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.CommonController.UserSelecter">
+            <summary>
+            用户选择器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.CommonController.RoleSelecter">
+            <summary>
+            角色选择器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.CommonController._GetDictionary(System.String)">
+            <summary>
+            【公共方法】获取字典表数据 {Text,Value}
+            </summary>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.CommonController._GetDictionaryTree(System.String)">
+            <summary>
+            【公共方法】获取字典表树结构数据{id,pId,name,title}
+            </summary>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.CommonController._GetOrganTree">
+            <summary>
+            获取组织机构树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController.List">
+            <summary>
+            【视图】列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController.Add">
+            <summary>
+            【视图】新增
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController.Edit(System.String)">
+            <summary>
+            【视图】编辑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController.Show(System.String)">
+            <summary>
+            查看
+            </summary>
+            <param name="RoleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController.UserRoleList(System.String)">
+            <summary>
+            【视图】用户角色分配列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController._RoleList(HS.MVCFramework.Core.Models.Role_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            分页数据获取
+            </summary>
+            <param name="role">搜索条件</param>
+            <param name="pi">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController._Add(HS.MVCFramework.Core.Models.Role_I)">
+            <summary>
+            添加
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController._Edit(HS.MVCFramework.Core.Models.Role_U)">
+            <summary>
+            编辑
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController._Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController._IsExists(System.String,System.String)">
+            <summary>
+            判断角色名是否被使用
+            </summary>
+            <param name="ID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController._UserRoleList(System.String,System.String,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            分页用户数据获取
+            </summary>
+            <param name="Role">搜索条件</param>
+            <param name="pi">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.RoleController._SetRole(System.String,System.String,System.Boolean)">
+            <summary>
+            设置用户角色
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleID"></param>
+            <param name="IsHas">ture设置 false移除</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController.List">
+            <summary>
+            【视图】菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController.Add(System.String)">
+            <summary>
+            【视图】添加子菜单
+            </summary>
+            <param name="pid">父节点ID，0表示顶层</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController.Edit(System.String)">
+            <summary>
+            【视图】编辑菜单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController.Show(System.String)">
+            <summary>
+            【视图】查看菜单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController.RoleMenuList(System.String)">
+            <summary>
+            【视图】分配角色菜单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController.GetMenuTree">
+            <summary>
+            获取菜单Json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController._Add(HS.MVCFramework.Core.Models.Menu_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="menu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController._Edit(HS.MVCFramework.Core.Models.Menu_U)">
+            <summary>
+            编辑
+            </summary>
+            <param name="menu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController._Delete(System.String)">
+            <summary>
+            删除菜单
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController._MenuFuncCodeIsSuc(System.String,System.String,System.String)">
+            <summary>
+            判断同级中菜单编号是否有重复
+            </summary>
+            <param name="MenuCode"></param>
+            <param name="PerMenuID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController._MenuDataCodeIsSuc(System.String,System.String)">
+            <summary>
+            判断数据权限编号是否有重复
+            </summary>
+            <param name="MenuCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController._RoleMenuList(System.String,System.String)">
+            <summary>
+            分配角色菜单数据
+            </summary>
+            <param name="RoleID"></param>
+            <param name="MenuName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController._SetRoleMenu(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            设置角色菜单
+            </summary>
+            <param name="RoleID"></param>
+            <param name="MenuIDs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.MenuController.VaildMenuRole(System.String,System.String)">
+            <summary>
+            验证按钮菜单权限
+            </summary>
+            <param name="menuid">页面菜单ID</param>
+            <param name="menus">需要验证的菜单编号，使用","逗号分隔</param>
+            <returns>返回拥有权限的菜单名称</returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController.List">
+            <summary>
+            【视图】部门列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController.Add(System.String)">
+            <summary>
+            【视图】添加子部门
+            </summary>
+            <param name="pid">父节点ID，0表示顶层</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController.Edit(System.String)">
+            <summary>
+            【视图】编辑部门
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController.Show(System.String)">
+            <summary>
+            【视图】查看部门
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController.RoleOrganizationList(System.String)">
+            <summary>
+            【视图】分配角色部门
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController.OrganizationUserList">
+            <summary>
+            部门用户设置列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController.GetOrganizationTree">
+            <summary>
+            获取部门Json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController._Add(HS.MVCFramework.Core.Models.Organization_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="menu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController._Edit(HS.MVCFramework.Core.Models.Organization_U)">
+            <summary>
+            编辑
+            </summary>
+            <param name="menu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController._Delete(System.String)">
+            <summary>
+            删除部门
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController._OrganNOIsSuc(System.String,System.String)">
+            <summary>
+            判断部门编号是否有重复
+            </summary>
+            <param name="OrganNO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController._OrganizationUserList(System.String,System.String,System.String,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            分页用户数据获取
+            </summary>
+            <param name="user">搜索条件</param>
+            <param name="pi">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController._SetUserOrgan(System.String,System.String,System.Boolean)">
+            <summary>
+            设置部门用户
+            </summary>
+            <param name="OrganID"></param>
+            <param name="UserID"></param>
+            <param name="isHas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.OrganizationController._SetDefaultOrgan(System.String,System.String)">
+            <summary>
+            设置为主部门
+            </summary>
+            <param name="OrganID"></param>
+            <param name="UserID"></param>
+            <param name="isHas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController.List">
+            <summary>
+            【视图】字典列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController.Add(System.String)">
+            <summary>
+            【视图】添加子字典
+            </summary>
+            <param name="pid">父节点ID，0表示顶层</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController.Edit(System.String)">
+            <summary>
+            【视图】编辑字典
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController.Show(System.String)">
+            <summary>
+            【视图】查看字典
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController.GetDictionaryTree">
+            <summary>
+            获取字典Json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController._Add(HS.MVCFramework.Core.Models.Dictionary_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="menu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController._Edit(HS.MVCFramework.Core.Models.Dictionary_U)">
+            <summary>
+            编辑
+            </summary>
+            <param name="menu"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController._Delete(System.String)">
+            <summary>
+            删除字典
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController._DictTypeIsSuc(System.String,System.String)">
+            <summary>
+            判断字典类型是否有重复
+            </summary>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.DictionaryController._DictCodeIsSuc(System.String,System.String,System.String)">
+            <summary>
+            判断字典编号是否有重复
+            </summary>
+            <param name="DictType"></param>
+            <param name="DictCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AppSettingController.Setting">
+            <summary>
+            【视图】设置页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AppSettingController._Save(HS.MVCFramework.Framework.AppConfig)">
+            <summary>
+            编辑
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AdminController.LockLogin(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            [操作]重载不锁定登录
+            </summary>
+            <param name="filterContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AdminController.Index">
+            <summary>
+            【视图】桌面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AdminController.LogOn(System.String)">
+            <summary>
+            [视图]登录页面
+            </summary>
+            <param name="reurl">登录后自动跳转页面</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AdminController.AjaxLogin">
+            <summary>
+            [视图]AJAX登录页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AdminController.LogOn(HS.MVCFramework.Core.Models.LogOnModel)">
+            <summary>
+            [操作]检验登录是否成功
+            </summary>
+            <param name="model">登录实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AdminController.LogOff">
+            <summary>
+            登录退出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AdminController.ChangePassword">
+            <summary>
+            [视图]修改用户密码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AdminController._ChangePassword(HS.MVCFramework.Core.Models.AccountModel)">
+            <summary>
+            [操作]修改用户密码
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.DAL.RoleAccess.GetUserRoles(System.String)">
+            <summary>
+            获取用户角色
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.DAL.MenuAccess.GetRoleMenus(System.String)">
+            <summary>
+            获取角色菜单
+            </summary>
+            <param name="RoleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.DAL.AppRegisterAccess.GetAppRegistersByUserID(System.String)">
+            <summary>
+            获取用户系统
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.DAL.UserAccess.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.DAL.UserAccess.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="configFileName"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.DAL.UserAccess.GetRoleUsers(System.String)">
+            <summary>
+            获取角色内所有用户
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.DAL.UserAccess.GetOrganUsers(System.String)">
+            <summary>
+            获取部门内所有用户
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Entitys.SYS_Log">
+            <summary>
+            系统日志
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.LogType">
+            <summary>
+            日志种类(Trace-痕迹,Data-数据日志,Error-错误,Warning-警告,Info-信息,Debug-调试,Fatal-致命)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.LogTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.Module">
+            <summary>
+            模块
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.ClassName">
+            <summary>
+            类名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.MethodName">
+            <summary>
+            方法名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.OperaterId">
+            <summary>
+            操作人ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.OperaterName">
+            <summary>
+            操作人名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.Exception">
+            <summary>
+            异常错误栈信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.DataString">
+            <summary>
+            业务数据（实体对象，数据日志使用,格式为JSON)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.Message">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_Log.IPAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity">
+            <summary>
+            系统字典表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity.ParDictID">
+            <summary>
+            父节点ID，0为顶层
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity.DictType">
+            <summary>
+            字典类型
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity.DictName">
+            <summary>
+            字典名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity.DictCode">
+            <summary>
+            字典编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity.DictDesc">
+            <summary>
+            字典描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity.DictOrder">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity.LevelNO">
+            <summary>
+            层级
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.Sys_DictionaryEntity.IsCache">
+            <summary>
+            是否缓存 1：是 0否
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Entitys.SYS_AppRoleEntity">
+            <summary>
+            系统角色
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_AppRoleEntity.RoleID">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_AppRoleEntity.AppID">
+            <summary>
+            系统ID
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Entitys.SYS_AppRegisterEntity">
+            <summary>
+            系统注册表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_AppRegisterEntity.AppRegisterID">
+            <summary>
+            注册系统号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_AppRegisterEntity.AppName">
+            <summary>
+            系统名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_AppRegisterEntity.LoginVerifiedUrl">
+            <summary>
+            系统登录校验地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_AppRegisterEntity.HomePageUrl">
+            <summary>
+            首页地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_AppRegisterEntity.OrderNum">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Entitys.SYS_AppRegisterEntity.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IAppRegisterFacade.GetRolePaged(HS.MVCFramework.Core.Models.AppRegister_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="Role"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IAppRegisterFacade.GetAppRegisterByUserID(System.String)">
+            <summary>
+            获取用户有权限系统
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IAppRegisterFacade.SetAppRole(System.String,System.String,System.Boolean)">
+            <summary>
+            设置角色系统
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleID"></param>
+            <param name="IsHas">ture设置 false移除</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IAppRegisterFacade._IsExists(System.String,System.String)">
+            <summary>
+            系统是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Facades.ILogFacade">
+            <summary>
+            日志业务访问逻辑
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.ILogFacade.Insert(HS.MVCFramework.Framework.LogItemModel)">
+            <summary>
+            增加日志
+            </summary>
+            <param name="LogModel">日志对象</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.GetRolePaged(HS.MVCFramework.Core.Models.Role_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="Role"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.GetAllRoleWithUser(System.String,System.String)">
+            <summary>
+            获取角色分配页面数据
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.SetUserRole(System.String,System.String,System.Boolean)">
+            <summary>
+            设置用户角色
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleID"></param>
+            <param name="IsHas">ture设置 false移除</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade._IsExists(System.String,System.String)">
+            <summary>
+            角色是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.Add(HS.MVCFramework.Core.Models.Role_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.Edit(HS.MVCFramework.Core.Models.Role_U)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.Del(System.String)">
+            <summary>
+            删除多个对象
+            </summary>
+            <param name="IDs">需要删除数据的ID，使用“,”分隔</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.GetAllRoles">
+            <summary>
+            获取所有角色，从数据库取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.GetRoleByID(System.String)">
+            <summary>
+            通过角色ID获取角色，从数据库中取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IRoleFacade.GetRolesByUser(System.String)">
+            <summary>
+            获取用户的角色
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.GetAllMenus">
+            <summary>
+            获取所有菜单（除管理员菜单）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.IsFuncExists(System.String,System.String,System.String)">
+            <summary>
+            判断菜单编号是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="MenuCode"></param>
+            <param name="PerMenuID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.IsDataExists(System.String,System.String)">
+            <summary>
+            判断数据权限编号是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="MenuCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.GetAllMenuWithRole(System.String,System.String)">
+            <summary>
+            获取角色菜单分配页面数据
+            </summary>
+            <param name="RoleID"></param>
+            <param name="MenuName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.SetRoleMenus(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            设置角色菜单
+            </summary>
+            <param name="RoleID"></param>
+            <param name="MenuIDs"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.Add(HS.MVCFramework.Core.Models.Menu_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.Edit(HS.MVCFramework.Core.Models.Menu_U)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.Del(System.String)">
+            <summary>
+            删除多个对象
+            </summary>
+            <param name="IDs">需要删除数据的ID，使用“,”分隔</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.GetMenusByUserID(System.String)">
+            <summary>
+            获取用户有权限的菜单
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.GetMenusByUserID(System.String,System.MenuType)">
+            <summary>
+            获取用户有权限的菜单(根据菜单类型)
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.GetFunMenuByMenuID(System.String)">
+            <summary>
+            获取所有或页面内的所有需要验证的功能按钮
+            </summary>
+            <param name="MenuID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.GetAllMenuInfos">
+            <summary>
+            获取所有菜单（MenuType为Menu的菜单）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.GetAdminMenu">
+            <summary>
+            获取超级管理员菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IMenuFacade.GetAllRoutingInfo">
+            <summary>
+            获取所有路由
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.IsExists(System.String,System.String)">
+            <summary>
+            判断部门编号是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="OrganNO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.Add(HS.MVCFramework.Core.Models.Organization_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.Edit(HS.MVCFramework.Core.Models.Organization_U)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.Del(System.String)">
+            <summary>
+            删除多个对象
+            </summary>
+            <param name="IDs">需要删除数据的ID，使用“,”分隔</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.GetAllOrgans">
+            <summary>
+            获取所有部门，从数据库取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.GetOrganByID(System.String)">
+            <summary>
+            通过部门ID获取部门，从数据库中取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.GetDefaultOrganByUser(System.String)">
+            <summary>
+            获取用户的默认部门
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.GetOrgansByUser(System.String)">
+            <summary>
+            获取用户的所有部门
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.GetUserWithOrgan(System.String,System.String,System.String)">
+            <summary>
+            获取部门用户列表
+            </summary>
+            <param name="OrganizationID"></param>
+            <param name="UserName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.SetUserOrgan(System.String,System.String,System.Boolean)">
+            <summary>
+            设置部门用户
+            </summary>
+            <param name="OrganID"></param>
+            <param name="UserID"></param>
+            <param name="IsHas">ture设置 false移除</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IOrganizationFacade.SetDefaultOrgan(System.String,System.String)">
+            <summary>
+            设置为主部门
+            </summary>
+            <param name="OrganID"></param>
+            <param name="UserID"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IDictionaryFacade.GetAllDict(System.String)">
+            <summary>
+            获取数据字典（包含标题项）
+            </summary>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IDictionaryFacade.GetDict(System.String)">
+            <summary>
+            获取数据字典（不包含标题项）
+            </summary>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IDictionaryFacade.IsExists(System.String,System.String)">
+            <summary>
+            判断字典类型是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IDictionaryFacade.IsExists(System.String,System.String,System.String)">
+            <summary>
+            判断字典编号是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="DictType"></param>
+            <param name="DictCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IDictionaryFacade.Add(HS.MVCFramework.Core.Models.Dictionary_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IDictionaryFacade.Edit(HS.MVCFramework.Core.Models.Dictionary_U)">
+            <summary>
+            更新
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IDictionaryFacade.Del(System.String)">
+            <summary>
+            删除多个对象
+            </summary>
+            <param name="IDs">需要删除数据的ID，使用“,”分隔</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IAdminFacade.ChangePwd(System.String,System.String)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="UserID"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IAdminFacade.ComparePassword(System.String,System.String)">
+            <summary>
+            对比密码是否正确
+            </summary>
+            <param name="UserID"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.LogFacade.Insert(HS.MVCFramework.Framework.LogItemModel)">
+            <summary>
+            增加日志
+            </summary>
+            <param name="logType">日志类型</param>
+            <param name="source">日志来源</param>
+            <param name="message">日志内容</param>
+            <param name="createTime">创建时间</param>
+            <param name="createUserId">创建用户编号</param>
+            <param name="createUserName">创建用户名称</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.GetRolePaged(HS.MVCFramework.Core.Models.Role_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="Role"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.GetAllRoleWithUser(System.String,System.String)">
+            <summary>
+            获取角色分配页面数据
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.SetUserRole(System.String,System.String,System.Boolean)">
+            <summary>
+            设置用户角色
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleID"></param>
+            <param name="IsHas">ture设置 false移除</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade._IsExists(System.String,System.String)">
+            <summary>
+            角色是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.Add(HS.MVCFramework.Core.Models.Role_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.Edit(HS.MVCFramework.Core.Models.Role_U)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.Del(System.String)">
+            <summary>
+            删除多个对象
+            </summary>
+            <param name="IDs">需要删除数据的ID，使用“,”分隔</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.GetAllRoles">
+            <summary>
+            获取所有角色，从数据库取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.GetRoleByID(System.String)">
+            <summary>
+            通过角色ID获取角色，从数据库中取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.RoleFacade.GetRolesByUser(System.String)">
+            <summary>
+            获取用户的角色
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.GetAllMenus">
+            <summary>
+            获取所有菜单（除管理员菜单）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.IsFuncExists(System.String,System.String,System.String)">
+            <summary>
+            判断按钮菜单编号是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="MenuCode"></param>
+            <param name="PerMenuID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.IsDataExists(System.String,System.String)">
+            <summary>
+            判断数据权限编号是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="MenuCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.GetAllMenuWithRole(System.String,System.String)">
+            <summary>
+            获取角色菜单分配页面数据
+            </summary>
+            <param name="RoleID"></param>
+            <param name="MenuName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.SetRoleMenus(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            设置角色菜单
+            </summary>
+            <param name="RoleID"></param>
+            <param name="MenuIDs"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.Add(HS.MVCFramework.Core.Models.Menu_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.Edit(HS.MVCFramework.Core.Models.Menu_U)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.Del(System.String)">
+            <summary>
+            删除多个对象
+            </summary>
+            <param name="IDs">需要删除数据的ID，使用“,”分隔</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.GetMenusByUserID(System.String)">
+            <summary>
+            获取用户有权限的菜单
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.GetMenusByUserID(System.String,System.MenuType)">
+            <summary>
+            获取用户有权限的菜单(根据菜单类型)
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.GetFunMenuByMenuID(System.String)">
+            <summary>
+            获取所有或页面内的所有需要验证的功能按钮
+            </summary>
+            <param name="MenuID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.GetAllMenuInfos">
+            <summary>
+            获取所有菜单（MenuType为Menu的菜单）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.GetAdminMenu">
+            <summary>
+            获取超级管理员菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.MenuFacade.GetAllRoutingInfo">
+            <summary>
+            获取所有路由
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.IsExists(System.String,System.String)">
+            <summary>
+            判断部门编号是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="OrganNO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.Add(HS.MVCFramework.Core.Models.Organization_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.Edit(HS.MVCFramework.Core.Models.Organization_U)">
+            <summary>
+            更新
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.Del(System.String)">
+            <summary>
+            删除多个对象
+            </summary>
+            <param name="IDs">需要删除数据的ID，使用“,”分隔</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.GetUserWithOrgan(System.String,System.String,System.String)">
+            <summary>
+            获取部门用户列表
+            </summary>
+            <param name="OrganizationID"></param>
+            <param name="UserName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.SetUserOrgan(System.String,System.String,System.Boolean)">
+            <summary>
+            设置部门用户
+            </summary>
+            <param name="OrganID"></param>
+            <param name="UserID"></param>
+            <param name="IsHas">ture设置 false移除</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.SetDefaultOrgan(System.String,System.String)">
+            <summary>
+            设置为主部门
+            </summary>
+            <param name="OrganID"></param>
+            <param name="UserID"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.GetAllOrgans">
+            <summary>
+            获取所有部门，从数据库取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.GetOrganByID(System.String)">
+            <summary>
+            通过部门ID获取部门，从数据库中取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.GetDefaultOrganByUser(System.String)">
+            <summary>
+            获取用户的默认部门
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.OrganizationFacade.GetOrgansByUser(System.String)">
+            <summary>
+            获取用户的所有部门
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.DictionaryFacade.GetAllDict(System.String)">
+            <summary>
+            获取数据字典（包含标题项）
+            </summary>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.DictionaryFacade.GetDict(System.String)">
+            <summary>
+            获取数据字典（不包含标题项）
+            </summary>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.DictionaryFacade.IsExists(System.String,System.String)">
+            <summary>
+            判断字典类型是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.DictionaryFacade.IsExists(System.String,System.String,System.String)">
+            <summary>
+            判断字典编号是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="DictType"></param>
+            <param name="DictCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.DictionaryFacade.Add(HS.MVCFramework.Core.Models.Dictionary_I)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.DictionaryFacade.Edit(HS.MVCFramework.Core.Models.Dictionary_U)">
+            <summary>
+            更新
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.DictionaryFacade.Del(System.String)">
+            <summary>
+            删除多个对象
+            </summary>
+            <param name="IDs">需要删除数据的ID，使用“,”分隔</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOAppRegisterFacade.GetRolePaged(HS.MVCFramework.Core.Models.AppRegister_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="Role"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOAppRegisterFacade.SetAppRole(System.String,System.String,System.Boolean)">
+            <summary>
+            设置角色系统
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleID"></param>
+            <param name="IsHas">ture设置 false移除</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOAppRegisterFacade._IsExists(System.String,System.String)">
+            <summary>
+            系统是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOAppRegisterFacade.GetAppRegisterByUserID(System.String)">
+            <summary>
+            获取用户有权限系统
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Facades.SSOFactory.SSO_AppRegister">
+            <summary>
+            系统注册表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_AppRegister.ID">
+            <summary>
+            GUID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_AppRegister.AppRegisterID">
+            <summary>
+            注册系统号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_AppRegister.AppName">
+            <summary>
+            系统名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_AppRegister.LoginVerifiedUrl">
+            <summary>
+            系统登录校验地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_AppRegister.HomePageUrl">
+            <summary>
+            首页地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_AppRegister.OrderNum">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_AppRegister.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Facades.SSOFactory.ModelAdapter">
+            <summary>
+            验证中心系统与本系统实体转换
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator">
+            <summary>
+            验证中心用户实体
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.USER_ID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_OP_NAME">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_OP_PASSWORD">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_OP_ROLES">
+            <summary>
+            用户角色(角色ID)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.C_OP_STATUS">
+            <summary>
+            用户状态(1激活 0注销)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_OP_AREA">
+            <summary>
+            用户所在地区
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_COMPANY_NAME">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_COMPANY_ADDR">
+            <summary>
+            用户地址地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_EMAIL">
+            <summary>
+            EMAIL
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_CONTACT_PERSON">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_TEL">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_FAX">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.N_REGISTE_TIME">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_REMARK">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSO_Operator.VC_MOBILE">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Facades.SSOFacadeAdapter">
+            <summary>
+            单点登录操作类转换器
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFacadeAdapter.UserInstance">
+            <summary>
+            获取UserFacade类实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFacadeAdapter.AppRegisterInstance">
+            <summary>
+            获取AppRegisterFacade类实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFacadeAdapter.appConfig">
+            <summary>
+            通用配置
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetUserByID(System.String)">
+            <summary>
+            根据ID获取用户
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetUserPaged(HS.MVCFramework.Core.Models.User_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取用户分页数据
+            </summary>
+            <param name="user"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetAllUsers(HS.MVCFramework.Core.Models.User_S)">
+            <summary>
+            获取用户列表
+            </summary>
+            <param name="user"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.AddUser(HS.MVCFramework.Core.Models.User_I)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.EditUser(HS.MVCFramework.Core.Models.User_U)">
+            <summary>
+            编辑用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.DelUsers(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="IDs">用户ID，逗号“,”隔开</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.IsExists(System.String)">
+            <summary>
+            判断登录名是否被占用
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.ChangePwd(System.String,System.String)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="UserID"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.ComparePassword(System.String,System.String)">
+            <summary>
+            对比密码是否正确
+            </summary>
+            <param name="UserID"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetUserInfoByID(System.String)">
+            <summary>
+            根据用户ID获取用户对象
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetUserByLoginName(System.String)">
+            <summary>
+            根据用户登录帐号获取用户对象
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetAllUsers(System.String,System.String)">
+            <summary>
+            获取所有用户数据
+            </summary>
+            <param name="LoginNameOrDisplayName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetUserPaged(System.String,System.String,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取用户分页数据
+            </summary>
+            <param name="LoginNameOrDisplayName"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetUsersByRoleID(System.String)">
+            <summary>
+            根据角色获取所有用户
+            </summary>
+            <param name="RoleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.IUserFacade.GetUsersByOrganID(System.String)">
+            <summary>
+            根据部门获取所有用户
+            </summary>
+            <param name="OrganID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetUserByID(System.String)">
+            <summary>
+            根据ID获取用户
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetUserPaged(HS.MVCFramework.Core.Models.User_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取用户分页数据
+            </summary>
+            <param name="user"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetAllUsers(HS.MVCFramework.Core.Models.User_S)">
+            <summary>
+            获取用户列表
+            </summary>
+            <param name="user"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.IsExists(System.String)">
+            <summary>
+            判断登录名是否被占用
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.ChangePwd(System.String,System.String)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="UserID"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.ComparePassword(System.String,System.String)">
+            <summary>
+            对比密码是否正确
+            </summary>
+            <param name="UserID"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetUserInfoByID(System.String)">
+            <summary>
+            根据用户ID获取用户对象
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetUserByLoginName(System.String)">
+            <summary>
+            根据用户登录帐号获取用户对象
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetUserPaged(System.String,System.String,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取用户分页数据
+            </summary>
+            <param name="LoginNameOrDisplayName"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetAllUsers(System.String,System.String)">
+            <summary>
+            获取所有用户数据
+            </summary>
+            <param name="LoginNameOrDisplayName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetUsersByRoleID(System.String)">
+            <summary>
+            根据角色获取所有用户
+            </summary>
+            <param name="RoleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.GetUsersByOrganID(System.String)">
+            <summary>
+            根据部门获取所有用户
+            </summary>
+            <param name="OrganID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.AddUser(HS.MVCFramework.Core.Models.User_I)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.EditUser(HS.MVCFramework.Core.Models.User_U)">
+            <summary>
+            编辑用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSOUserFacade.DelUsers(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="IDs">用户ID，逗号“,”隔开</param>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory">
+            <remarks/>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.GetUserByID(System.String,System.String)">
+            <summary>
+            说明：获取用户信息
+            </summary>
+            <param name="UserID">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.GetUserPaged(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            说明：获取用户分页数据
+            </summary>
+            <param name="LoginName">登录帐户</param>
+            <param name="DisplayName">用户姓名</param>
+            <param name="pageSize">行数</param>
+            <param name="pageIndex">页数</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.GetUserByLoginName(System.String,System.String)">
+            <summary>
+            说明：获取用户信息
+            </summary>
+            <param name="LoginName">登录账号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.GetAllUsers(System.String,System.String,System.String)">
+            <summary>
+            说明：获取所有用户信息
+            </summary>
+            <param name="LoginName">登录账号</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.ChangePwd(System.String,System.String,System.String)">
+            <summary>
+            说明：修改用户密码
+            </summary>
+            <param name="UserID">用户ID</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.ComparePassword(System.String,System.String,System.String)">
+            <summary>
+            说明：对比密码是否正确
+            </summary>
+            <param name="UserID">用户ID</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.GetAppRegisterByUserID(System.String,System.String)">
+            <summary>
+            说明：获取用户有权限系统
+            </summary>
+            <param name="UserID">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Facades.SSOFactory.SSODataFactory.AppConfig">
+            <summary>
+            通用配置
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Facades.AdminFacade">
+            <summary>
+            管理员登录业务处理器
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AdminFacade.GetUserByLoginName(System.String)">
+            <summary>
+            根据用户登录帐号获取用户对象
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AdminFacade.ChangePwd(System.String,System.String)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="UserID"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AdminFacade.ComparePassword(System.String,System.String)">
+            <summary>
+            对比密码是否正确
+            </summary>
+            <param name="UserID"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AppRegisterFacade.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AppRegisterFacade.#ctor(System.String)">
+            <summary>
+            构造函数，传数据库配置文件
+            </summary>
+            <param name="dbConfigPath"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AppRegisterFacade.GetRolePaged(HS.MVCFramework.Core.Models.AppRegister_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="Role"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AppRegisterFacade.GetAppRegisterByUserID(System.String)">
+            <summary>
+            获取用户有权限系统
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AppRegisterFacade.SetAppRole(System.String,System.String,System.Boolean)">
+            <summary>
+            设置角色系统
+            </summary>
+            <param name="UserID"></param>
+            <param name="RoleID"></param>
+            <param name="IsHas">ture设置 false移除</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.AppRegisterFacade._IsExists(System.String,System.String)">
+            <summary>
+            系统是否存在
+            </summary>
+            <param name="ID"></param>
+            <param name="RoleName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.AppRegister_S">
+            <summary>
+            系统注册表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_S.AppRegisterID">
+            <summary>
+            注册系统号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_S.AppName">
+            <summary>
+            系统名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_S.LoginVerifiedUrl">
+            <summary>
+            系统登录校验地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_S.HomePageUrl">
+            <summary>
+            首页地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_S.OrderNum">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_S.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.AppRegister_I">
+            <summary>
+            系统注册表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_I.AppRegisterID">
+            <summary>
+            注册系统号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_I.AppName">
+            <summary>
+            系统名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_I.LoginVerifiedUrl">
+            <summary>
+            系统登录校验地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_I.HomePageUrl">
+            <summary>
+            首页地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_I.OrderNum">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_I.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.AppRegister_U">
+            <summary>
+            系统注册表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_U.AppRegisterID">
+            <summary>
+            注册系统号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_U.AppName">
+            <summary>
+            系统名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_U.LoginVerifiedUrl">
+            <summary>
+            系统登录校验地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_U.HomePageUrl">
+            <summary>
+            首页地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_U.OrderNum">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.AppRegister_U.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.SysDictionary">
+            <summary>
+            系统字典表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.SysDictionary.ParDictID">
+            <summary>
+            父节点ID，0为顶层
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.SysDictionary.DictType">
+            <summary>
+            字典类型
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.SysDictionary.DictName">
+            <summary>
+            字典名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.SysDictionary.DictCode">
+            <summary>
+            字典编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.SysDictionary.DictDesc">
+            <summary>
+            字典描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.SysDictionary.LevelNO">
+            <summary>
+            层级
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.SysDictionary.DictOrder">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.SysDictionary.ParDictCode">
+            <summary>
+            父节点编码
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Dictionary_S">
+            <summary>
+            系统字典表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.ParDictID">
+            <summary>
+            父节点ID，0为顶层
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.DictType">
+            <summary>
+            字典类型
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.DictName">
+            <summary>
+            字典名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.DictCode">
+            <summary>
+            字典编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.DictDesc">
+            <summary>
+            字典描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.LevelNO">
+            <summary>
+            层级
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.DictOrder">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.IsCache">
+            <summary>
+            是否缓存 1：是 0否
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.ParDictName">
+            <summary>
+            父节点名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_S.ParDictCode">
+            <summary>
+            父节点编码
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Dictionary_U">
+            <summary>
+            系统字典表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_U.DictName">
+            <summary>
+            字典名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_U.DictCode">
+            <summary>
+            字典编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_U.DictDesc">
+            <summary>
+            字典描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_U.DictOrder">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_U.IsCache">
+            <summary>
+            是否缓存 1：是 0否
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_U.IsCache_Old">
+            <summary>
+            原是否缓存
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Dictionary_I">
+            <summary>
+            系统字典表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_I.ParDictID">
+            <summary>
+            父节点ID，0为顶层
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_I.DictType">
+            <summary>
+            字典类型
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_I.DictName">
+            <summary>
+            字典名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_I.DictCode">
+            <summary>
+            字典编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_I.DictDesc">
+            <summary>
+            字典描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_I.LevelNO">
+            <summary>
+            层级
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_I.DictOrder">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Dictionary_I.IsCache">
+            <summary>
+            是否缓存 1：是 0否
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Menu_S">
+            <summary>
+            菜单表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.MenuName">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.MenuPath">
+            <summary>
+            菜单地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.MenuType">
+            <summary>
+            菜单类型。-1：超级管理员菜单 1：菜单 2：功能
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.PerMenuID">
+            <summary>
+            父菜单ID。0表示顶层
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.RecordStatus">
+            <summary>
+            菜单状态
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.MenuCode">
+            <summary>
+            菜单编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.MenuLevel">
+            <summary>
+            菜单层级
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.MenuOrder">
+            <summary>
+            菜单排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.MenuDesc">
+            <summary>
+            菜单描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.Controller">
+            <summary>
+            权限控制-Controller
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.Action">
+            <summary>
+            权限控制-Action
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.Area">
+            <summary>
+            权限控制-Area
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.PerMenuName">
+            <summary>
+            父级菜单名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_S.IsHas">
+            <summary>
+            角色是否拥有该菜单
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Menu_U">
+            <summary>
+            菜单表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.MenuName">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.MenuPath">
+            <summary>
+            菜单地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.RecordStatus">
+            <summary>
+            菜单状态
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.MenuCode">
+            <summary>
+            菜单编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.MenuOrder">
+            <summary>
+            菜单排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.MenuDesc">
+            <summary>
+            菜单描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.Controller">
+            <summary>
+            权限控制-Controller
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.Action">
+            <summary>
+            权限控制-Action
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.Area">
+            <summary>
+            权限控制-Area
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_U.PerMenuName">
+            <summary>
+            父级菜单名称
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Menu_I">
+            <summary>
+            菜单表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.MenuName">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.MenuPath">
+            <summary>
+            菜单地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.MenuType">
+            <summary>
+            菜单类型。-1：超级管理员菜单 1：菜单 2：功能
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.PerMenuID">
+            <summary>
+            父菜单ID。0表示顶层
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.RecordStatus">
+            <summary>
+            菜单状态
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.MenuCode">
+            <summary>
+            菜单编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.MenuLevel">
+            <summary>
+            菜单层级
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.MenuOrder">
+            <summary>
+            菜单排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.MenuDesc">
+            <summary>
+            菜单描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.Controller">
+            <summary>
+            权限控制-Controller
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.Action">
+            <summary>
+            权限控制-Action
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.Area">
+            <summary>
+            权限控制-Area
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Menu_I.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Organization_S">
+            <summary>
+            组织机构表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.OrganName">
+            <summary>
+            组织机构名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.OrganDesc">
+            <summary>
+            组织机构描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.OrganParentID">
+            <summary>
+            组织机构父节点ID。0表示顶层
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.OrganNO">
+            <summary>
+            组织机构编码
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.LevelNO">
+            <summary>
+            层次
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.OrganOrder">
+            <summary>
+            排序号
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_S.ParOrganName">
+            <summary>
+            父部门名称
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Organization_I">
+            <summary>
+            组织机构表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.OrganName">
+            <summary>
+            组织机构名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.OrganDesc">
+            <summary>
+            组织机构描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.OrganParentID">
+            <summary>
+            组织机构父节点ID。0表示顶层
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.OrganNO">
+            <summary>
+            组织机构编码
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.LevelNO">
+            <summary>
+            层次
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.OrganOrder">
+            <summary>
+            排序号
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_I.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Organization_U">
+            <summary>
+            组织机构表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.OrganName">
+            <summary>
+            组织机构名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.OrganDesc">
+            <summary>
+            组织机构描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.OrganNO">
+            <summary>
+            组织机构编码
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.OrganOrder">
+            <summary>
+            排序号
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Organization_U.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Role_S">
+            <summary>
+            角色信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.RoleName">
+            <summary>
+            角色名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.RoleDesc">
+            <summary>
+            角色描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_S.IsHas">
+            <summary>
+            是否拥有
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Role_I">
+            <summary>
+            角色信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_I.RoleName">
+            <summary>
+            角色名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_I.RoleDesc">
+            <summary>
+            角色描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_I.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_I.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_I.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_I.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_I.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_I.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.Role_U">
+            <summary>
+            角色信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_U.RoleName">
+            <summary>
+            角色名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_U.RoleDesc">
+            <summary>
+            角色描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_U.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_U.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_U.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_U.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_U.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.Role_U.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.OrganUser_S">
+            <summary>
+            用户表-Select
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.UserLoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.UserDisplayName">
+            <summary>
+            用户显示名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.UserPhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.UserType">
+            <summary>
+            用户类型:-1超级管理员 1用户 2普通管理员 99匿名用户
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.IsHas">
+            <summary>
+            是否拥有
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.OrganUser_S.IsMain">
+            <summary>
+            是否是主部门
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Open.DictionaryshipFactory">
+            <summary>
+            数据字典对外开放接口
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Open.DictionaryshipFactory.Instance">
+            <summary>
+            单例对象
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Open.DictionaryshipFactory._facade">
+            <summary>
+            facade延迟对象
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Open.DictionaryshipFactory.GetDictionary(System.String)">
+            <summary>
+            【缓存优先】获取数据字典
+            </summary>
+            <param name="DictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.DictionaryshipFactory.GetDictSelectList(System.String,System.Boolean,System.String)">
+            <summary>
+            【缓存优先】获取数据字典下拉框数据格式
+            </summary>
+            <param name="DictType"></param>
+            <param name="hasDefault">是否包含默认空值项（--请选择--）</param>
+            <param name="defaultText">默认空值项显示值（默认值：--请选择--）</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.DictionaryshipFactory.GetDictName(System.String,System.String,System.Boolean)">
+            <summary>
+            【缓存优先】获取数据字典显示值
+            </summary>
+            <param name="DictType">字典表类型</param>
+            <param name="DictCode">字典值</param>
+            <param name="isRecursive">是否递归显示名称（用于树字典）</param>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Open.JsonBuilder">
+            <summary>
+            前台控件的Json数据组织辅助类
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SSO.Entity.MenuEntity">
+            <summary>
+            菜单表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.MenuName">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.MenuPath">
+            <summary>
+            菜单地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.MenuType">
+            <summary>
+            菜单类型。-1：超级管理员菜单 1：菜单 2：功能
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.PerMenuID">
+            <summary>
+            父菜单ID。0表示顶层
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.RecordStatus">
+            <summary>
+            菜单状态
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.MenuCode">
+            <summary>
+            菜单编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.MenuLevel">
+            <summary>
+            菜单层级
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.MenuOrder">
+            <summary>
+            菜单排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.MenuDesc">
+            <summary>
+            菜单描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.Controller">
+            <summary>
+            权限控制-Controller
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.Action">
+            <summary>
+            权限控制-Action
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.Area">
+            <summary>
+            权限控制-Area
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuEntity.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.LogOnModel">
+            <summary>
+            登录类
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.LogOnModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.LogOnModel.ValidateCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.LogOnModel.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.LogOnModel.ReUrl">
+            <summary>
+            登录后跳转地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.LogOnModel.LoginSystemID">
+            <summary>
+            登录系统ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.LogOnModel.IsKeepLogon">
+            <summary>
+            保持登录
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SSO.Entity.MenuRoleEntity">
+            <summary>
+            菜单角色关系表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuRoleEntity.MenuID">
+            <summary>
+            菜单ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.MenuRoleEntity.RoleID">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.MenuInfo">
+            <summary>
+            菜单信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.MenuName">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.MenuPath">
+            <summary>
+            菜单地址
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.MenuType">
+            <summary>
+            菜单类型。-1：超级管理员菜单 1：菜单 2：按钮
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.PerMenuID">
+            <summary>
+            父菜单ID。0表示顶层
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.RecordStatus">
+            <summary>
+            菜单状态
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.RoleID">
+            <summary>
+            所属角色
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.MenuCode">
+            <summary>
+            菜单编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.MenuLevel">
+            <summary>
+            菜单层级
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.MenuOrder">
+            <summary>
+            菜单排序
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.MenuDesc">
+            <summary>
+            菜单描述
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.Controller">
+            <summary>
+            权限控制-Controller
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.Action">
+            <summary>
+            权限控制-Action
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.Area">
+            <summary>
+            权限控制-Area
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.MenuInfo.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Open.CacheshipFactory">
+            <summary>
+            缓存相关对外开放接口
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Open.CacheshipFactory.Instance">
+            <summary>
+            单例对象
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Open.CacheshipFactory.ClearSSOUserCache(System.String)">
+            <summary>
+            清理登录用户缓存
+            </summary>
+            <param name="UserID">用户ID</param>
+        </member>
+        <member name="M:HS.MVCFramework.Open.CacheshipFactory.ClearAllSSOUser">
+            <summary>
+            清理所有登录用户缓存
+            </summary>
+            <returns>大于0表示移除的缓存记录数，等于0没有缓存可以移除。</returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.CacheshipFactory.ClearOrganCache">
+            <summary>
+            清理组织机构缓存
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Open.CacheshipFactory.ClearRoleCache">
+            <summary>
+            清理角色缓存
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Open.CacheshipFactory.ClearFunMenuCache">
+            <summary>
+            清理功能菜单缓存
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Open.CacheshipFactory.ClearRoutingCache">
+            <summary>
+            清理路由缓存
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Open.CacheshipFactory.ClearDictionaryCache(System.String)">
+            <summary>
+            清理数据字典缓存
+            </summary>
+            <param name="DictType">数据字典类型</param>
+        </member>
+        <member name="M:HS.MVCFramework.Open.CacheshipFactory.ClearAllDictionary">
+            <summary>
+            清理所有数据字典缓存
+            </summary>
+            <returns>大于0表示移除的缓存记录数，等于0没有缓存可以移除。</returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.RoutingInfo">
+            <summary>
+            路由信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoutingInfo.Area">
+            <summary>
+            Area名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoutingInfo.Controller">
+            <summary>
+            Controller名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoutingInfo.Action">
+            <summary>
+            Action名称
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.AjaxResult">
+            <summary>
+            前台Ajax请求的统一返回结果类
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.AjaxResult.Error">
+            <summary>
+            输错错误信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.AjaxResult.Error(System.String)">
+            <summary>
+            输错错误信息
+            </summary>
+            <param name="message">附属消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.AjaxResult.Error(System.Object)">
+            <summary>
+            输错错误信息
+            </summary>
+            <param name="data">附属数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.AjaxResult.Error(System.Object,System.String)">
+            <summary>
+            输错错误信息
+            </summary>
+            <param name="data">附属数据</param>
+            <param name="message">附属消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.AjaxResult.Success">
+            <summary>
+            输出成功信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.AjaxResult.Success(System.String)">
+            <summary>
+            输出成功信息
+            </summary>
+            <param name="message">附属消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.AjaxResult.Success(System.Object)">
+            <summary>
+            输出成功信息
+            </summary>
+            <param name="data">附属数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.AjaxResult.Success(System.Object,System.String)">
+            <summary>
+            输出成功信息
+            </summary>
+            <param name="data">附属数据</param>
+            <param name="message">附属消息</param>
+            <returns></returns>
+        </member>
+        <member name="P:HS.MVCFramework.Core.AjaxResult.IsError">
+            <summary>
+            是否产生错误
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.AjaxResult.Message">
+            <summary>
+            错误信息，或者成功信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.AjaxResult.Data">
+            <summary>
+            成功可能时返回的数据
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Cache.LoginUserCacheStorage">
+            <summary>
+            登录用户缓存服务
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.LoginUserCacheStorage.Set(System.String,HS.MVCFramework.Core.SSO.LoginUserContext)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.LoginUserCacheStorage.Get(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.LoginUserCacheStorage.ClearSSPUser(System.String)">
+            <summary>
+            重置登录用户缓存
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.LoginUserCacheStorage.Current">
+            <summary>
+            当前登录用户缓存服务
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.LoginUserCacheStorage.CacheArea">
+            <summary>
+            缓存空间名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.LoginUserCacheStorage.KEYID">
+            <summary>
+            缓存类型键名
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Cache.SSOCacheStorage">
+            <summary>
+            组织机构、角色缓存服务
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.SetAllOrgan(System.Collections.Generic.List{HS.MVCFramework.Core.SSO.OrganizationInfo})">
+            <summary>
+            设置组织机构缓存
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.SetAllRole(System.Collections.Generic.List{HS.MVCFramework.Core.SSO.RoleInfo})">
+            <summary>
+            设置角色缓存
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.SetAllFunMenu(System.Collections.Generic.List{HS.MVCFramework.Core.SSO.MenuInfo})">
+            <summary>
+            设置功能菜单
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.SetAllRouting(System.Collections.Generic.List{HS.MVCFramework.Core.SSO.RoutingInfo})">
+            <summary>
+            设置路由缓存
+            </summary>
+            <param name="key"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.GetAllOrgan">
+            <summary>
+            获取组织机构缓存
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.GetAllRole">
+            <summary>
+            获取角色缓存
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.GetAllFunMenu">
+            <summary>
+            获取功能菜单缓存
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.GetAllRouting">
+            <summary>
+            获取所有路由缓存
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.ClearAllOrgan">
+            <summary>
+            重置组织机构缓存
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.ClearAllRole">
+            <summary>
+            清理角色缓存
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.ClearAllFunMenu">
+            <summary>
+            清理功能菜单缓存
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Cache.SSOCacheStorage.ClearAllRouting">
+            <summary>
+            清理路由缓存
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.SSOCacheStorage.Current">
+            <summary>
+            当前登录用户缓存服务
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.SSOCacheStorage.CacheArea">
+            <summary>
+            缓存空间名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Cache.SSOCacheStorage.KEYID">
+            <summary>
+            缓存类型键名
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController.List">
+            <summary>
+            【视图】用户列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController.Add">
+            <summary>
+            【视图】新增用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController.Edit(System.String)">
+            <summary>
+            【视图】编辑用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController.Show(System.String)">
+            <summary>
+            查看用户
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController._UserList(HS.MVCFramework.Core.Models.User_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            分页用户数据获取
+            </summary>
+            <param name="user">搜索条件</param>
+            <param name="pi">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController._Add(HS.MVCFramework.Core.Models.User_I)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController._Edit(HS.MVCFramework.Core.Models.User_U)">
+            <summary>
+            编辑用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController._Delete(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController._IsExists(System.String)">
+            <summary>
+            判断登录名是否被占用
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.UserController._ResetPwd(System.String)">
+            <summary>
+            重置用户密码
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.HomeController.GetMenuTree">
+            <summary>
+            获取菜单Json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController.LockLogin(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            [操作]重载不锁定登录
+            </summary>
+            <param name="filterContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController.LogOn(System.String)">
+            <summary>
+            [视图]登录页面
+            </summary>
+            <param name="reurl">登录后自动跳转页面</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController.GetValidateCode">
+            <summary>
+            获取验证码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController.AjaxLogin">
+            <summary>
+            [视图]AJAX登录页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController.LogOn(HS.MVCFramework.Core.Models.LogOnModel)">
+            <summary>
+            [操作]检验登录是否成功
+            </summary>
+            <param name="model">登录实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController.LogOff">
+            <summary>
+            登录退出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController.SSOLoginVerified(System.String,System.String)">
+            <summary>
+            单点登录验证中心登录验证入口
+            </summary>
+            <param name="ticket"></param>
+            <param name="app_reurl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController.ChangePassword">
+            <summary>
+            [视图]修改用户密码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Controllers.AccountController._ChangePassword(HS.MVCFramework.Core.Models.AccountModel)">
+            <summary>
+            [操作]修改用户密码
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.#ctor(System.String)">
+            <summary>
+            构造函数，传数据库配置文件
+            </summary>
+            <param name="dbConfigPath"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetUserByID(System.String)">
+            <summary>
+            根据ID获取用户
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetUserPaged(HS.MVCFramework.Core.Models.User_S,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取用户分页数据
+            </summary>
+            <param name="user"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetAllUsers(HS.MVCFramework.Core.Models.User_S)">
+            <summary>
+            获取所有用户数据
+            </summary>
+            <param name="user"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.AddUser(HS.MVCFramework.Core.Models.User_I)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.EditUser(HS.MVCFramework.Core.Models.User_U)">
+            <summary>
+            编辑用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.DelUsers(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="IDs">用户ID，逗号“,”隔开</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.IsExists(System.String)">
+            <summary>
+            判断登录名是否被占用
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.ChangePwd(System.String,System.String)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="UserID"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.ComparePassword(System.String,System.String)">
+            <summary>
+            对比密码是否正确
+            </summary>
+            <param name="UserID"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetUserInfoByID(System.String)">
+            <summary>
+            根据用户ID获取用户对象
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetUserByLoginName(System.String)">
+            <summary>
+            根据用户登录帐号获取用户对象
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetAllUsers(System.String,System.String)">
+            <summary>
+            获取所有用户数据
+            </summary>
+            <param name="LoginNameOrDisplayName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetUserPaged(System.String,System.String,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取用户分页数据
+            </summary>
+            <param name="LoginNameOrDisplayName"></param>
+            <param name="pi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetUsersByRoleID(System.String)">
+            <summary>
+            根据角色获取所有用户
+            </summary>
+            <param name="RoleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.Facades.UserFacade.GetUsersByOrganID(System.String)">
+            <summary>
+            根据部门获取所有用户
+            </summary>
+            <param name="OrganID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.User_U">
+            <summary>
+            用户表-Update
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.UserDisplayName">
+            <summary>
+            用户显示名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.UserPhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.UserDeptID">
+            <summary>
+            用户部门
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.UserType">
+            <summary>
+            用户类型:-1超级管理员 1用户 2普通管理员 99匿名用户
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_U.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.User_I">
+            <summary>
+            用户表-Insert
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.UserLoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.UserDisplayName">
+            <summary>
+            用户显示名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.UserPassword">
+            <summary>
+            用户登录密码
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.UserPhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.UserDeptID">
+            <summary>
+            用户部门ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.UserType">
+            <summary>
+            用户类型:-1超级管理员 1用户 2普通管理员 99匿名用户
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_I.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.Models.User_S">
+            <summary>
+            用户表-Select
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.UserLoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.UserDisplayName">
+            <summary>
+            用户显示名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.UserPhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.UserType">
+            <summary>
+            用户类型:-1超级管理员 1用户 2普通管理员 99匿名用户
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.UserDept">
+            <summary>
+            用户部门
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.Models.User_S.UserLoginOrDisplayName">
+            <summary>
+            用户名或姓名（查询）
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SSO.Entity.UserEntity">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.UserLoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.UserDisplayName">
+            <summary>
+            用户显示名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.UserPassword">
+            <summary>
+            用户登录密码
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.UserPhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.UserType">
+            <summary>
+            用户类型:-1超级管理员 1用户 2普通管理员 99匿名用户
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserEntity.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SSO.Entity.OrganizationEntity">
+            <summary>
+            组织机构表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.OrganName">
+            <summary>
+            组织机构名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.OrganDesc">
+            <summary>
+            组织机构描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.OrganParentID">
+            <summary>
+            组织机构父节点ID。0表示顶层
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.OrganNO">
+            <summary>
+            组织机构编码
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.LevelNO">
+            <summary>
+            层次
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.OrganOrder">
+            <summary>
+            排序号
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.OrganizationEntity.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SSO.Entity.RoleEntity">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.RoleEntity.RoleName">
+            <summary>
+            角色名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.RoleEntity.RoleDesc">
+            <summary>
+            角色描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.RoleEntity.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.RoleEntity.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.RoleEntity.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.RoleEntity.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.RoleEntity.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.RoleEntity.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SSO.Entity.UserRoleEntity">
+            <summary>
+            用户角色关系表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserRoleEntity.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserRoleEntity.RoleID">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SSO.Entity.UserOrganizationEntity">
+            <summary>
+            用户组织机构关系表
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserOrganizationEntity.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserOrganizationEntity.OrganizationID">
+            <summary>
+            组织机构ID
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SSO.Entity.UserOrganizationEntity.IsDefault">
+            <summary>
+            是否是主部门
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.LoginUserContext">
+            <summary>
+            登录用户缓存服务
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.UserID">
+            <summary>
+            登录用户编号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.PublicCode">
+            <summary>
+            公钥
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.UserInfo">
+            <summary>
+            登录用户信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.LoginTime">
+            <summary>
+            登录时间
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.DefaultOrganization">
+            <summary>
+            默认组织机构
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.Organizations">
+            <summary>
+            用户所有组织机构
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.UserRoles">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.UserMenus">
+            <summary>
+            用户菜单(MenuType为Menu的菜单)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.UserFuns">
+            <summary>
+            用户功能(MenuType为Function的菜单)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.UserDatas">
+            <summary>
+            用户数据权限(MenuType为Data的菜单)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.UserRoutings">
+            <summary>
+            用户路由权限(路由设置不为空的菜单)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginUserContext.UserType">
+            <summary>
+            用户类型
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Open.MembershipFactory">
+            <summary>
+            用户、组织、角色相关对外开放接口
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Open.MembershipFactory.Instance">
+            <summary>
+            单例对象
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Open.MembershipFactory._userFacade">
+            <summary>
+            facade延迟对象
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetUserByID(System.String)">
+            <summary>
+            根据用户ID获取用户对象
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetUserByLoginName(System.String)">
+            <summary>
+            根据用户登录帐号获取用户对象
+            </summary>
+            <param name="LoginName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetAllUsers(System.String,System.String)">
+            <summary>
+            获取所有用户
+            </summary>
+            <param name="LoginNameOrDisplayName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetUserPaged(System.String,System.String,HS.MVCFramework.Framework.PageInfo)">
+            <summary>
+            获取所有用户分页数据
+            </summary>
+            <param name="LoginNameOrDisplayName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetUsersByRoleID(System.String)">
+            <summary>
+            根据角色获取所有用户
+            </summary>
+            <param name="RoleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetUsersByOrganID(System.String)">
+            <summary>
+            根据部门获取所有用户
+            </summary>
+            <param name="OrganID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetAllOrgans">
+            <summary>
+            获取所有部门，从数据库取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetAllOrgans_Cache">
+            <summary>
+            【缓存优先】获取所有部门
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetOrganByID(System.String)">
+            <summary>
+            通过部门ID获取部门，从数据库中取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetOrganByID_Cache(System.String)">
+            <summary>
+            【缓存优先】通过部门ID获取部门
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetDefaultOrganByUser(System.String)">
+            <summary>
+            获取用户的默认部门
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetOrgansByUser(System.String)">
+            <summary>
+            获取用户的所有部门
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetAllRoles">
+            <summary>
+            获取所有角色，从数据库取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetAllRoles_Cache">
+            <summary>
+            【缓存优先】获取所有角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetRoleByID(System.String)">
+            <summary>
+            通过角色ID获取角色，从数据库中取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetRoleByID_Cache(System.String)">
+            <summary>
+            【缓存优先】通过角色ID获取角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetRolesByUser(System.String)">
+            <summary>
+            获取用户的角色
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetMenusByUserID(System.String)">
+            <summary>
+            获取用户有权限的菜单
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetMenusByUserID(System.String,System.MenuType)">
+            <summary>
+            获取用户有权限的菜单(根据菜单类型)
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetFunMenuByMenuID(System.String)">
+            <summary>
+            获取所有或页面内的所有需要验证的功能按钮
+            </summary>
+            <param name="MenuID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetFunMenuByMenuID_Cache(System.String)">
+            <summary>
+            获取所有或页面内的所有需要验证的功能按钮，优先缓存中获取
+            </summary>
+            <param name="MenuID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetAllMenus">
+            <summary>
+            获取所有菜单（MenuType为Menu的菜单）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetAdminMenu">
+            <summary>
+            【未开放】获取超级管理员菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Open.MembershipFactory.GetAllRouting_Cache">
+            <summary>
+            【优先缓存】获取所有路由权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.OrganizationInfo">
+            <summary>
+            组织机构信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.OrganName">
+            <summary>
+            组织机构名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.OrganDesc">
+            <summary>
+            组织机构描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.OrganParentID">
+            <summary>
+            组织机构父节点ID
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.OrganNO">
+            <summary>
+            组织机构编码
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.LevelNO">
+            <summary>
+            层次
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.OrganOrder">
+            <summary>
+            排序号
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.IsDefault">
+            <summary>
+            是否是主部门
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.OrganizationInfo.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.RoleInfo">
+            <summary>
+            角色信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoleInfo.RoleName">
+            <summary>
+            角色名称
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoleInfo.RoleDesc">
+            <summary>
+            角色描述
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoleInfo.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoleInfo.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoleInfo.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoleInfo.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoleInfo.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.RoleInfo.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.UserInfo">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.UserLoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.UserDisplayName">
+            <summary>
+            用户显示名称
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.UserPassword">
+            <summary>
+            用户登录密码
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.UserPhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.RecordStatus">
+            <summary>
+            状态:1启用 0停用
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.UserType">
+            <summary>
+            用户类型:-1超级管理员 1用户 2普通管理员 99匿名用户
+            </summary>		
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.DefaultOrganization">
+            <summary>
+            默认组织机构
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.Organizations">
+            <summary>
+            用户所有组织机构
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.UserRoles">
+            <summary>
+            用户角色关系视图
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.UserAllMenus">
+            <summary>
+            用户角色关系视图(包括菜单和功能)
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.Extend1">
+            <summary>
+            冗余1
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.Extend2">
+            <summary>
+            冗余2
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.Extend3">
+            <summary>
+            冗余3
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.Extend4">
+            <summary>
+            冗余4
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.UserInfo.Extend5">
+            <summary>
+            冗余5
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.SSOAuthorization">
+            <summary>
+            登录用户上下文
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.Login(HS.MVCFramework.Core.Models.LogOnModel)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="loginName"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.SSOLogin(System.String)">
+            <summary>
+            单点登录验证
+            </summary>
+            <param name="ticket"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.AdminLogin(HS.MVCFramework.Core.Models.LogOnModel)">
+            <summary>
+            管理员登录
+            </summary>
+            <param name="loginName"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.CookieSimulationLogin(System.Boolean)">
+            <summary>
+            通过cookie模拟登录
+            </summary>
+            <param name="IsReBuiled">是否重新创建seesion和cookie</param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.Logout">
+            <summary>
+            退出登录
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.CreateUserContext(HS.MVCFramework.Core.SSO.UserInfo)">
+            <summary>
+            创建登录用户缓存对象
+            </summary>
+            <param name="userInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.CreateUserSession(HS.MVCFramework.Core.SSO.LoginUserContext)">
+            <summary>
+            创建用户session数据
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.CreateUserCookie(HS.MVCFramework.Core.SSO.LoginUserContext)">
+            <summary>
+            创建用户cookie数据
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSO.SSOAuthorization.CheckRouting(System.String,System.String,System.String)">
+            <summary>
+            判断路由权限
+            </summary>
+            <param name="area"></param>
+            <param name="controller"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.SSOAuthorization.GetCurrentUserContext">
+            <summary>
+            获取当前登录用户上下文
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.SSOAuthorization.IsLogin">
+            <summary>
+            判断是否登陆
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.LoginReturnInfo">
+            <summary>
+            登录返回信息
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginReturnInfo.LoginUserContext">
+            <summary>
+            登录的用户上下文
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginReturnInfo.Status">
+            <summary>
+            登录状态
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.Core.SSO.LoginReturnInfo.Message">
+            <summary>
+            登录返回信息
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.Core.SSO.LoginingStatus">
+            <summary>
+            登录状态信息枚举
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.SystemError">
+            <summary>
+            系统错误
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.ParameterNeed">
+            <summary>
+            缺少必要参数
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.FormateError">
+            <summary>
+            参数格式错误
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.NotExits">
+            <summary>
+            不存在的用户
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.NotMatch">
+            <summary>
+            账户密码不匹配
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.Success">
+            <summary>
+            登录成功
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.NotInRole">
+            <summary>
+            用户未设置角色或角色已停用
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.DynamicError">
+            <summary>
+            动态口令错误
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.TimeOut">
+            <summary>
+            超时
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSO.LoginingStatus.ErrorTicket">
+            <summary>
+            错误票据信息
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.InitController.appConfig">
+            <summary>
+            应用系统配置信息
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.InitController.exceptionLogger">
+            <summary>
+            异常日志记录器
+            </summary>
+        </member>
+        <member name="F:HS.MVCFramework.Core.InitController.operationLogger">
+            <summary>
+            操作日志记录器
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.InitController.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            重载执行中
+            </summary>
+            <param name="filterContext">过滤器上下文</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.InitController.LockLogin(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            锁定登录。作用：重载直接return treu可以实现非登录调用Action
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.InitController.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            重载执行后
+            </summary>
+            <param name="filterContext">过滤器上下文</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.InitController.OnException(System.Web.Mvc.ExceptionContext)">
+            <summary>
+            重载例外
+            </summary>
+            <param name="filterContext">过滤器上下文</param>
+        </member>
+        <member name="M:HS.MVCFramework.Core.InitController.WriteLog(System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="message">日志信息</param>
+        </member>
+        <member name="F:HS.MVCFramework.Core.SSOAuthorize.appConfig">
+            <summary>
+            应用系统配置信息
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.Core.SSOAuthorize.AuthorizeCore(System.Web.HttpContextBase)">
+            <summary>
+            判断用户登录
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

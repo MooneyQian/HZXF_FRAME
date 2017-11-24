@@ -1,0 +1,16 @@
+﻿<!-- tab 右键菜单 -->
+<dl class="layui-nav-child layui-show tab-listen" id="{{ d.id }}">
+    <dd onclick="layui.MainIndex.closeOthers('{{ d.key }}')">
+        <a href="javascript:;" onclick="">
+            <i class="icon-adjust qui-top-i"></i>
+            <label>关闭其他</label>
+        </a>
+    </dd>
+
+    <dd onclick="layui.MainIndex.closeAll()">
+        <a href="javascript:;">
+            <i class="icon-ban-circle qui-top-i"></i>
+            <label>关闭全部</label>
+        </a>
+    </dd>
+</dl>

@@ -1,0 +1,8 @@
+D:\Projects\营运管理系统\trunk\Sources\HS.MVC.ODMS\HS.MVC.ODMS.YTW\HS.MVC.ODMS.YTW.FeeStation.Model\bin\Debug\HS.MVC.ODMS.YTW.FeeStation.Model.dll
+D:\Projects\营运管理系统\trunk\Sources\HS.MVC.ODMS\HS.MVC.ODMS.YTW\HS.MVC.ODMS.YTW.FeeStation.Model\bin\Debug\HS.MVC.ODMS.YTW.FeeStation.Model.pdb
+D:\Projects\营运管理系统\trunk\Sources\HS.MVC.ODMS\HS.MVC.ODMS.YTW\HS.MVC.ODMS.YTW.FeeStation.Model\bin\Debug\HS.MVCFramework.Framework.dll
+D:\Projects\营运管理系统\trunk\Sources\HS.MVC.ODMS\HS.MVC.ODMS.YTW\HS.MVC.ODMS.YTW.FeeStation.Model\bin\Debug\HS.MVCFramework.Framework.pdb
+D:\Projects\营运管理系统\trunk\Sources\HS.MVC.ODMS\HS.MVC.ODMS.YTW\HS.MVC.ODMS.YTW.FeeStation.Model\bin\Debug\HS.MVCFramework.Framework.xml
+D:\Projects\营运管理系统\trunk\Sources\HS.MVC.ODMS\HS.MVC.ODMS.YTW\HS.MVC.ODMS.YTW.FeeStation.Model\obj\Debug\HS.MVC.ODMS.YTW.FeeStation.Model.dll
+D:\Projects\营运管理系统\trunk\Sources\HS.MVC.ODMS\HS.MVC.ODMS.YTW\HS.MVC.ODMS.YTW.FeeStation.Model\obj\Debug\HS.MVC.ODMS.YTW.FeeStation.Model.pdb
+D:\Projects\营运管理系统\trunk\Sources\HS.MVC.ODMS\HS.MVC.ODMS.YTW\HS.MVC.ODMS.YTW.FeeStation.Model\obj\Debug\HS.MVC.ODMS.YTW.FeeStation.Model.csprojResolveAssemblyReference.cache

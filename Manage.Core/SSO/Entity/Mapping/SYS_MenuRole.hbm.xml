@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Manage.SSO.Entity.MenuRoleEntity,Manage.Core" table="SYS_MenuRole" lazy="false">
+    <!--ID必须要有，column可以不是ID，但是name一定要设置为ID-->
+    <id name="ID" column="ID" type="string" length="36">
+      <generator class="assigned"/>
+    </id>
+    <property column="RoleID" type="string" name="RoleID"  />
+    <property column="MenuID" type="string" name="MenuID" />
+  </class>
+</hibernate-mapping>

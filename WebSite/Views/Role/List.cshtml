@@ -1,0 +1,22 @@
+﻿@model Manage.Core.Models.Role_S
+@{
+    ViewBag.Title = "角色管理";
+    Layout = "~/Views/Shared/_List.cshtml";
+    ViewBag.Search = true;
+    ViewBag.Modules = "Role";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "List";
+}
+
+
+@section SearchConditions
+{
+  
+    <div class="layui-inline line-inline">
+        <label class="layui-form-label form-label">角色名称</label>
+        <div class="layui-input-inline input-inline">
+            @Html.TextBoxFor(c => c.RoleName, new { @class = "layui-input" })
+        </div>
+    </div>
+ 
+}

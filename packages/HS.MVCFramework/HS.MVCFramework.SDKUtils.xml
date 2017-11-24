@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HS.MVCFramework.SDKUtils</name>
+    </assembly>
+    <members>
+        <member name="T:HS.MVCFramework.SDKUtils.WSEncrypterEnum">
+            <summary>
+            加密方式
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SDKUtils.WSSignatureType">
+            <summary>
+            签名方式，默认使用MD5签名
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.SDKUtils.EncrypterProviderFactory.GetEncrypterProvider(HS.MVCFramework.SDKUtils.WSEncrypterEnum,System.String,System.String)">
+            <summary>
+            获取加密器
+            </summary>
+            <param name="a_Type"></param>
+            <param name="a_PublicKey">加密密钥</param>
+            <param name="a_PrivateKey">解密密钥</param>
+            <returns></returns>
+        </member>
+        <member name="T:HS.MVCFramework.SDKUtils.SignatureProviderFactory">
+            <summary>
+            签名器工厂
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.SDKUtils.SignatureProviderFactory.GetSignatureProvider(HS.MVCFramework.SDKUtils.WSSignatureType)">
+            <summary>
+            获取签名器
+            </summary>
+            <param name="a_Type">签名器类型</param>
+            <returns>签名器接口</returns>
+        </member>
+        <member name="T:HS.MVCFramework.SDKUtils.IEncrypterProvider">
+            <summary>
+            加/解密器
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.SDKUtils.IEncrypterProvider.Encrypt(System.String)">
+            <summary>
+            加密方法
+            </summary>
+            <param name="a_Text">待加密的文字</param>
+            <returns>加密后报文</returns>
+        </member>
+        <member name="M:HS.MVCFramework.SDKUtils.IEncrypterProvider.Decrypt(System.String)">
+            <summary>
+            解密方法
+            </summary>
+            <param name="a_securityText">密文</param>
+            <returns>解密后的原文</returns>
+        </member>
+        <member name="P:HS.MVCFramework.SDKUtils.IEncrypterProvider.PublicKey">
+            <summary>
+            对方公钥字符串
+            </summary>
+        </member>
+        <member name="P:HS.MVCFramework.SDKUtils.IEncrypterProvider.PrivateKey">
+            <summary>
+            己方私钥字符串
+            </summary>
+        </member>
+        <member name="T:HS.MVCFramework.SDKUtils.ISignatureProvider">
+            <summary>
+            签名/验签器
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.SDKUtils.ISignatureProvider.Signature(System.String,System.String@)">
+            <summary>
+            签名方法
+            </summary>
+            <param name="a_Text">待签名的原文片段</param>
+            <param name="o_DigestText">签名后的摘要信息</param>
+            <returns>签名是否成功</returns>
+        </member>
+        <member name="M:HS.MVCFramework.SDKUtils.ISignatureProvider.VerifySignature(System.String,System.String)">
+            <summary>
+            验签方法
+            </summary>
+            <param name="a_SignedText">签名后的摘要文字</param>
+            <param name="a_OriginalText">待验签的原文</param>
+            <returns>验签是否成功</returns>
+        </member>
+        <member name="T:HS.MVCFramework.SDKUtils.Md5SignatureProvider">
+            <summary>
+            Md5签名器
+            </summary>
+        </member>
+        <member name="M:HS.MVCFramework.SDKUtils.Md5SignatureProvider.Signature(System.String,System.String@)">
+            <summary>
+            签名方法
+            </summary>
+            <param name="a_Text">待签名的原文片段</param>
+            <param name="o_DigestText">签名后的摘要信息</param>
+            <returns>签名是否成功</returns>
+        </member>
+        <member name="M:HS.MVCFramework.SDKUtils.Md5SignatureProvider.VerifySignature(System.String,System.String)">
+            <summary>
+            验签方法
+            </summary>
+            <param name="a_SignedText">签名后的摘要文字</param>
+            <param name="a_OriginalText">待验签的原文</param>
+            <returns>验签是否成功</returns>
+        </member>
+        <!-- 对于成员“M:HS.MVCFramework.SDKUtils.Md5SignatureProvider.EncryptMD5(System.String)”忽略有格式错误的 XML 注释 -->
+    </members>
+</doc>

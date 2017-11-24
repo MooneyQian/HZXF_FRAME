@@ -1,0 +1,222 @@
+﻿@model Manage.Core.Models.Menu_S
+@{
+    ViewBag.Title = "编辑菜单";
+    Layout = "~/Views/Shared/_Add.cshtml";
+
+    ViewBag.Modules = "Menu";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "Add";
+}
+
+<div class="rightpart">
+
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>编辑菜单</legend>
+    </fieldset>
+
+    <div class="layui-block">
+        <label class="layui-form-label add-k">类型</label>
+        <div class="layui-input-block add-v border-v">
+            @Html.RadioButtonFor(c => c.MenuType,
+            1,
+            new
+            {
+                @title = "菜单",
+                @id = "MenuType1",
+                @name = "MenuType",
+            })
+
+            @Html.RadioButtonFor(c => c.MenuType,
+            2,
+            new
+            {
+                @title = "功能",
+                @id = "MenuType2",
+                @name = "MenuType",
+            })
+
+            @Html.RadioButtonFor(c => c.MenuType,
+            3,
+            new
+            {
+                @title = "数据",
+                @id = "MenuType3",
+                @name = "MenuType",
+                @disabled = ""
+            })
+
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label add-k">上级菜单</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.PerMenuName,
+            new
+            {
+                @class = "layui-input layui-disabled",
+                @readonly = "readonly"
+            })
+        </div>
+    </div>
+
+
+    <div class="layui-inline">
+        <label class="layui-form-label add-k">菜单名称</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.MenuName,
+            new
+            {
+                @class = "layui-input",
+                lay_verify = "q-required",
+                placeholder = "请输入菜单名称"
+            })
+        </div>
+    </div>
+
+
+    <div class="layui-inline">
+        <label class="layui-form-label add-k">菜单地址</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.MenuPath,
+            new
+            {
+                @class = "layui-input"
+            })
+        </div>
+    </div>
+
+
+    <div class="layui-inline">
+        <label class="layui-form-label add-k">菜单编号</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.MenuCode,
+            new
+            {
+                @class = "layui-input"
+            })
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label add-k">排序号</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.MenuOrder,
+            new
+            {
+                @class = "layui-input"
+            })
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label add-k">状态</label>
+        <div class="layui-input-inline add-v border-v">
+            <input type="checkbox" id="RecordStatus" name="RecordStatus" lay-skin="switch" lay-text = "启用|禁用" value = "@(Model.RecordStatus)" />
+        </div>
+    </div>
+
+    <div class="layui-inline ">
+        <label class="layui-form-label add-k">图标</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.MenuIcon,
+            new
+            {
+                @class = "layui-input"
+            })
+        </div>
+    </div>
+
+    <div class="MenuType2">
+        <div class="layui-inline ">
+            <label class="layui-form-label add-k">功能类型</label>
+            <div class="layui-input-inline add-v">
+                @Html.TextBoxFor(c => c.Extend3,
+                new
+                {
+                    @class="layui-input"
+                })
+            </div>
+        </div>
+
+
+        <div class="layui-inline ">
+            <label class="layui-form-label add-k">导航栏显示</label>
+            <div class="layui-input-inline add-v border-v">
+                <input type="checkbox" id="IsNav" name="IsNav" lay-skin="switch" lay-text = "是|否" value = "@(Model.IsNav)" />
+            </div>
+        </div>
+
+        <div class="layui-inline IsNav">
+            <label class="layui-form-label add-k">关联列表记录</label>
+            <div class="layui-input-inline add-v border-v">
+                <input type="checkbox" id="Extend2" name="Extend2" lay-skin="switch" lay-text = "是|否" value = "@(Model.Extend2)" />
+            </div>
+        </div>
+
+        <div class="layui-inline ">
+            <label class="layui-form-label add-k">工具栏显示</label>
+            <div class="layui-input-inline add-v border-v">
+                <input type="checkbox" id="IsTool" name="IsTool" lay-skin="switch" lay-text = "是|否" value = "@(Model.IsTool)" />
+            </div>
+        </div>
+
+        <div class="layui-inline ">
+            <label class="layui-form-label add-k">背景色</label>
+            <div class="layui-input-inline add-v">
+                @Html.TextBoxFor(c => c.Extend1,
+                new
+                {
+                    @class = "layui-input"
+                })
+            </div>
+        </div>
+
+        <div class="layui-inline ">
+            <label class="layui-form-label add-k">POST提交</label>
+            <div class="layui-input-inline add-v border-v">
+                <input type="checkbox" id="IsPost" name="IsPost" lay-skin="switch" lay-text = "是|否" value = "@(Model.IsPost)" />
+            </div>
+        </div>
+
+        <div class="layui-inline ">
+            <label class="layui-form-label add-k">需要确认</label>
+            <div class="layui-input-inline add-v border-v">
+                <input type="checkbox" id="NeedConfirm" name="NeedConfirm" lay-skin="switch" lay-text = "是|否" value = "@(Model.NeedConfirm)" />
+            </div>
+        </div>
+
+        <div class="layui-inline NeedConfirm">
+            <label class="layui-form-label add-k">确认信息</label>
+            <div class="layui-input-inline add-v">
+                @Html.TextBoxFor(c => c.ConfirmInfo,
+                new
+                {
+                    @class = "layui-input"
+                })
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="layui-block layui-form-text fortextarea">
+        <label class="layui-form-label add-k">菜单描述</label>
+        <div class="layui-input-block add-v-textarea">
+            @Html.TextAreaFor(c => c.MenuDesc,
+            new
+            {
+                @class = "layui-textarea"
+            })
+        </div>
+    </div>
+</div>
+
+@section HiddenArea {
+    @Html.HiddenFor(c => c.ID)
+}
+
+
+
+
+

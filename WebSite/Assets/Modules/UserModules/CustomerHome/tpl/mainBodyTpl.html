@@ -1,0 +1,144 @@
+﻿<div class="content-scroll">
+    <div id="mapDiv"></div>
+    <div class="layui-container container-unset">
+        <div class="layui-row">
+            <div class="layui-col-md3 layui-col-sm6">
+                <div class="profit" id="todaycase">
+                    <div class="headline">
+                        <h3>
+                            <span class="back-red"><i class="icon-list-ol"></i>&nbsp;&nbsp;今日案件</span>
+                        </h3>
+
+                    </div>
+
+                    <div class="value font-red">
+                        <span class="pull-left">
+                            <i class="entypo-clock clock-position"></i>
+                        </span>
+                        <div>
+                            <span id="todaycase-nums">{{ d.JRAJ }}</span>
+                            <span class="start-min">件</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-tinny">
+                        <div style="width: 50%" class="bar"></div>
+                    </div>
+                    <div class="profit-line" style="" id="todaycase-des">
+                        <i class="icon-double-angle-right font-blue" style="margin-right: 3px; font-size: 15px;"></i>
+                        <a href="javascript:;" class="font-blue">马上处理</a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md3 layui-col-sm6">
+                <div class="profit" id="process">
+                    <div class="headline ">
+                        <h3>
+                            <span class="back-yellow"><i class="icon-bell"></i>&nbsp;&nbsp;待处理案件
+                            </span>
+                        </h3>
+                        <div class="rightcorner">
+                            <i class="icon-hand-right font-blue" style="margin-right: 3px; font-size: 15px;"></i>
+                            <a href="javascript:;" class="font-blue">处理</a>
+                        </div>
+                    </div>
+
+                    <div class="value font-yellow">
+                        <span class="pull-left"><i
+                            class="entypo-clock clock-position"></i></span>
+                        <div>
+                            <span id="process-nums">{{ d.WCLAJ }}</span>
+                            <span class="start-min">件</span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="progress-tinny">
+                        <div style="width: 50%" class="bar"></div>
+                    </div>
+                    <div class="profit-line" id="process-des">
+                        <i class="icon-circle-arrow-up" style="margin-right: 3px; font-size: 15px;"></i>
+                        <span>今日新增<span style="color: rgb(255, 107, 107); margin-left: 10px;">{{ d.JRAJ }}</span></span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md3 layui-col-sm6">
+                <div class="profit" id="failcase">
+                    <div class="headline">
+                        <h3>
+                            <span class="back-green"><i class="icon-ban-circle"></i>&nbsp;&nbsp;上报失败案件
+                            </span>
+                        </h3>
+                    </div>
+
+                    <div class="value font-green">
+                        <span class="pull-left"><i
+                            class="entypo-clock clock-position"></i></span>
+                        <div>
+                            <span>{{ d.WCGSBAJ }}</span>
+                            <span class="start-min">件</span>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="profit-line">
+                        <i class="icon-double-angle-right font-blue" style="margin-right: 3px; font-size: 15px;"></i>
+                        <a href="javascript:;" class="font-blue">马上处理</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md3 layui-col-sm6">
+                <div class="profit" id="equip">
+                    <div class="headline ">
+                        <h3>
+                            <span class="back-blue"><i class="icon-facetime-video"></i>&nbsp;&nbsp;设备总数
+                            </span>
+                        </h3>
+                        <div class="rightcorner">
+                            <i class="icon-hand-right font-blue" style="margin-right: 3px; font-size: 15px;"></i>
+                            <a href="javascript:;" class="font-blue">查看</a>
+                        </div>
+                    </div>
+
+                    <div class="value font-blue">
+
+                        <div>
+                            <span id="equip-nums">10</span>
+                            <span class="start-min">个</span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="progress-tinny">
+                        <div style="width: 50%" class="bar"></div>
+                    </div>
+                    <div class="profit-line" id="equip-des">
+                        <i class="layui-icon" style="color: #5FB878; font-weight: 600; margin-right: 1px;">&#xe610;</i>
+                        <span style="margin-right: 10px;">3个在线</span>
+                        <i class="layui-icon" style="font-weight: 600; margin-right: 1px;">&#xe64f;</i>
+                        <span>3个下线</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-row">
+            <div class="layui-col-md6 layui-col-sm12">
+                <div id="charts1" style="height: 400px;"></div>
+            </div>
+
+            <div class="layui-col-md6 layui-col-sm12">
+                <div id="charts2" style="height: 400px;"></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

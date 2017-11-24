@@ -1,0 +1,60 @@
+﻿@model Manage.Core.Models.Role_S
+@{
+    ViewBag.Title = "编辑";
+    Layout = "~/Views/Shared/_Add.cshtml";
+
+    ViewBag.Modules = "Role";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "Add";
+}
+
+
+@if (ViewBag.OperType == "Edit")
+{
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>编辑角色</legend>
+    </fieldset>
+}
+else
+{
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>添加角色</legend>
+    </fieldset>
+}
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">角色名</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.RoleName,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入名称",
+                lay_verify = "q-required"
+            })
+    </div>
+</div>
+
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">状态</label>
+    <div class="layui-input-inline add-v border-v">
+        <input type="checkbox" id="RecordStatus" name="RecordStatus" 
+            lay-skin="switch" lay-text = "启用|禁用" value = "@(Model.RecordStatus)" />
+    </div>
+</div>
+<div class="layui-block layui-form-text fortextarea">
+    <label class="layui-form-label add-k">角色描述</label>
+    <div class="layui-input-block add-v-textarea">
+        @Html.TextAreaFor(c => c.RoleDesc,
+            new
+            {
+                @class = "layui-textarea"
+            })
+    </div>
+</div>
+@* 隐藏域*@
+@section HiddenArea {
+    @Html.HiddenFor(c => c.ID)
+}

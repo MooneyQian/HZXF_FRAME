@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE94BCE9-6070-4AF6-8575-BC8F63F01339}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Manage.Core</RootNamespace>
+    <AssemblyName>Manage.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Manage.Core.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\packages\Aspose\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\packages\Aspose\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\11.营运管理系统\HZW杭州湾\1.代码\HS.MVC.ODMS.HZW\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\DictionaryCacheStorage.cs" />
+    <Compile Include="Common\Compare.cs" />
+    <Compile Include="Common\Define.cs" />
+    <Compile Include="Common\DictParam.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\Helpers\Aspose\AsposeExcelHelper.cs" />
+    <Compile Include="Common\Helpers\Aspose\AsposeWordHelper.cs" />
+    <Compile Include="Components\Logging\AppDatabaseLog.cs" />
+    <Compile Include="Components\Logging\AppDatabaseLogFactory.cs" />
+    <Compile Include="Components\Logging\BootLoger.cs" />
+    <Compile Include="Components\Logging\Log4netLog.cs" />
+    <Compile Include="Components\Logging\Log4netLogFactory.cs" />
+    <Compile Include="Components\Logging\TraceSourceLog.cs" />
+    <Compile Include="Components\Logging\TraceSourceLogFactory.cs" />
+    <Compile Include="Controllers\CacheManagerController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\ConfigurationController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\OrganizationController.cs" />
+    <Compile Include="Controllers\DictionaryController.cs" />
+    <Compile Include="Controllers\AppSettingController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Core\Global.cs" />
+    <Compile Include="DAL\RoleAccess.cs" />
+    <Compile Include="DAL\MenuAccess.cs" />
+    <Compile Include="DAL\AppRegisterAccess.cs" />
+    <Compile Include="Entitys\Entitys\SYS_ConfigurationEntity.cs" />
+    <Compile Include="Entitys\Entitys\SYS_Log.cs" />
+    <Compile Include="Entitys\Entitys\Sys_DictionaryEntity.cs" />
+    <Compile Include="Entitys\Entitys\SYS_AppRoleEntity.cs" />
+    <Compile Include="Entitys\Entitys\SYS_AppRegisterEntity.cs" />
+    <Compile Include="Facades\ConfigurationFacade.cs" />
+    <Compile Include="Facades\Interface\IAppRegisterFacade.cs" />
+    <Compile Include="Facades\Interface\IConfigurationFacade.cs" />
+    <Compile Include="Facades\Interface\ILogFacade.cs" />
+    <Compile Include="Facades\Interface\IRoleFacade.cs" />
+    <Compile Include="Facades\Interface\IMenuFacade.cs" />
+    <Compile Include="Facades\Interface\IOrganizationFacade.cs" />
+    <Compile Include="Facades\Interface\IDictionaryFacade.cs" />
+    <Compile Include="Facades\Interface\IAdminFacade.cs" />
+    <Compile Include="Facades\LogFacade.cs" />
+    <Compile Include="Facades\RoleFacade.cs" />
+    <Compile Include="Facades\MenuFacade.cs" />
+    <Compile Include="Facades\OrganizationFacade.cs" />
+    <Compile Include="Facades\DictionaryFacade.cs" />
+    <Compile Include="Facades\SSOFactory\SSOAppRegisterFacade.cs" />
+    <Compile Include="Facades\SSOFactory\Model\SSO_AppRegister.cs" />
+    <Compile Include="Facades\SSOFactory\Model\ModelAdapter.cs" />
+    <Compile Include="Facades\SSOFactory\Model\SSO_Operator.cs" />
+    <Compile Include="Facades\SSOFactory\SSOFacadeAdapter.cs" />
+    <Compile Include="Facades\SSOFactory\SSOUserFacade.cs" />
+    <Compile Include="Facades\SSOFactory\WebServicesReference\SSODataFactory.cs" />
+    <Compile Include="Facades\AdminFacade.cs" />
+    <Compile Include="Facades\AppRegisterFacade.cs" />
+    <Compile Include="Models\Account\AccountModel.cs" />
+    <Compile Include="Models\AppRegister\AppRegister_S.cs" />
+    <Compile Include="Models\AppRegister\AppRegister_I.cs" />
+    <Compile Include="Models\AppRegister\AppRegister_U.cs" />
+    <Compile Include="Models\Dictionary\SysDictionary.cs" />
+    <Compile Include="Models\Dictionary\Dictionary_S.cs" />
+    <Compile Include="Models\Dictionary\Dictionary_U.cs" />
+    <Compile Include="Models\Dictionary\Dictionary_I.cs" />
+    <Compile Include="Models\Menu\Menu_S.cs" />
+    <Compile Include="Models\Menu\Menu_U.cs" />
+    <Compile Include="Models\Menu\Menu_I.cs" />
+    <Compile Include="Models\Organization\Organization_S.cs" />
+    <Compile Include="Models\Organization\Organization_I.cs" />
+    <Compile Include="Models\Organization\Organization_U.cs" />
+    <Compile Include="Models\Role\Role_S.cs" />
+    <Compile Include="Models\Role\Role_I.cs" />
+    <Compile Include="Models\Role\Role_U.cs" />
+    <Compile Include="Models\SYS_Configuration\Configuration_I.cs" />
+    <Compile Include="Models\SYS_Configuration\Configuration_S.cs" />
+    <Compile Include="Models\SYS_Configuration\Configuration_U.cs" />
+    <Compile Include="Models\User\OrganUser_S.cs" />
+    <Compile Include="Open\DictionaryshipFactory.cs" />
+    <Compile Include="Open\JsonBuilder.cs" />
+    <Compile Include="SSO\Entity\Entitys\MenuEntity.cs" />
+    <Compile Include="Models\Account\LogOnModel.cs" />
+    <Compile Include="SSO\Entity\Entitys\MenuRoleEntity.cs" />
+    <Compile Include="SSO\Model\MenuInfo.cs" />
+    <Compile Include="Open\CacheshipFactory.cs" />
+    <Compile Include="Web\AjaxResult.cs" />
+    <Compile Include="Web\BaseController.cs" />
+    <Compile Include="Cache\LoginUserCacheStorage.cs" />
+    <Compile Include="Cache\SSOCacheStorage.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Facades\Interface\IUserFacade.cs" />
+    <Compile Include="Facades\UserFacade.cs" />
+    <Compile Include="Models\User\User_U.cs" />
+    <Compile Include="Models\User\User_I.cs" />
+    <Compile Include="Models\User\User_S.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SSO\Entity\Entitys\UserEntity.cs" />
+    <Compile Include="SSO\Entity\Entitys\OrganizationEntity.cs" />
+    <Compile Include="SSO\Entity\Entitys\RoleEntity.cs" />
+    <Compile Include="SSO\Entity\Entitys\UserRoleEntity.cs" />
+    <Compile Include="SSO\Entity\Entitys\UserOrganizationEntity.cs" />
+    <Compile Include="SSO\LoginUserContext.cs" />
+    <Compile Include="Open\MembershipFactory.cs" />
+    <Compile Include="SSO\Model\OrganizationInfo.cs" />
+    <Compile Include="SSO\Model\RoleInfo.cs" />
+    <Compile Include="SSO\Model\UserInfo.cs" />
+    <Compile Include="SSO\SSOAuthorization.cs" />
+    <Compile Include="Web\SSOAuthorize.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Manage.Framework\Manage.Framework.csproj">
+      <Project>{4febbda2-dc51-4c22-8f8d-b1aaf9f47e7d}</Project>
+      <Name>Manage.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SSO\Entity\Mapping\SYS_User.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\HelperModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SSO\Entity\Mapping\SYS_Organization.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SSO\Entity\Mapping\SYS_UserOrganization.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SSO\Entity\Mapping\SYS_Role.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SSO\Entity\Mapping\SYS_UserRole.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SSO\Entity\Mapping\SYS_Menu.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SSO\Entity\Mapping\SYS_MenuRole.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entitys\Mapping\SYS_Log.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entitys\Mapping\SYS_Dictionary.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entitys\Mapping\SYS_AppRegister.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entitys\Mapping\SYS_AppRole.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entitys\Mapping\SYS_Configuration.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,154 @@
+﻿<!-- 菜单start-->
+<div id="tree-wrap">
+	<div class="side-bar">
+		<ul class="topnav child menu-left-nest">
+            {{# layui.each(d, function(index, item) { }}
+                <li id="{{ item.id }}">
+                    {{# if (item.childList && item.childList.length > 0) { }}
+                    <a class="tooltip-tip ajax-load" href="javascript:;" title="{{ item.title }}">
+                        {{# if (item.menuicon) { }}
+                            {{# if (item.menuicon.indexOf("icon") >= 0) { }}
+                            <i class="{{ item.menuicon }}"></i>  
+                            {{# } else { }}
+                            <i class="layui-icon">{{ item.menuicon }}</i>
+                            {{# } }}
+                        {{# } else { }}
+                        <i class="icon-screenshot"></i>
+                        {{# } }}
+                        <span>{{ item.name }}</span>
+                    </a>
+                    <ul class="child sub1">
+                        {{# layui.each(item.childList, function(i, it1) { }}
+                            <li id="{{ it1.id }}">
+                                {{# if (it1.childList && it1.childList.length > 0) { }}
+                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="" >
+                                    <i class="layui-icon" style="font-size:15px;margin-left:-7px;margin-right:8px;top:0px;">&#xe641;</i>
+                                    <span>{{ it1.name }}</span>
+					            </a>
+
+                                <ul class="child sub2">
+                                    {{# layui.each(it1.childList, function(i, it2) { }}
+                                        <li id="{{ it2.id }}">
+                                            {{# if (it2.childList && it2.childList.length > 0) { }}
+                                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="" >
+                                                    <i class="layui-icon" style="font-size:15px;margin-left:-5px;margin-right:4px;top:0px;">&#xe641;</i>
+                                                    <span>{{ it2.name }}</span>
+					                            </a>
+                                                <ul class="child sub3">
+                                                    {{# layui.each(it2.childList, function(i, it3) { }}
+                                                        <li id="{{ it3.id }}">
+                                                            {{# if (it3.childList && it3.childList.length > 0) { }}
+                                                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="" >
+							                                        <i class="layui-icon" style="font-size:15px;margin-left:-5px;margin-right:4px;top:0px;">&#xe641;</i>
+                                                                    <span>{{ it3.name }}</span>
+					                                            </a>
+
+                                                                <ul class="child sub4">
+                                                                    {{# layui.each(it3.childList, function(i, it4) { }}
+                                                                        <li id="{{ it4.id }}">
+                                                                            {{# if (it4.childList && it4.childList.length > 0) { }}
+                                                                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="" >
+							                                                        <i class="layui-icon" style="font-size:15px;margin-left:-5px;margin-right:4px;top:0px;">&#xe641;</i>
+                                                                                    <span>{{ it4.name }}</span>
+					                                                            </a>
+                                                                                <ul class="child sub5">
+                                                                                    {{# layui.each(it4.childList, function(i, it5) { }}
+                                                                                        <li id="{{ it5.id }}">
+                                                                                            {{# if (it5.childList && it5.childList.length > 0) { }}
+                                                                                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="" >
+							                                                                       <i class="layui-icon" style="font-size:15px;margin-left:-5px;margin-right:4px;top:0px;">&#xe641;</i>
+                                                                                                    <span>{{ it5.name }}</span>
+					                                                                            </a>
+                                                                                                <ul class="child sub6">
+                                                                                                    {{# layui.each(it5.childList, function(i, it6) { }}
+                                                                                                        <li id="{{ it6.id }}">
+                                                                                                            
+                                                                                                            <a class="tooltip-tip2 ajax-load" href="javascript:;" title="{{ it6.title }}" 
+                                                                                                                q-data="{{ encodeURIComponent(JSON2.stringify(it6)) }}" onclick="layui.MainIndex.tabAdd(this)">
+							                                                                                    <i class="layui-icon" style="font-size:15px;margin-left:-5px;margin-right:4px;top:0px;">&#xe641;</i>
+                                                                                                                <span>{{ it6.name }}</span>
+					                                                                                        </a>
+                                                                                                         </li>
+                                                                                                    {{# }); }}
+                                                                                                </ul>
+
+                                                                                            {{# } else { }}
+                                                                                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="{{ it5.title }}" 
+                                                                                                    q-data="{{ encodeURIComponent(JSON2.stringify(it5)) }}" onclick="layui.MainIndex.tabAdd(this)">
+							                                                                        <i class="layui-icon" style="font-size:15px;margin-left:-4px;margin-right:2px;top:1px;">&#xe643;</i>
+                                                                                                    <span>{{ it5.name }}</span>
+					                                                                            </a>
+                                                                                            {{# } }}
+
+                                                                                         </li>
+                                                                                    {{# }); }}
+                                                                                </ul>
+
+                                                                            {{# } else { }}
+                                                                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="{{ it4.title }}" 
+                                                                                    q-data="{{ encodeURIComponent(JSON2.stringify(it4)) }}" onclick="layui.MainIndex.tabAdd(this)">
+							                                                        <i class="layui-icon" style="font-size:15px;margin-left:-4px;margin-right:2px;top:1px;">&#xe643;</i>
+                                                                                    <span>{{ it4.name }}</span>
+					                                                            </a>
+                                                                            {{# } }}
+
+                                                                         </li>
+                                                                    {{# }); }}
+                                                                </ul>
+
+                                                            {{# } else { }}
+                                                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="{{ it3.title }}" 
+                                                                    q-data="{{ encodeURIComponent(JSON2.stringify(it3)) }}" onclick="layui.MainIndex.tabAdd(this)">
+							                                        <i class="layui-icon" style="font-size:15px;margin-left:-4px;margin-right:2px;top:1px;">&#xe643;</i>
+                                                                    <span>{{ it3.name }}</span>
+					                                            </a>
+                                                            {{# } }}
+
+                                                         </li>
+                                                    {{# }); }}
+                                                </ul>
+
+                                            {{# } else { }}
+                                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="{{ it2.title }}" 
+                                                    q-data="{{ encodeURIComponent(JSON2.stringify(it2)) }}" onclick="layui.MainIndex.tabAdd(this)">
+							                        <i class="layui-icon" style="font-size:15px;margin-left:-4px;margin-right:2px;top:1px;">&#xe643;</i>
+                                                    <span>{{ it2.name }}</span>
+					                            </a>
+                                            {{# } }}
+
+                                         </li>
+                                    {{# }); }}
+                                </ul>
+
+                                {{# } else { }}
+                                <a class="tooltip-tip2 ajax-load" href="javascript:;" title="{{ it1.title }}" 
+                                    q-data="{{ encodeURIComponent(JSON2.stringify(it1)) }}" onclick="layui.MainIndex.tabAdd(this)">
+                                     <i class="layui-icon" style="font-size:15px;margin-left:-6px;margin-right:8px;top:1px;">&#xe643;</i>
+                                    <span>{{ it1.name }}</span>
+					            </a>
+                                {{# } }}
+                            </li>
+                        {{# }); }}
+                    </ul>
+                    {{# } else { }}
+                    <a class="tooltip-tip ajax-load" href="javascript:;" title="{{ item.title }}"
+                        q-data="{{ encodeURIComponent(JSON2.stringify(item)) }}" onclick="layui.MainIndex.tabAdd(this)">
+                        {{# if (item.menuicon) { }}
+                            {{# if (item.menuicon.indexOf("icon") >= 0) { }}
+                            <i class="{{ item.menuicon }}"></i>  
+                            {{# } else { }}
+                            <i class="layui-icon">{{ item.menuicon }}</i>
+                            {{# } }}
+                        {{# } else { }}
+                        <i class="icon-screenshot"></i>
+                        {{# } }}
+                        <span>{{ item.name }}</span>
+                    </a>
+                    {{# } }}
+                </li>
+            {{# }); }}
+		</ul>
+	</div>
+</div>
+
+<!-- 菜单 end-->

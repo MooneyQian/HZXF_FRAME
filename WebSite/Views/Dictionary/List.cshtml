@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "数字字典";
+    Layout = "~/Views/Shared/_TreeList.cshtml";
+
+    ViewBag.Modules = "Dictionary";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "List";
+}
+@section HeadContent {
+    <script>
+        var listObj = null;
+
+        function updateNode(type, data) {
+            if (listObj) {
+                listObj.updateNode(type, data);
+            }
+        }
+
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+    ViewBag.Title = "数据字典";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadContent
+{
+    <script src="@Url.Content("~/Components/zTree/js/jquery.ztree.core-3.5.min.js")"></script>
+    <link href="@Url.Content("~/Components/zTree/css/zTreeStyle/zTreeStyle.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Components/zTree/js/jquery.ztree.exedit-3.5.min.js")"></script>
+
+    <style type="text/css">
+        .ztree li span.button.add {
+            margin-left: 2px;
+            margin-right: 2px;
+            background-position: -144px 0;
+            vertical-align: top;
+            *vertical-align: middle;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var FUNC = { Search: null, Show: null, Add: null, Edit: null, Del: null, afterAdd: null, afterEdit: null };
+        var CTRL = { SearchBar: null, TollBar: null, Grid: null, Dialog: null, Tree: null };
+        $(function () {
+            //布局
+            $("#layout1").ligerLayout({ leftWidth: 220, height: '100%', heightDiff: -1, space: 1, onHeightChanged: f_heightChanged });
+
+            $("#leftcenter").each(function () {
+                $(this).height($(this).parent().height() - $(this).prev().height());
+            });
+
+            //创建分组树
+            $.ajax({
+                async: false,
+                type: "POST",
+                url: '@Url.Action("GetDictionaryTree", "Dictionary")',
+                data: {},
+                success: function (res) {
+                    if (res.IsError) return;
+                    CTRL.Tree = $.fn.zTree.init($("#menutree"), {
+                        data: {
+                            simpleData: {
+                                enable: true,  //开启简单数据模式(Array)  
+                                idKey: "id",
+                                pIdKey: "pId",
+                                rootPId: 0
+                            },
+                            key: {
+                                title: "title"
+                            },
+                        },
+                        callback: {
+                            onClick: function (event, treeId, treeNode) {
+                                if (treeNode.id != "root")
+                                    FUNC.Show(treeNode.id);
+                                else
+                                    FUNC.Show();
+                            },
+                            beforeRemove: function (treeId, treeNode) {
+                                FUNC.Del(treeNode.id);
+                                return false;
+                            },
+                            beforeEditName: function (treeId, treeNode) {
+                                FUNC.Edit(treeNode.id);
+                                return false;
+                            }
+                        },
+                        edit: {
+                            enable: true,
+                            showRemoveBtn: function (treeId, treeNode) { return treeNode.id != "root" },
+                            showRenameBtn: function (treeId, treeNode) { return treeNode.id != "root" }
+                        },
+                        view: {
+                            addHoverDom: function (treeId, treeNode) {
+                                var sObj = $("#" + treeNode.tId + "_span");
+                                if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+                                var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+                                    + "' title='添加子节点' onfocus='this.blur();'></span>";
+                                sObj.after(addStr);
+                                var btn = $("#addBtn_" + treeNode.tId);
+                                if (btn) btn.bind("click", function () {
+                                    FUNC.Add(treeNode.id);
+                                    return false;
+                                });
+                            },
+                            removeHoverDom: function (treeId, treeNode) {
+                                $("#addBtn_" + treeNode.tId).unbind().remove();
+                            }
+                        }
+                    }, res.Data);
+                    if (res.Data.length > 0)
+                        CTRL.Tree.expandNode(CTRL.Tree.getNodes()[0], true);
+                    if (res.Data.length == 0) {
+                        var url = '@(Url.Action("Add"))?pid=0';
+                        $("#rightFrame").attr("src", url);
+                    }
+                },
+                error: function (e, m) {
+                    alert(e.responseText);
+                }
+            });
+        });
+        function f_heightChanged() {
+            $("#leftcenter").each(function () {
+                $(this).height($(this).parent().height() - $(this).prev().height());
+            });
+        }
+
+        FUNC.Add = function (pid) {
+            var url = '@(Url.Action("Add"))?pid=' + pid;
+            $("#rightFrame").attr("src", url);
+        }
+        FUNC.Edit = function (id) {
+            var url = '@(Url.Action("Edit"))?id=' + id;
+            $("#rightFrame").attr("src", url);
+        }
+        FUNC.Del = function (id) {
+            var url = '@Url.Action("_Delete")' + '?randnum=' + Math.random();
+            $.dialog.confirm("确认要删除该数据吗？", function () {
+                $.post(url, { ids: id }).done(function (res) {
+                    if (!res.IsError)
+                        CTRL.Tree.removeNode(CTRL.Tree.getNodeByParam("id", id));
+                });
+            });
+        }
+        FUNC.Show = function (id) {
+            if (!id)
+                $("#rightFrame").attr("src", "about:blank");
+            else {
+                var url = '@(Url.Action("Show"))?id=' + id;
+                $("#rightFrame").attr("src", url);
+            }
+        }
+        //新增子节点完成
+        FUNC.afterAdd = function (data) {
+            var perNode = null;
+            if (data.pId != "0")
+                perNode = CTRL.Tree.getNodeByParam("id", data.pId);
+            else
+                data.pId = "root";
+            CTRL.Tree.addNodes(perNode, data);
+            FUNC.Add(data.pId);
+        }
+        //更新节点完成
+        FUNC.afterEdit = function (data) {
+            var node = CTRL.Tree.getNodeByParam("id", data.id);
+            if (node) {
+                CTRL.Tree.updateNode($.extend(node, data));
+            }
+            FUNC.Show(data.id);
+        }
+    </script>
+}
+
+<div id="layout1" style="width: 99.2%; margin: 0 auto;">
+    <div position="left" title="字典" id="leftcenter" class="l-scroll" style="overflow:auto;">
+        <ul id="menutree" class="ztree"></ul>
+    </div>
+    <div position="center" id="framecenter">
+        <iframe frameborder="0" id="rightFrame" src="about:blank" style="width: 100%; height: 100%;"></iframe>
+    </div>
+</div>*@

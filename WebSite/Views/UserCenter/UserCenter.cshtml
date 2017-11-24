@@ -1,0 +1,90 @@
+﻿@model Manage.Core.Models.Configuration_S
+@{
+    ViewBag.Title = "账户设置";
+    Layout = "~/Views/Shared/_Add.cshtml";
+
+    ViewBag.Modules = "UserCenter";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "Add";
+}
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>账户设置</legend>
+</fieldset>
+
+<div class="layui-block">
+    <div class="photo-area">
+        <div class="layui-upload-drag photo-info-fixed" id="centeravatar-area">
+            <div class="photo-info">
+                <img src="/Assets/Res/Images/default.jpg" id="centeravatar-img" class="photo-info-img">
+                <input type="hidden" id="centeravatar" name="centeravatar" value="" />
+            </div>
+            <span class="photo-info-text">点击更换头像
+            </span>
+        </div>
+       
+
+        <div class="photo-info-head-item">
+            <div class="h-item">
+                <span class="h-item-text">当前帐号：
+                     @(ViewBag.UserInfo.UserLoginName)
+                </span>
+            </div>
+            <div class="h-item">
+                <span class="h-item-text">显示名称：
+                     @(ViewBag.UserInfo.UserDisplayName)
+                </span>
+            </div>
+            <div class="h-item">
+                <span class="h-item-text">密码设置：
+                </span>
+                <span class="h-item-oper">
+                    <button class="layui-btn layui-btn-xs layui-btn-normal" id="passchange">
+                        <i class="layui-icon">&#xe64d;</i>修改</button>
+                </span>
+                @*<span class="h-item-oper">
+                     <button class="layui-btn layui-btn-xs layui-btn-normal">
+                         <i class="layui-icon">&#xe641;</i>找回</button>
+                 </span>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>外观设置</legend>
+</fieldset>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">更换皮肤</label>
+    <div class="layui-input-inline add-v">
+        <select id="centerskin" name="centerskin"></select>
+    </div>
+</div>
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>消息设置</legend>
+</fieldset>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">消息提示音</label>
+    <div class="layui-input-inline add-v border-v">
+        <input type="checkbox" id="centersound" name="centersound"
+            lay-skin="switch"
+            lay-text="开启|关闭"
+            value="" />
+    </div>
+</div>
+
+<div class="layui-inline centersound">
+    <label class="layui-form-label add-k">选择提示音</label>
+    <div class="layui-input-inline add-v border-v">
+        <div id="radiolist"></div>
+    </div>
+</div>
+
+@section HiddenArea {
+    <input type="hidden" id="mystr" value="@Html.DisplayFor(c => c.SETTEXT)" />
+}
+
+

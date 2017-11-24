@@ -1,0 +1,27 @@
+﻿<!-- 导航操作列 -->
+<script type="text/html" id="navBtnsTpl">
+{{# for(var i = 0; i < d.length; i++) { }}
+    {{#  var tmp = layui.List.proccessBtnStyles(d[i], 'fromnav'); }}
+    <button class="layui-btn btn-bit-large {{ tmp.classname }}" {{ tmp.stylename }}" onclick="layui.List.proccessNavsTo('{{ encodeURIComponent(JSON2.stringify(d[i])) }}')">
+         {{ tmp.icon }}
+         {{ d[i].name }}
+    </button>
+{{# } }}
+{{# if (d.length == 0) { 
+        return "&nbsp;";
+    }
+}}
+</script>
+
+<!-- 记录操作列 -->
+<script type="text/html" id="toolBtnsTpl">
+{{# var btns = layui.List.proccessToolBtns(d);}}
+{{# for(var i = 0; i < btns.length; i++) { }}
+    {{#  var tmp = layui.List.proccessBtnStyles(btns[i]); }}
+    <button class="layui-btn btn-bit-small {{ tmp.classname }}" {{ tmp.stylename }} onclick="layui.List.proccessToolsTo('{{ encodeURIComponent(JSON2.stringify(btns[i])) }}', this)">
+        {{ tmp.icon }}
+        {{ btns[i].name }}
+    </button>
+{{# } }}
+    
+</script>

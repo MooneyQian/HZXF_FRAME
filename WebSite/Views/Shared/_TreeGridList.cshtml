@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "树型折叠列表模板页";
+    ViewBag.Master = "TreeGridList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadCssContent {
+    <link rel="stylesheet" href="@Url.Content("~/Assets/Res/Css/master/treegridlist.css")" media="all"/>
+    @RenderSection("HeadCssContent", required: false)
+}
+
+<div id="mainbody">
+    <div id="treeGridList" class="layui-fluid layui-form">
+        @RenderBody()
+    </div>
+
+    <div id="editbody">
+        <button class="layui-btn layui-btn-small qui-btn-normal" id="q-submit">提交</button>
+    </div>
+</div>
+@section HeadContent {
+    @RenderSection("HeadContent", required: false)
+}
+

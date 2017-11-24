@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.PageTitle = ViewBag.PageTitle + "-登录页面";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadContent
+{
+    <script type="text/javascript">
+        var resUrl = "@(ViewBag.ReUrl)";
+        $(function () {
+            //判断单点登录验证中心登录成功
+            if ("success" == '@(ViewBag.SSOAjaxLogin)') {
+                var dialog = art.dialog.data('Relogin');
+                if (dialog)
+                    dialog.close();
+            }
+            setTimeout(function () { $("#txtUsername").focus(); }, 100);
+            $("#txtUsername").keydown(function (event) {
+                if (event.keyCode == "13")
+                    $("#txtPassword").focus();
+            });
+            $("#txtPassword").keydown(function (event) {
+                if (event.keyCode == "13")
+                    $("#doLog").click();
+            });
+
+            $("#doLog").click(function () {
+                var userName = $("#txtUsername").val();
+                var userPwd = $("#txtPassword").val();
+                if (userName == "" || userPwd == "")
+                {
+                    $.dialog.alert("请输入帐号密码！");
+                    return;
+                }
+                $.ajax({
+                    type: "post", cache: false, dataType: "json",
+                    url: '@(Url.Action("LogOn"))' + '?rn=' + Math.random(),
+                    data: [
+                            { name: 'ReUrl', value: resUrl },
+                            { name: 'username', value: userName },
+                            { name: 'password', value: userPwd }
+                    ],
+                    success: function (result) {
+                        if (result.IsError) {
+                            $.dialog.alert(result.Message);
+                            $("#txtUsername").focus();
+                            return;
+                        } else {
+                            var dialog = art.dialog.data('Relogin');
+                            if (dialog)
+                                dialog.close();
+                        }
+                    },
+                    error: function (err) {
+                        $.dialog.alert("发送系统错误,请与系统管理员联系！");
+                    }
+                });
+            });
+        });
+    </script>
+}
+@*以下是页面元素部分*@
+<div style="width: 100%; height: 100%; background-color: #a9c5ff; position: relative;">
+    <div style="width: 300px; height: 160px; position: absolute; top: 50%; left: 50%; margin-left: -150px; margin-top: -80px; text-align: center;">
+        <div style="padding-bottom:10px;">
+            <input type="text" id="txtUsername" style="width: 200px; height: 40px; line-height: 40px; border: solid 1px #808080; font-size: 20px;" value="" />
+        </div>
+        <div style="padding-bottom:10px;">
+            <input type="password" id="txtPassword" style="width: 200px; height: 40px; line-height: 40px; border: solid 1px #808080; font-size: 20px;" value="" /><br />
+        </div>
+        <div>
+            <input type="button" id="doLog" value="登 录" style="width: 120px; height: 40px; line-height: 40px; font-size: 20px; font-weight:bold; color:#fff; border: solid 1px #281940; background-color: #5b4086; cursor:pointer;" />
+        </div>
+    </div>
+</div>

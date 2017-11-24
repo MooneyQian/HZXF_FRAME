@@ -1,0 +1,125 @@
+﻿@model Manage.Core.Models.Organization_S
+@{
+    ViewBag.Title = "部门管理编辑";
+    Layout = "~/Views/Shared/_Add.cshtml";
+
+    ViewBag.Modules = "Organization";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "Add";
+}
+
+<div class="rightpart">
+    @if (ViewBag.OperType == "Edit")
+    {
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>编辑部门</legend>
+        </fieldset>
+    }
+    else
+    {
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>添加部门</legend>
+        </fieldset>
+    }
+
+@*<div class="layui-inline">
+    <label class="layui-form-label add-k">上级部门</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.ParOrganName,
+            new
+            {
+                @class = "layui-input layui-disabled",
+                @readonly = "readonly"
+            })
+    </div>
+</div>*@
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">部门名称</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.OrganName,
+            new
+            {
+                @class = "layui-input",
+                lay_verify = "q-required",
+                placeholder = "请输入部门名称"
+           
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">联系人</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Extend2,
+            new
+            {
+                @class = "layui-input",
+                placeholder = "请输入联系人"
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">联系电话</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Extend3,
+            new
+            {
+                @class = "layui-input",
+                lay_verify="q-phone",
+                placeholder = "请输入联系电话"
+            })
+    </div>
+</div>
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">地址</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Extend1,
+            new
+            {
+                @class = "layui-input",
+                  placeholder = "请输入地址"
+            })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">排序号</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.OrganOrder,
+            new
+            {
+                @class = "layui-input",
+                  placeholder = "请输入地址"
+            })
+    </div>
+</div>
+
+
+<div class="layui-block layui-form-text fortextarea">
+    <label class="layui-form-label add-k">部门描述</label>
+    <div class="layui-input-block add-v-textarea">
+        @Html.TextAreaFor(c => c.OrganDesc,
+            new
+            {
+                @class = "layui-textarea"
+            })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">状态</label>
+    <div class="layui-input-inline add-v border-v">
+        <input type="checkbox" id="RecordStatus" name="RecordStatus" 
+            lay-skin="switch" lay-text = "启用|禁用" value = "@(Model.RecordStatus)" />
+    </div>
+</div>
+</div>
+
+
+
+@section HiddenArea {
+    @Html.HiddenFor(c => c.ID)
+    @Html.HiddenFor(c => c.OrganParentID)
+    @Html.HiddenFor(c => c.LevelNO)
+}

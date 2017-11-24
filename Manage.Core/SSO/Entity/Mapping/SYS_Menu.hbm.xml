@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Manage.SSO.Entity.MenuEntity,Manage.Core" table="SYS_Menu" lazy="false">
+    <!--ID必须要有，column可以不是ID，但是name一定要设置为ID-->
+    <id name="ID" column="ID" type="string" length="36">
+      <generator class="assigned"/>
+    </id>
+    <property column="MenuName" type="string" name="MenuName"  />
+    <property column="MenuPath" type="string" name="MenuPath" />
+    <property column="MenuType" type="int" name="MenuType" />
+    <property column="PerMenuID" type="string" name="PerMenuID"  />
+    <property column="RecordStatus" type="int" name="RecordStatus"  />
+    <property column="MenuCode" type="string" name="MenuCode"  />
+    <property column="MenuLevel" type="int" name="MenuLevel"  />
+    <property column="MenuOrder" type="int" name="MenuOrder"  />
+    <property column="MenuDesc" type="string" name="MenuDesc"  />
+    <property column="Controller" type="string" name="Controller"  />
+    <property column="Action" type="string" name="Action"  />
+    <!--后加字段-->
+    <property column="IsNav" type="string" name="IsNav"  />
+    <property column="IsPost" type="string" name="IsPost"  />
+    <property column="NeedConfirm" type="string" name="NeedConfirm"  />
+    <property column="ConfirmInfo" type="string" name="ConfirmInfo"  />
+    <property column="MenuIcon" type="string" name="MenuIcon"  />
+    <property column="IsTool" type="string" name="IsTool"  />
+    
+    <property column="Extend1" type="string" name="Extend1"  />
+    <property column="Extend2" type="string" name="Extend2"  />
+    <property column="Extend3" type="string" name="Extend3"  />
+    <property column="Extend4" type="string" name="Extend4"  />
+    <property column="Extend5" type="string" name="Extend5"  />
+  </class>
+</hibernate-mapping>

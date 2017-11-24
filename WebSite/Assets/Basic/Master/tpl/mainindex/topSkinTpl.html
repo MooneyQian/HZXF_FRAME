@@ -1,0 +1,18 @@
+﻿<!-- 换肤 start-->
+<div>
+    <ul class="skin-list">
+        {{# if (d.length > 0) { }}
+            {{# for (var i = 0; i < d.length; i++) { }}
+            <li class="skin-logo">
+                <a href="javascript:;" onclick="layui.usercenter.changeSkin('{{ d[i].key }}')">
+                    <img src="{{ d[i].smallpath }}"/>
+                </a>
+            </li>
+            {{# } }}
+        {{# } }}
+
+    </ul>
+
+</div>
+
+<!-- 换肤 end-->

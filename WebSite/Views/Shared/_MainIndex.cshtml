@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadCssContent {
+    <link rel="stylesheet" href="@Url.Content("~/Assets/Res/Components/skin-select/skin-select.css")" media="all"/>
+    @RenderSection("HeadCssContent", required: false)
+}
+
+<div class="layui-layout layui-layout-admin qui-body-background" style="height: 1000px" id="framebase">
+    <!-- 头部 start -->
+    <div class="layui-header header header-demo qui-frame-top">
+        <div class="layui-main">
+            <!-- logo或文字 -->
+            <div id="logo" pc>
+                <h1>
+                    @(ViewBag.AppConfig.AppName)
+                    <span>@(ViewBag.AppConfig.Version)</span>
+                </h1>
+            </div>
+
+            <!-- 中间组件 -->
+            <div class="top-middle running-text">
+                <div class="date-top" id="date-com">
+                    <i class="layui-icon">&#xe637;</i><span id="Date"></span>
+                </div>
+
+
+                <div class="date-top time-top" id="time-com">
+                    <i class="layui-icon">&#xe60e;</i>
+                    <ul id="digital-clock" class="digital">
+                        <li class="entypo-clock"></li>
+                        <li class="hour"></li>
+                        <li>:</li>
+                        <li class="min"></li>
+                        <li>:</li>
+                        <li class="sec"></li>
+                        <li class="meridiem"></li>
+                    </ul>
+                </div>
+
+                @*头部提醒区域*@
+                @RenderSection("TopTipsContent", required: false)
+            </div>
+
+            <!-- 右部导航 -->
+
+            <ul class="layui-nav">
+                <!-- pc端 -->
+                <li class="layui-nav-item" pc>
+                    <a href="javascript:;">
+                        <i class="icon-cogs qui-top-i"></i>
+                        <label>更多操作</label>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd id="h-change-skin">
+                            <a href="javascript:;">
+                                <i class="icon-magic qui-top-i"></i>
+                                <label>更换皮肤</label>
+                            </a>
+                        </dd>
+                        @*头部下拉菜单区域*@
+                        @RenderSection("MoreOperationsContent", required: false)
+                    </dl>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- 头部 end -->
+
+    <!-- SIDE MENU -->
+    <div class="layui-side">
+        <div class="layui-side-scroll">
+            <div id="skin-select">
+                <!-- 个人logo start-->
+                <div class="user-photo" pc>
+                    <a href="javascript:;" class="img info-trigger">
+                        <img src="/Assets/Res/Images/default.jpg" id="info-trigger-avatar">
+                        <div class="info-settings" style="display: none">设置</div>
+                    </a>
+
+                    <div class="title-menu-left title-menu-left-tips">
+                        <span class="widget-menu">欢迎，@(ViewBag.UserName)</span>
+                        <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+                    </div>
+                </div>
+                <!-- 个人logo end-->
+
+                <!-- 菜单start-->
+                <div id="leftMenus" class="skin-part"></div>
+                <!-- 菜单 end-->
+            </div>
+        </div>
+    </div>
+    <!-- END OF SIDE MENU -->
+
+
+    <!-- 内容 start -->
+    <div class="layui-body layui-form qui-body">
+        <div id="frameheight">
+            <div class="layui-tab qui-frame-tabmargin tabcontainer" lay-filter="tabmain" lay-notauto="true">
+                <ul class="layui-tab-title tabnobottom" id="tab-listen">
+                    <li class="layui-this" lay-id="1">
+                        <i class="layui-icon" style="margin-right: 3px;">&#xe68e;</i>
+                        <span>
+                            @if (ViewBag.IndexName == null || ViewBag.IndexName == "")
+                            {
+                                ViewBag.IndexName = "默认首页";
+                            }
+                            @(ViewBag.IndexName)</span>
+                    </li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <div id="mainBody"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 内容 end -->
+
+    <!-- 底部 start -->
+    <div class="layui-footer footer qui-footer">
+        <p>@(ViewBag.AppConfig.Watermark)</p>
+    </div>
+    <!-- 底部 end -->
+
+    <!-- 移动端菜单 start -->
+    <div class="site-tree-mobile layui-hide">
+        <i class="layui-icon">&#xe602;</i>
+    </div>
+    <div class="site-mobile-shade"></div>
+
+</div>
+
+@section HeadContent
+{
+
+    <script src="@Url.Content("~/Assets/Res/Components/skin-select/skin-select.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Assets/Res/Components/skin-select/scriptbreaker-multiple-accordion-1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Assets/Res/Components/clock/jquery.clock.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Assets/Res/Components/clock/date.js")" type="text/javascript"></script>
+    @RenderSection("HeadContent", required: false)
+}
+
+

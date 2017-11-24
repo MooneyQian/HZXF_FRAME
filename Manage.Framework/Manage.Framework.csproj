@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FEBBDA2-DC51-4C22-8F8D-B1AAF9F47E7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Manage.Framework</RootNamespace>
+    <AssemblyName>Manage.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Manage.Framework.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\11.营运管理系统\HZW杭州湾\1.代码\HS.MVC.ODMS.HZW\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseAccess.cs" />
+    <Compile Include="Base\BaseFacade.cs" />
+    <Compile Include="Base\BaseModel.cs" />
+    <Compile Include="Base\IBaseFacade.cs" />
+    <Compile Include="Base\SSO\SSOBaseFacade.cs" />
+    <Compile Include="Cache\BaseCacheStorage.cs" />
+    <Compile Include="Cache\Core\Binder.cs" />
+    <Compile Include="Cache\Core\CacheItem.cs" />
+    <Compile Include="Cache\Core\CacheItemDictionary.cs" />
+    <Compile Include="Cache\Core\GCWrapper.cs" />
+    <Compile Include="Cache\Core\ICacheOperations.cs" />
+    <Compile Include="Cache\Core\MemoryCache.cs" />
+    <Compile Include="Cache\Core\MemoryCacheClient.cs" />
+    <Compile Include="Cache\Core\SerializationUtility.cs" />
+    <Compile Include="Common\Config\AppConfig.cs" />
+    <Compile Include="Common\Config\Config.cs" />
+    <Compile Include="Common\Extends.cs" />
+    <Compile Include="Common\Helper\AdapterHelper.cs" />
+    <Compile Include="Common\Helper\AdapterMapperIgnore.cs" />
+    <Compile Include="Common\Config\ConfigManager.cs" />
+    <Compile Include="Common\Helper\AiExpressionVisitor.cs" />
+    <Compile Include="Common\Helper\DataReaderHelper.cs" />
+    <Compile Include="Common\Helper\DynamicFactory.cs" />
+    <Compile Include="Common\Helper\EnumHelper.cs" />
+    <Compile Include="Common\Helper\ParseHelper.cs" />
+    <Compile Include="Common\Helper\RequestHelper.cs" />
+    <Compile Include="Common\Helper\SecurityHelper.cs" />
+    <Compile Include="Common\Helper\StringHelper.cs" />
+    <Compile Include="Common\Helper\TransferHelper.cs" />
+    <Compile Include="Common\Helper\PartialEvaluator.cs" />
+    <Compile Include="Common\Helper\AiTypeHelper.cs" />
+    <Compile Include="Common\Pager\PageInfo.cs" />
+    <Compile Include="Common\Reflection\DynamicMethodHelper.cs" />
+    <Compile Include="Common\Reflection\PropertyHelper.cs" />
+    <Compile Include="Common\Reflection\AiReflectionExtensions.cs" />
+    <Compile Include="DataBase\AggregateRoot.cs" />
+    <Compile Include="DataBase\ExpressionToSql.cs" />
+    <Compile Include="DataBase\IAggregateRoot.cs" />
+    <Compile Include="DataBase\IRepository.cs" />
+    <Compile Include="DataBase\NHibernate\DatabaseSessionFactory.cs" />
+    <Compile Include="DataBase\NHibernate\NHContextAdapter.cs" />
+    <Compile Include="DataBase\OperationType.cs" />
+    <Compile Include="DataBase\SortOrder.cs" />
+    <Compile Include="DataBase\Specifications\AndSpecification.cs" />
+    <Compile Include="DataBase\Specifications\CompositeSpecification.cs" />
+    <Compile Include="DataBase\Specifications\DirectSpecification.cs" />
+    <Compile Include="DataBase\Specifications\ExpressionBuilder.cs" />
+    <Compile Include="DataBase\Specifications\ISpecification.cs" />
+    <Compile Include="DataBase\Specifications\NotSpecification.cs" />
+    <Compile Include="DataBase\Specifications\OrSpecification.cs" />
+    <Compile Include="DataBase\Specifications\ParametersRebinder.cs" />
+    <Compile Include="DataBase\Specifications\Specification.cs" />
+    <Compile Include="DataBase\Specifications\TrueSpecification.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\ILoggerFactory.cs" />
+    <Compile Include="Logging\LogArchiveModel.cs" />
+    <Compile Include="Logging\LoggerFactory.cs" />
+    <Compile Include="Logging\LoggingType.cs" />
+    <Compile Include="Logging\LogItemModel.cs" />
+    <Compile Include="Logging\LogType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,79 @@
+﻿@model Manage.Core.Models.User_S
+@{
+    ViewBag.Title = "查看用户";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section HeadContent{
+    <script type="text/javascript">
+        var CTRL = { art_parent: null, valform: null }
+        $(function () {
+            //获取父页面对象
+            CTRL.art_parent = $.dialog.data("ParentWindow");
+        });
+
+    </script>
+}
+    <div class="pop-page">
+        <div class="formtitle">查看用户</div>
+        <table class="tableread" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td class="table-title" style="width: 90px;">登录名：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.DisplayFor(c => c.UserLoginName)
+                </td>
+                <td class="table-title" style="width: 90px;">用户姓名：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.DisplayFor(c => c.UserDisplayName)
+                </td>
+                <td class="table-title" style="width: 90px;">类型：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.Encode(Model.UserType.ToString().ConvertToEnum<UserType_ZH>().ToString())
+                </td>
+            </tr>
+            <tr>
+                <td class="table-title">分组：</td>
+                <td class="table-value">
+                    @Html.DisplayFor(c => c.UserDept.OrganName)
+                </td>
+                <td class="table-title">手机号：</td>
+                <td class="table-value">
+                    @Html.DisplayFor(c => c.UserPhone)
+                </td>
+                <td class="table-title">员工编号：</td>
+                <td class="table-value">
+                    @Html.DisplayFor(c => c.Extend1)
+                </td>
+            </tr>
+            <tr>
+                <td class="table-title">E-Mail：</td>
+                <td class="table-value">
+                    @Html.DisplayFor(c => c.Extend2)
+                </td>
+                <td class="table-title">短号：</td>
+                <td class="table-value">
+                    @Html.DisplayFor(c => c.Extend3)
+                </td>
+                <td class="table-title">座机：</td>
+                <td class="table-value">
+                    @Html.DisplayFor(c => c.Extend4)
+                </td>
+            </tr>
+            <tr>
+                <td class="table-title">状态：</td>
+                <td class="table-value" colspan="5">
+                    @{if (Model.RecordStatus == (int)RecordStatus.Enable)
+                      {
+                          <span style="color:green;">启用</span>
+                      }
+                      else
+                      { 
+                          <span style="color:red;">禁用</span>                      
+                      }
+                     }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="pop-page-bar">
+        <a title="返回" class="btn1" href="javascript:$.dialog.close();">返回<i></i></a>
+    </div>

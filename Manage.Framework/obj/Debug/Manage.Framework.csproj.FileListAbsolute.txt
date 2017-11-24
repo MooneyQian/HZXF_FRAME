@@ -1,0 +1,55 @@
+D:\xc\demo\Manage.Framework\bin\Debug\Manage.Framework.xml
+D:\xc\demo\Manage.Framework\bin\Debug\Manage.Framework.dll
+D:\xc\demo\Manage.Framework\bin\Debug\Manage.Framework.pdb
+D:\xc\demo\Manage.Framework\bin\Debug\Iesi.Collections.dll
+D:\xc\demo\Manage.Framework\bin\Debug\NHibernate.dll
+D:\xc\demo\Manage.Framework\obj\Debug\Manage.Framework.dll
+D:\xc\demo\Manage.Framework\obj\Debug\Manage.Framework.pdb
+D:\xc\history\demo\Manage.Framework\bin\Debug\Manage.Framework.xml
+D:\xc\history\demo\Manage.Framework\bin\Debug\Manage.Framework.dll
+D:\xc\history\demo\Manage.Framework\bin\Debug\Manage.Framework.pdb
+D:\xc\history\demo\Manage.Framework\bin\Debug\Iesi.Collections.dll
+D:\xc\history\demo\Manage.Framework\bin\Debug\NHibernate.dll
+D:\xc\history\demo\Manage.Framework\obj\Debug\Manage.Framework.dll
+D:\xc\history\demo\Manage.Framework\obj\Debug\Manage.Framework.pdb
+D:\xc\history\demo\Manage.Framework\obj\Debug\Manage.Framework.csprojResolveAssemblyReference.cache
+E:\xc\Projects\HZXF.MVC\Manage.Framework\bin\Debug\Manage.Framework.xml
+E:\xc\Projects\HZXF.MVC\Manage.Framework\bin\Debug\Manage.Framework.dll
+E:\xc\Projects\HZXF.MVC\Manage.Framework\bin\Debug\Manage.Framework.pdb
+E:\xc\Projects\HZXF.MVC\Manage.Framework\bin\Debug\Iesi.Collections.dll
+E:\xc\Projects\HZXF.MVC\Manage.Framework\bin\Debug\NHibernate.dll
+E:\xc\Projects\HZXF.MVC\Manage.Framework\obj\Debug\Manage.Framework.csprojResolveAssemblyReference.cache
+E:\xc\Projects\HZXF.MVC\Manage.Framework\obj\Debug\Manage.Framework.dll
+E:\xc\Projects\HZXF.MVC\Manage.Framework\obj\Debug\Manage.Framework.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.xml
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\Iesi.Collections.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\NHibernate.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.csprojResolveAssemblyReference.cache
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.xml
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\Iesi.Collections.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Framework\bin\Debug\NHibernate.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.csprojResolveAssemblyReference.cache
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.xml
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Debug\Manage.Framework.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Debug\Iesi.Collections.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Debug\NHibernate.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\obj\Debug\Manage.Framework.csprojResolveAssemblyReference.cache
+F:\project\HZXF_FRAME\Manage.Framework\bin\Debug\Manage.Framework.xml
+F:\project\HZXF_FRAME\Manage.Framework\bin\Debug\Manage.Framework.dll
+F:\project\HZXF_FRAME\Manage.Framework\bin\Debug\Manage.Framework.pdb
+F:\project\HZXF_FRAME\Manage.Framework\bin\Debug\Iesi.Collections.dll
+F:\project\HZXF_FRAME\Manage.Framework\bin\Debug\NHibernate.dll
+F:\project\HZXF_FRAME\Manage.Framework\obj\Debug\Manage.Framework.csprojResolveAssemblyReference.cache
+F:\project\HZXF_FRAME\Manage.Framework\obj\Debug\Manage.Framework.dll
+F:\project\HZXF_FRAME\Manage.Framework\obj\Debug\Manage.Framework.pdb

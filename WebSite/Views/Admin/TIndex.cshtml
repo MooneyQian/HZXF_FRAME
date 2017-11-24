@@ -1,0 +1,23 @@
+﻿@model Business.Model.Models.Home_S
+@{
+    ViewBag.Modules = "Admin";
+    ViewBag.ModulesType = "Manager";
+
+    ViewBag.Sysname = "后台管理系统";
+    ViewBag.Version = "v1.0";
+
+    Layout = "~/Views/Shared/_MainIndex.cshtml";
+}
+
+
+
+@section MoreOperationsContent {
+
+    <dd id="h-logout">
+        <a href="javascript:;">
+            <i class="icon-signout qui-top-i"></i>
+            <label>退出登录</label>
+        </a>
+    </dd>
+}
+

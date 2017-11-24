@@ -1,0 +1,97 @@
+﻿@model Manage.Core.Models.Menu_S
+@{
+    ViewBag.Title = "查看菜单";
+    Layout = "~/Views/Shared/_Show.cshtml";
+}
+@section HeadContent{
+    <script type="text/javascript">
+        var CTRL = { art_parent: null, valform: null, dialog: null }
+        var _MENUTYPE = { Menu: '@((int)MenuType.Menu)', Function: '@((int)MenuType.Function)' };
+        $(function () {
+            //绑定权限控制隐藏区
+            $("#rotecontrol").toggle(function () { $("#rotecontrol_center").show(); $(this).children("span").removeClass("icon_control").addClass("icon_control_off"); },
+                function () { $("#rotecontrol_center").hide(); $(this).children("span").removeClass("icon_control_off").addClass("icon_control"); });
+
+            MenuTypeController();
+
+        });
+
+        function MenuTypeController() {
+            switch ($("#MenuType").val()) {
+                case _MENUTYPE.Menu: $("#part1").show(); $("#MenuCode").removeClass("k-notnull "); break;
+                case _MENUTYPE.Function:
+                case _MENUTYPE.Data: $("#part1").hide(); $("#MenuPath").val(""); $("#MenuCode").addClass("k-notnull "); break;
+            };
+        }
+
+    </script>
+}
+<div class="rightpart">
+    <div class="layui-inline">
+        <label class="layui-form-label show-k">上级菜单</label>
+        <div class="layui-input-inline show-v">
+            @Html.DisplayFor(c => c.PerMenuName)
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label show-k">菜单名称</label>
+        <div class="layui-input-inline show-v">
+            @Html.DisplayFor(c => c.MenuName)
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label show-k">类型</label>
+        <div class="layui-input-inline show-v">
+            @Html.Encode(Model.MenuType.ToString().ConvertToEnum<MenuType_ZH>().ToString())
+            @Html.HiddenFor(c => c.MenuType)
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label show-k">菜单地址</label>
+        <div class="layui-input-inline show-v">
+            @Html.DisplayFor(c => c.MenuPath)
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label show-k">菜单编号</label>
+        <div class="layui-input-inline show-v">
+            @Html.DisplayFor(c => c.MenuCode)
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label show-k">排序号</label>
+        <div class="layui-input-inline show-v">
+            @Html.DisplayFor(c => c.MenuOrder)
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label show-k">状态</label>
+        <div class="layui-input-inline show-v">
+            @{if (Model.RecordStatus == (int)RecordStatus.Enable)
+              {
+                <span style="color: green;">启用</span>
+              }
+              else
+              { 
+                <span style="color: red;">禁用</span>                      
+              }
+            }
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label show-k">菜单描述</label>
+        <div class="layui-input-inline show-v">
+            @Html.DisplayFor(c => c.MenuDesc)
+        </div>
+    </div>
+
+</div>
+
+

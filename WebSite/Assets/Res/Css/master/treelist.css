@@ -1,0 +1,63 @@
+﻿#treeArea {
+    /*position: absolute;*/
+    border:1px solid #ccc;
+    overflow-y:auto;
+}
+
+#contentArea {
+    /*position: absolute;*/
+    border:1px solid #ccc;
+}
+
+#treemenu-top {
+    padding: 10px;
+    /*position: fixed;
+    line-height:28px;
+    height: 28px;
+    padding-left:10px;*/
+    /*border-bottom:1px solid #ccc;
+    background-color:#f0f0f0;*/
+}
+
+.treemenu-title {
+    color: #333;
+    
+}
+
+.search-icon {
+    float:right;
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-left: none;
+    line-height: 32px;
+    padding: 0 10px;
+    color: #555;
+    margin-left: -3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+#treemenu-content {
+}
+
+.tree-tips {
+    width:3px;
+    cursor:pointer;
+}
+
+.layui-layer-tips .layui-layer-content {
+    padding: 6px 7px !important;
+}
+
+.col-span {
+    margin-left: 5px;
+    position:fixed;
+    width:100%;
+    background-color:#fff;
+    height:30px;
+    line-height:30px;
+}

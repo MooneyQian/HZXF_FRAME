@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadContent
+{
+    <script src="@Url.Content("~/Content/HomePage/js/frame.js")"></script>
+    <link href="@Url.Content("~/Content/HomePage/style/frame.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Components/zTree/js/jquery.ztree.core-3.5.min.js")"></script>
+    <link href="@Url.Content("~/Components/zTree/css/zTreeStyle/zTreeStyle.css")" rel="stylesheet" />
+
+    <script type="text/javascript">
+        var tree;
+        $(function () {
+            //创建菜单树
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GetMenuTree", "Home")',
+                data: {},
+                success: function (res) {
+                    if (res.IsError) return;
+                    tree = $.fn.zTree.init($("#menutree"), {
+                        data: {
+                            simpleData: {
+                                enable: true,  //开启简单数据模式(Array)  
+                                idKey: "id",
+                                pIdKey: "pId",
+                                rootPId: 0
+                            },
+                            key: {
+                                title: "title"
+                            }
+                        },
+                        callback: {
+                            onClick: function (event, treeId, treeNode) {
+                                if (!treeNode.isParent && treeNode.menupath != "")
+                                    $('#fm-right').attr("src", treeNode.menupath);
+                            }
+                        }
+                    }, res.Data);
+                    if (res.Data.length > 0)
+                        tree.expandNode(tree.getNodes()[0], true);
+                },
+                error: function (e, m) {
+                    alert(e.responseText);
+                }
+            });
+        });
+        //退出
+        function f_logoff() {
+            location.href = "/Account/LogOff";
+        }
+        //修改密码
+        function f_changepassword() {
+            var dialog = $.dialog.open("/Account/ChangePassword", { id: 'hs_change_password_dialog', title: '修改密码', lock: true, height: 250, width: 300, padding: 0 });
+            $.dialog.data('ChangePwd', window);
+        }
+    </script>
+}
+
+<div id="fm-frame">
+    <div id="fm-top">
+        <div id="fm-logo"></div>
+        <div id="fm-link">
+            <span><strong><b>@(ViewBag.UserName)</b></strong> 欢迎您1111！</span>
+            <dl class="fm-link-sub" id="fm-link-sub">
+                <dt></dt>
+                <dd class="n1"><i></i><a href="javascript:f_changepassword()">修改密码</a></dd>
+                <dd class="n3"><i></i><a href="javascript:f_logoff()">退出</a></dd>
+            </dl>
+        </div>
+    </div>
+    <div id="fm-main">
+        <div id="fm-left">
+            <div id="fm-submu">
+                <ul id="menutree" class="ztree"></ul>
+            </div>
+        </div>
+        <iframe src="about:blank" id="fm-right" name="fm-right" frameborder="0" class="loading"></iframe>
+    </div>
+    <div id="fm-fot">@(ViewBag.CompanyName111)</div>
+</div>

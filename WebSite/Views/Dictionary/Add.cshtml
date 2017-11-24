@@ -1,0 +1,111 @@
+﻿@model Manage.Core.Models.Dictionary_S
+@{
+    ViewBag.Title = "字典编辑";
+    Layout = "~/Views/Shared/_Add.cshtml";
+
+    ViewBag.Modules = "Dictionary";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "Add";
+}
+
+
+<div class="rightpart">
+    @if (ViewBag.OperType == "Edit")
+    {
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>编辑字典</legend>
+        </fieldset>
+    }
+    else
+    {
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>添加字典</legend>
+        </fieldset>
+    }
+
+    <div class="layui-inline">
+        <label class="layui-form-label add-k">上级节点</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.ParDictName,
+            new
+            {
+                @class = "layui-input layui-disabled",
+                @readonly = "readonly"
+            })
+        </div>
+    </div>
+
+       <div class="layui-inline">
+        <label class="layui-form-label add-k">字典类型</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.DictType,
+            new
+            {
+                @class = "layui-input layui-disabled",
+                @readonly = "readonly"
+            })
+        </div>
+    </div>
+      <div class="layui-inline">
+        <label class="layui-form-label add-k">字典名称</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.DictName,
+            new
+            {
+                @class = "layui-input",
+                lay_verify = "q-required",
+                placeholder = "请输入字典名称"
+            })
+        </div>
+    </div>
+      <div class="layui-inline">
+        <label class="layui-form-label add-k">字典编码</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.DictCode,
+            new
+            {
+                @class = "layui-input",
+                lay_verify = "q-required",
+                placeholder = "请输入字典编码"
+            })
+        </div>
+    </div>
+
+
+      <div class="layui-inline">
+        <label class="layui-form-label add-k">排序号</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.DictOrder,
+            new
+            {
+                @class = "layui-input",
+            })
+        </div>
+    </div>
+
+        <div class="layui-inline">
+        <label class="layui-form-label add-k">是否缓存</label>
+        <div class="layui-input-inline add-v border-v ">
+            <input type="checkbox" id="IsCache" name="IsCache" disabled="disabled" value = "@(Model.IsCache)" checked="checked" />
+        </div>
+    </div>
+
+     <div class="layui-block layui-form-text fortextarea">
+        <label class="layui-form-label add-k">字典描述</label>
+        <div class="layui-input-block add-v-textarea">
+            @Html.TextAreaFor(c => c.DictDesc,
+            new
+            {
+                @class = "layui-textarea"
+            })
+        </div>
+    </div>
+
+</div>
+@section HiddenArea {
+    @Html.HiddenFor(c => c.ID)
+    @Html.HiddenFor(c => c.ParDictID)
+    @Html.HiddenFor(c => c.LevelNO)
+}
+
+

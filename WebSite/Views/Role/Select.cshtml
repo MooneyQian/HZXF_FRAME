@@ -1,0 +1,130 @@
+﻿@model Manage.Core.Models.Role_S
+@{
+    ViewBag.Title = "角色列表";
+    Layout = "~/Views/Shared/_List.cshtml";
+}
+@section HeadContent
+{
+    <script type="text/javascript">
+        var FUNC = { Search: null, Show: null, Add: null, Edit: null, Del: null };
+        var CTRL = { SearchBar: null, TollBar: null, Grid: null, Dialog: null };
+        $(function () {
+            //查询条
+            CTRL.SearchBar = $.SearchBarSimple({ contentid: "SearchCentext1", searchFun: FUNC.Search, width: 300, dir: "right", Watermark: "搜索角色名称..." });
+            //工具栏
+            CTRL.TollBar = $.ToolBar({
+                contentid: "BtnToolBar", data: [
+                    { id: "btnAdd", text: "新 增", onClick: FUNC.Add },
+                    { id: "btnDel", text: "删 除", onClick: FUNC.Del }
+                ]
+            });
+            //列表结构
+            CTRL.Grid = $("#maingrid").ligerGrid({
+                columns: [
+                    { display: "角色名称", name: "RoleName", type: "text", align: "left", width: 100 },
+                    { display: "角色描述", name: "RoleDesc", type: "text", align: "left", width: 400 },
+                    {
+                        display: "状态", name: "RecordStatus", type: "text", align: "center", width: 80, render: function (row) {
+                            var html = "";
+                            if (row.RecordStatus == "0")
+                                html = "<font style='color:red;'>禁用</font>";
+                            else
+                                html = "<font style='color:green;'>启用</font>";
+                            return html;
+                        }
+                    },
+                    {
+                        display: '操作', isAllowHide: false, width: 130,
+                        render: function (row) {
+                            var html = "";
+                            html += "<a href='#' onclick=\"FUNC.Edit('" + row.ID + "');\">编辑</a>&nbsp;&nbsp;";
+                            html += "<a href='#' onclick=\"FUNC.Del('" + row.ID + "');\">删除</a>&nbsp;&nbsp;";
+                            html += "<a href='#' onclick=\"FUNC.AllotMenu('" + row.ID + "','" + row.RoleName + "');\">分配菜单</a>&nbsp;&nbsp;";
+                            return html;
+                        }
+                    }
+                ],
+                pageSize: 25, sortOrder: 'Asc', sortName: 'ID', url: '@Url.Action("_RoleList")',
+                rowDraggable: false, rownumbers: true, enabledSort: false, height: '100%', heightDiff: -5, checkbox: true,
+                onDblClickRow: function (data, rowindex, rowobj) {
+                    FUNC.Show(data.ID, rowobj, rowindex);
+                }
+            });
+        });
+        //查询方法
+        FUNC.Search = function (SearchText) {
+            var searchData = [
+                { name: "RoleName", value: SearchText }
+            ];
+
+            if (!CTRL.Grid) return;
+
+            //根据查询条件刷新列表数据
+            CTRL.Grid.setOptions({ newPage: 1 });
+            CTRL.Grid.set('parms', LigerUiExtend.ParmsMerge(CTRL.Grid.get('parms'), searchData));
+            CTRL.Grid.loadData();
+            if (CTRL.SearchBar) {
+                CTRL.SearchBar.Hide();//隐藏查询框
+                CTRL.SearchBar.SetText();//设置查询条内容
+            }
+        }
+        //查看详细
+        FUNC.Show = function (id, rowobj, rowinidex) {
+            var url = '@Url.Action("Show")' + "?RoleID=" + id;
+            $.dialog.data("ParentWindow", window);
+            $.dialog.open(url, { title: '查看', width: 750, height: 300, lock: true, resize: false }, false);
+        }
+        //新增
+        FUNC.Add = function () {
+            var url = '@Url.Action("Add")';
+            $.dialog.data("ParentWindow", window);
+            $.dialog.open(url, { title: '新增', width: 750, height: 300, lock: true, resize: false }, false);
+        }
+        //编辑
+        FUNC.Edit = function (id) {
+            var url = '@Url.Action("Edit")' + "?RoleID=" + id;
+            $.dialog.data("ParentWindow", window);
+            $.dialog.open(url, { title: '编辑', width: 750, height: 300, lock: true, resize: false }, false);
+        }
+        //删除
+        FUNC.Del = function (ids) {
+            if (!ids) {
+                var selRows = CTRL.Grid.getSelectedRows();
+                if (selRows.length == 0) {
+                    $.dialog.alert("请选择要删除的数据！");
+                    return;
+                }
+                $(selRows).each(function () {
+                    ids += ids != "" ? "," : "";
+                    ids += this.ID;
+                });
+            }
+            var url = '@Url.Action("_Delete")' + '?randnum=' + Math.random();
+            $.dialog.confirm("确认要删除该数据吗？", function () {
+                $.post(url, { ids: ids }).done(function (data) {
+                    $.dialog.alert(data.Message, function () {
+                        if (!data.IsError)
+                            CTRL.Grid.loadData();
+                    });
+                });
+            });
+        }
+        //分配角色
+        FUNC.AllotMenu = function (id, name) {
+            var url = '@Url.Action("RoleMenuList", "Menu")' + "?RoleID=" + id;
+            $.dialog.data("ParentWindow", window);
+            $.dialog.open(url, { title: name + '--分配角色菜单', width: 550, height: 450, lock: true, resize: false }, false);
+        }
+    </script>
+}
+
+<div class="toolbar">
+    @*工具栏*@
+    <div id="BtnToolBar" style="">
+    </div>
+    @*搜索栏*@
+    <div id="SearchCentext1" class="search-box">
+    </div>
+</div>
+<div id="maingrid" class="list" style="top: 0; clear: both">
+</div>

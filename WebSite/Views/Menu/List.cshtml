@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "菜单列表";
+    Layout = "~/Views/Shared/_TreeList.cshtml";
+
+    ViewBag.Modules = "Menu";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "List";
+}
+@section HeadContent {
+    <script>
+        var listObj = null;
+
+        function updateNode(type, data) {
+            if (listObj) {
+                listObj.updateNode(type, data);
+            }
+        }
+        
+    </script>
+}

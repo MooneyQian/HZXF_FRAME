@@ -1,0 +1,17 @@
+﻿@model Business.Model.Models.ErrorInfo
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="textml; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>错误信息</title>
+</head>
+
+<body>
+    <div style="width: 100%; text-align: center">用户非法，无法查看！</div>
+    <div style="width: 100%; text-align: center">@Html.DisplayFor(c => c.ErrorMessage)</div>
+</body>
+</html>

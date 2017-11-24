@@ -1,0 +1,12 @@
+﻿.content-scroll {
+    overflow-x:hidden;
+    overflow-y:auto;
+    padding-right:1px;
+}
+
+#mapDiv {
+    width: auto;
+    height: 320px;
+    border: #ccc solid 1px;
+    z-index:0;
+}

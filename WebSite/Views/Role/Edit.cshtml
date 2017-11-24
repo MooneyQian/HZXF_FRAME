@@ -1,0 +1,100 @@
+﻿@model Manage.Core.Models.Role_S
+@{
+    ViewBag.Title = "编辑角色";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section HeadContent{
+    <script type="text/javascript">
+        var CTRL = { art_parent: null, valform: null, dialog: null }
+        $(function () {
+            //获取父页面对象
+            CTRL.art_parent = $.dialog.data("ParentWindow");
+
+            //验证提示动态代码
+            $("*[datatype]").each(function (index) {
+                $(this).before("<span class='prompt' style='position:relative'><div class='info' onMouseOut='javascript:$(this).hide();'><span class='Validform_checktip'></span><span class='dec'><s class='dec1'>&#9670;</s><s class='dec2'>&#9670;</s></span></div></span>");
+            });
+
+            //验证与提交（可以通过CTRL.valform.check()进行验证）
+            CTRL.valform = $(".valform").Validform({
+                tiptype: tiptype8,
+                tipSweep: false,
+                ajaxPost: true,
+                btnSubmit: "#asave",
+                callback: function () {
+                    CTRL.dialog = $.dialog.tips("数据处理中，请稍候...");
+                    $.post('@Url.Action("_Edit")' + '?randnum=' + Math.random(), $('form').serializeArray()).done(function (data) {
+                        if (CTRL.dialog) CTRL.dialog.close();
+                        $.dialog.alert(data.Message, function () {
+                            if (!data.IsError) {
+                                CTRL.art_parent.CTRL.Grid.loadData();//重载父页面grid
+                                $.dialog.close();
+                            }
+                        });
+                    });
+                },
+                //特殊处理帐号名称的
+                datatype:
+                    {
+                        "RoleName": function (gets, obj, curform, regxp) {/*参数gets是获取到的表单元素值，obj为当前表单元素，curform为当前验证的表单，regxp为内置的一些正则表达式的引用。*/
+                            var msg = "";
+                            if (gets == "") return "请输入角色名！";
+                            var url = '@Url.Action("_IsExists")';
+                            $.ajax({
+                                type: "POST",
+                                url: url,
+                                async: false,
+                                data: { ID: $("#ID").val(), RoleName: gets, n: Math.random() },
+                                success: function (res) {
+                                    if (res == true)
+                                        msg = "该角色名已存在！";
+                                }
+                            });
+                            if (msg != "")
+                                return msg;
+                            else
+                                return true;
+                        }
+                    }
+            });
+
+            //初始化控件
+            HS.UI.OnOffBtn($("#RecordStatus"));
+
+        });
+
+    </script>
+}
+@using (Html.BeginForm("", "", FormMethod.Post, new { @class = "valform" }))
+{
+    @Html.HiddenFor(c => c.ID)
+    <div class="pop-page">
+        <div class="formtitle">新增角色</div>
+        <table class="tableread" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td class="table-title" style="width: 90px;">角色名：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.TextBoxFor(c => c.RoleName, new { @class = "k-input k-notnull pw90", datatype = "RoleName", nullmsg = "请输入角色名!" })
+                </td>
+                <td class="table-title" style="width: 90px;">状态：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.TextBoxFor(c => c.RecordStatus)
+                </td>
+                <td class="table-title" style="width: 90px;">&nbsp;</td>
+                <td class="table-value" style="width: 150px;">&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="table-title">角色描述：</td>
+                <td class="table-value" colspan="5">
+                    @Html.TextAreaFor(c => c.RoleDesc, 3, 5, new { @class = "k-textarea pw90" })
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="pop-page-bar">
+        <a title="返回" class="btn1" href="javascript:$.dialog.close();">返回<i></i></a>
+        <a title="重置" class="btn1" href="javascript:$('form').get(0).reset();">重置<i></i></a>
+        <a title="保存" class="btn2" href="javascript:;" id="asave">保存<i></i></a>
+    </div>
+}

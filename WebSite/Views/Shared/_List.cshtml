@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "普通列表模板页";
+    ViewBag.Master = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadCssContent {
+    <link rel="stylesheet" href="@Url.Content("~/Assets/Res/Css/master/list.css")" media="all"/>
+    @RenderSection("HeadCssContent", required: false)
+}
+<div id="listBody">
+    <div class="layui-row toolAreas" id="toolAreas">
+        @*工具栏*@
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md4" id="navBtnsAreas">&nbsp;</div>
+        @*搜索区域*@
+        @if (ViewBag.Search == null)
+        {
+            ViewBag.Search = false;
+        }
+        @if (ViewBag.Search)
+        {
+            <div class="layui-col-xs12 layui-col-sm12 layui-col-md6 layui-col-md-offset2" id="searchAreas">
+                <div class="search-areas">
+                    <div class="search-tab" id="search-tab"></div>
+
+                    <input type="text" class="search-input" id="search-input" readonly="readonly" placeholder="点击展开搜索条件" />
+                    <div class="search-icon-button">
+                        <i class="icon-search"></i>
+                    </div>
+                    <div class="search-ele-area" style="display: none">
+                        <form class="layui-form" name="form1" id="form1">
+                            <div class="search-ele">
+                                <div class="search-form">
+                                    <div class="layui-form-item">
+                                    @RenderSection("SearchConditions", required: false)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-ele-button">
+                                <button class="layui-btn btn-bit-large search-submit-button" id="btn-submit" lay-filter="search" lay-submit>查询</button>
+                                <button class="layui-btn btn-bit-large search-reset-button" id="btn-reset">重置</button>
+                                <button class="layui-btn btn-bit-large search-reset-button" id="btn-close">关闭</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="layui-hide">
+                @RenderSection("SearchConditions", required: false)
+            </div>
+           
+        }
+    </div>
+
+    <div class="layui-row listAreas">
+        <table class="layui-table" style="margin: 0px" id="listTable" lay-filter="listTable"></table>
+    </div>
+    <div class="layui-hide">
+        <div id="menuid"></div>
+        @RenderSection("HiddenAreas", required: false)
+    </div>
+
+</div>
+
+@RenderBody()
+@section HeadContent {
+    @RenderPage("~/Assets/Basic/Master/tpl/ListTpl.cshtml")
+    @RenderSection("HeadContent", required: false)
+}
+

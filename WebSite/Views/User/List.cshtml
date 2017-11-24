@@ -1,0 +1,30 @@
+﻿@model Manage.Core.Models.User_S
+@{
+    ViewBag.Title = "角色管理";
+    Layout = "~/Views/Shared/_List.cshtml";
+    ViewBag.Search = true;
+    ViewBag.Modules = "User";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "List";
+}
+
+
+
+
+@section SearchConditions
+{
+  
+    <div class="layui-inline line-inline">
+        <label class="layui-form-label form-label">登录名</label>
+        <div class="layui-input-inline input-inline">
+            @Html.TextBoxFor(c => c.UserLoginName, new { @class = "layui-input" })
+        </div>
+    </div>
+      <div class="layui-inline line-inline">
+        <label class="layui-form-label form-label">姓名</label>
+        <div class="layui-input-inline input-inline">
+            @Html.TextBoxFor(c => c.UserDisplayName, new { @class = "layui-input" })
+        </div>
+    </div>
+ 
+}

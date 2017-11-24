@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "普通详情模板页";
+    ViewBag.Master = "Show";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeadCssContent {
+    <link rel="stylesheet" href="@Url.Content("~/Assets/Res/Css/master/show.css")" media="all"/>
+    @RenderSection("HeadCssContent", required: false)
+}
+
+<div class="show-body">
+    <form class="layui-form layui-form-pane">
+        <div class="layui-form-item">
+            @RenderBody()
+        </div>
+    </form>
+</div>
+
+<div class="show-footer">
+    <div class="show-footer-buttons">
+        <div class="show-footer-buttons">
+            <button id="base-return" class="layui-btn layui-btn-small qui-btn-normal">返回</button>
+            @RenderSection("ButtonsArea", required: false)
+        </div>
+    </div>
+</div>
+@section HeadContent
+{
+    @RenderSection("HeadContent", required: false)
+}
+

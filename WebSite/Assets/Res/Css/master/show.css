@@ -1,0 +1,92 @@
+﻿html {
+    overflow:auto;
+}
+
+
+.show-body {
+    margin: 20px 0;
+    padding: 0px 5px 50px 5px;
+    color:#333;
+}
+
+.show-k {
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.show-v {
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: none;
+    padding: 0 10px;
+}
+
+.show-v-textarea {
+    padding:10px;
+}
+
+
+.show-footer {
+    position:fixed;
+    height:40px;
+    line-height:40px;
+    background-color:#fff;
+    bottom:0px;
+    border-top:1px solid rgba(0, 0, 0, 0.2);
+    width:100%;
+    z-index:1000;
+}
+
+.show-footer-buttons {
+    text-align:center;
+}
+
+.show-footer-buttons-right {
+    float: right;
+    margin-right:10px;
+}
+
+.fortextarea {
+    margin-top:10px;
+}
+
+.layui-input, .layui-select, .layui-textarea {
+    height: 38px;
+    line-height: 36px\9;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.layui-form-pane label {
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+.layui-form-pane .layui-form-item {
+    margin-bottom:1px;
+}
+
+.layui-form-item .layui-inline, .layui-form-item .layui-block {
+    margin-bottom: 8px;
+    margin-left:30px;
+    margin-right:0px;
+}
+
+.layui-form-item .layui-input-inline {
+    width: 330px;
+}
+
+.rightpart .layui-input-inline {
+    width: 240px;
+}
+
+.rightpart {
+    margin-top:46px;
+}
+
+.layui-form-pane .layui-form-radio, .layui-form-pane .layui-form-switch {
+    margin-top: -1px;
+}
+

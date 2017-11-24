@@ -1,0 +1,123 @@
+﻿@model Manage.Core.Models.User_S
+@{
+    ViewBag.Title = "编辑用户";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section HeadContent{
+    <script type="text/javascript">
+        var CTRL = { art_parent: null, valform: null }
+        $(function () {
+            //获取父页面对象
+            CTRL.art_parent = $.dialog.data("ParentWindow");
+
+            //验证提示动态代码
+            $("*[datatype]").each(function (index) {
+                $(this).before("<span class='prompt' style='position:relative'><div class='info' onMouseOut='javascript:$(this).hide();'><span class='Validform_checktip'></span><span class='dec'><s class='dec1'>&#9670;</s><s class='dec2'>&#9670;</s></span></div></span>");
+            });
+
+            //验证与提交（可以通过CTRL.valform.check()进行验证）
+            CTRL.valform = $(".valform").Validform({
+                tiptype: tiptype8,
+                tipSweep: false,
+                ajaxPost: true,
+                btnSubmit: "#asave",
+                callback: function () {
+                    $.post('@Url.Action("_Edit")' + '?randnum=' + Math.random(), $('form').serializeArray()).done(function (data) {
+                        $.dialog.alert(data.Message, function () {
+                            if (!data.IsError) {
+                                CTRL.art_parent.CTRL.Grid.loadData();//重载父页面grid
+                                $.dialog.close();
+                            }
+                        });
+                    });
+                },
+                //特殊处理帐号名称的
+                datatype:
+                    {
+                        UserDeptID: function (gets, obj, curform, regxp) {
+                            if ($("#UserDeptID").val() == "") return true;
+                        }
+                    }
+            });
+
+            //初始化日期控件
+            $(".Wdate").each(function () { $(this).focus(function () { WdatePicker(); }) });
+
+            //初始化下拉框
+            //$('#UserDeptID').ligerComboBox({ width: 90 });
+
+            //初始化控件
+            HS.UI.OrganDropdownList($("#UserDeptID"), { width: "90%", selectBoxWidth: 160, selectBoxHeight: 200 });
+            HS.UI.OnOffBtn($("#RecordStatus"));
+        });
+
+    </script>
+
+    <style>
+        .l-tree {
+            width: 100% !important;
+        }
+    </style>
+}
+@using (Html.BeginForm("", "", FormMethod.Post, new { @class = "valform" }))
+{
+    @Html.HiddenFor(c => c.ID)
+    <div class="pop-page">
+        <div class="formtitle">编辑用户</div>
+        <table class="tableread" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td class="table-title" style="width: 90px;">登录名：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.DisplayFor(c => c.UserLoginName)
+                </td>
+                <td class="table-title" style="width: 90px;">用户姓名：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.TextBoxFor(c => c.UserDisplayName, new { @class = "k-input k-notnull pw90", datatype = "*2-10", nullmsg = "请输入用户姓名！", errormsg = "用户姓名不少于2位！" })
+                </td>
+                <td class="table-title" style="width: 90px;">类型：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.DropDownListFor(c => c.UserType, new SelectList(ViewBag.UserTypes, "Value", "Text", "1"), new { @class = "k-select pw90" })
+                </td>
+            </tr>
+            <tr>
+                <td class="table-title">分组：</td>
+                <td class="table-value">
+                    @Html.TextBox("UserDeptID", Model.UserDept.ID, new { @class = "k-input k-notnull pw90", datatype = "UserDeptID", nullmsg = "请选择用户分组！", errormsg = "请选择用户分组！" })
+                </td>
+                <td class="table-title">手机号：</td>
+                <td class="table-value">
+                    @Html.TextBoxFor(c => c.UserPhone, new { @class = "k-input pw90" })
+                </td>
+                <td class="table-title">员工编号：</td>
+                <td class="table-value">
+                    @Html.TextBoxFor(c => c.Extend1, new { @class = "k-input pw90" })
+                </td>
+            </tr>
+            <tr>
+                <td class="table-title">E-Mail：</td>
+                <td class="table-value">
+                    @Html.TextBoxFor(c => c.Extend2, new { @class = "k-input pw90" })
+                </td>
+                <td class="table-title">短号：</td>
+                <td class="table-value">
+                    @Html.TextBoxFor(c => c.Extend3, new { @class = "k-input pw90" })
+                </td>
+                <td class="table-title">座机：</td>
+                <td class="table-value">
+                    @Html.TextBoxFor(c => c.Extend4, new { @class = "k-input pw90" })
+                </td>
+            </tr>
+            <tr>
+                <td class="table-title">状态：</td>
+                <td class="table-value" colspan="5">
+                    @Html.TextBoxFor(c => c.RecordStatus)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="pop-page-bar">
+        <a title="返回" class="btn1" href="javascript:$.dialog.close();">返回<i></i></a>
+        <a title="重置" class="btn1" href="javascript:$('form').get(0).reset();">重置<i></i></a>
+        <a title="保存" class="btn2" href="javascript:;" id="asave">保存<i></i></a>
+    </div>
+}

@@ -1,0 +1,1344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{121A3A00-CD91-44DC-91FD-B304C3B975E8}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSite</RootNamespace>
+    <AssemblyName>WebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\packages\Aspose\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\packages\Aspose\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Main\MainAreaRegistration.cs" />
+    <Compile Include="Assets\Res\Components\UEditor\net\App_Code\Config.cs" />
+    <Compile Include="Assets\Res\Components\UEditor\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="Assets\Res\Components\UEditor\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="Assets\Res\Components\UEditor\net\App_Code\Handler.cs" />
+    <Compile Include="Assets\Res\Components\UEditor\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="Assets\Res\Components\UEditor\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="Assets\Res\Components\UEditor\net\App_Code\PathFormater.cs" />
+    <Compile Include="Assets\Res\Components\UEditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Assets\Res\Components\Uploadify\net\DeleteHandler.ashx.cs">
+      <DependentUpon>DeleteHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\Res\Components\Uploadify\net\UploadHandler.ashx.cs">
+      <DependentUpon>UploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Basic\Layout\Layout.js" />
+    <Content Include="Assets\Basic\Master\Add.js" />
+    <Content Include="Assets\Basic\Master\Grid.js" />
+    <Content Include="Assets\Basic\Master\List.js" />
+    <Content Include="Assets\Basic\Master\MainIndex.js" />
+    <Content Include="Assets\Basic\Master\Show.js" />
+    <Content Include="Assets\Basic\Master\tpl\mainindex\leftMenusTpl.html" />
+    <Content Include="Assets\Basic\Master\tpl\mainindex\mainBodyTpl.html" />
+    <Content Include="Assets\Basic\Master\tpl\mainindex\tabRightTpl.html" />
+    <Content Include="Assets\Basic\Master\tpl\mainindex\topSkinTpl.html" />
+    <Content Include="Assets\Basic\Master\TreeGridList.js" />
+    <Content Include="Assets\Basic\Master\TreeList.js" />
+    <Content Include="Assets\ModulesUtils\base64.js" />
+    <Content Include="Assets\ModulesUtils\qian.js" />
+    <Content Include="Assets\ModulesUtils\html.js" />
+    <Content Include="Assets\ModulesUtils\res.js" />
+    <Content Include="Assets\ModulesUtils\usercenter.js" />
+    <Content Include="Assets\Modules\ManagerModules\Account\Account.js" />
+    <Content Include="Assets\Modules\ManagerModules\Account\AccountPass.js" />
+    <Content Include="Assets\Modules\ManagerModules\Admin\Admin.js" />
+    <Content Include="Assets\Modules\ManagerModules\AppSetting\AppSettingAdd.js" />
+    <Content Include="Assets\Modules\ManagerModules\CacheManager\CacheManagerList.js" />
+    <Content Include="Assets\Modules\ManagerModules\CacheManager\RoleAdd.js" />
+    <Content Include="Assets\Modules\ManagerModules\Dictionary\DictionaryAdd.js" />
+    <Content Include="Assets\Modules\ManagerModules\Dictionary\DictionaryList.js" />
+    <Content Include="Assets\Modules\ManagerModules\Menu\MenuAdd.js" />
+    <Content Include="Assets\Modules\ManagerModules\Menu\MenuList.js" />
+    <Content Include="Assets\Modules\ManagerModules\Menu\MenuRoleList.js" />
+    <Content Include="Assets\Modules\ManagerModules\Organization\OrganizationAdd.js" />
+    <Content Include="Assets\Modules\ManagerModules\Organization\OrganizationList.js" />
+    <Content Include="Assets\Modules\ManagerModules\Organization\OrganizationUserList.js" />
+    <Content Include="Assets\Modules\ManagerModules\Role\RoleList.js" />
+    <Content Include="Assets\Modules\ManagerModules\UserCenter\UserCenterAdd.js" />
+    <Content Include="Assets\Modules\ManagerModules\User\UserAdd.js" />
+    <Content Include="Assets\Modules\ManagerModules\User\UserList.js" />
+    <Content Include="Assets\Modules\UserModules\CustomerHome\css\index.css" />
+    <Content Include="Assets\Modules\UserModules\CustomerHome\CustomerHome.js" />
+    <Content Include="Assets\Modules\UserModules\CustomerHome\tpl\mainBodyTpl.html" />
+    <Content Include="Assets\Modules\UserModules\EquipmentInfo\EquipmentInfoList.js" />
+    <Content Include="Assets\Modules\UserModules\EquipmentInfo\EquipmentInfoAdd.js" />
+    <Content Include="Assets\Modules\UserModules\User\UserList.js" />
+    <Content Include="Assets\Modules\UserModules\Test\TestAdd.js" />
+    <Content Include="Assets\Modules\UserModules\Test\TestList.js" />
+    <Content Include="Assets\Res\Components\clock\date.js" />
+    <Content Include="Assets\Res\Components\clock\jquery.clock.js" />
+    <Content Include="Assets\Res\Components\echarts\echarts.min.js" />
+    <Content Include="Assets\Res\Components\HS\HS.Plugs.js" />
+    <Content Include="Assets\Res\Components\jquery\j11.js" />
+    <Content Include="Assets\Res\Components\json2\json2.js" />
+    <Content Include="Assets\Res\Components\layui\css\layui.css" />
+    <Content Include="Assets\Res\Components\layui\css\layui.mobile.css" />
+    <Content Include="Assets\Res\Components\layui\css\modules\code.css" />
+    <Content Include="Assets\Res\Components\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="Assets\Res\Components\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Assets\Res\Components\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Assets\Res\Components\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Assets\Res\Components\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Assets\Res\Components\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Assets\Res\Components\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\0.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\1.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\10.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\11.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\12.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\13.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\14.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\15.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\16.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\17.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\18.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\19.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\2.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\20.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\21.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\22.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\23.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\24.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\25.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\26.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\27.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\28.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\29.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\3.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\30.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\31.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\32.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\33.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\34.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\35.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\36.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\37.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\38.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\39.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\4.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\40.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\41.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\42.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\43.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\44.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\45.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\46.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\47.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\48.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\49.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\5.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\50.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\51.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\52.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\53.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\54.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\55.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\56.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\57.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\58.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\59.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\6.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\60.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\61.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\62.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\63.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\64.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\65.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\66.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\67.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\68.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\69.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\7.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\70.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\71.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\8.gif" />
+    <Content Include="Assets\Res\Components\layui\images\face\9.gif" />
+    <Content Include="Assets\Res\Components\layui\layui.all.js" />
+    <Content Include="Assets\Res\Components\layui\layui.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\carousel.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\code.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\element.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\flow.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\form.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\jquery.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\laydate.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\layedit.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\layer.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\laypage.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\laytpl.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\layui\global.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\mobile.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\table.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\tree.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\upload.js" />
+    <Content Include="Assets\Res\Components\layui\lay\modules\util.js" />
+    <Content Include="Assets\Res\Components\nicescroll\jquery.nicescroll.js" />
+    <Content Include="Assets\Res\Components\skin-select\scriptbreaker-multiple-accordion-1.js" />
+    <Content Include="Assets\Res\Components\skin-select\skin-select.css" />
+    <Content Include="Assets\Res\Components\skin-select\skin-select.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\anchor\anchor.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\attachment.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\attachment.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\attachment.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\icons.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\image.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\progress.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\success.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\attachment\images\success.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\background\background.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\background\background.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\background\background.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\background\images\bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\background\images\success.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\chart.config.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\charts.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\charts.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\charts.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\images\charts0.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\images\charts1.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\images\charts2.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\images\charts3.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\images\charts4.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\charts\images\charts5.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\emotion.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\emotion.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\emotion.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\0.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\gmap\gmap.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\help\help.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\help\help.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\help\help.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\image.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\image.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\image.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\images\bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\images\icons.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\images\icons.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\images\image.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\images\progress.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\images\success.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\image\images\success.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\internal.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\link\link.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\map\map.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\map\show.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\music\music.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\music\music.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\music\music.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\preview\preview.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\size.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\spechars\spechars.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\spechars\spechars.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\table\dragicon.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\table\edittable.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\table\edittable.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\table\edittable.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\table\edittd.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\table\edittip.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\config.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\images\bg.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\images\pre0.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\images\pre1.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\images\pre2.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\images\pre3.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\images\pre4.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\template.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\template.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\template\template.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\file-icons.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\icons.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\icons.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\image.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\progress.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\success.gif" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\images\success.png" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\video.css" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\video.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\video\video.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\webapp\webapp.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\wordimage\tangram.js" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="Assets\Res\Components\UEditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="Assets\Res\Components\UEditor\index.html" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\addKityFormulaDialog.js" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\defaultFilterFix.js" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\getKfContent.js" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kf-icon.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityFormulaDialog.html" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\custom\bar-bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\custom\bar.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\custom\bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\custom\bottom.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\custom\btn.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\custom\down.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\custom\top.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\custom\up.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\edit\bar-bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\edit\bar-left.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\edit\bar-right.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\edit\thumb-bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\edit\thumb-left.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\scrollbar\edit\thumb-right.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\aleph.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\bbbk.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\beth.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\circleds.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\complement.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\daleth.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\ell.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\eth.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\finv.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\game.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\gimel.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\hbar.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\hslash.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\im.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\mho.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\partial.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\re.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\alphabetic\wp.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\circlearrowleft.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\circlearrowright.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\curvearrowleft.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\curvearrowright.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\downarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\downdownarrows.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\downharpoonleft.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\downharpoonright.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\gets.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\leftarrowtail.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\leftharpoondown.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\leftharpoonup.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\leftleftarrows.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\leftrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\leftrightarrows.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\leftrightharpoons.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\leftrightsquigarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\longleftarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\longleftrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\longrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\looparrowleft.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\looparrowright.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\multimap.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\nearrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\nleftarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\nrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\nwarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\rightarrowtail.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\rightharpoondown.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\rightharpoonup.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\rightleftarrows.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\rightleftharpoons.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\rightrightarrows.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\rightsquigarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\searrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\swarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\to.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\twoheadleftarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\twoheadrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-downarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-leftarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-leftrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-lftarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-lleftarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-longleftarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-longleftrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-longrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-lsh.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-nleftarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-nleftrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-nrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-rightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-rrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-rsh.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-uparrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\u-updownarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\uparrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\updownarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\upharpoonleft.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\upharpoonright.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\arrow\upuparrows.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\brackets\1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\brackets\2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\brackets\3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\brackets\4.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\btn.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\brackets.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\down.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\frac.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\fx.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\int.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\lim.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\open.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\script.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\sin.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\sqrt.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\sum.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\tick.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\button\up.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\a.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\b.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\c.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\d.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\e.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\f.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\g.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\h.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\i.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\j.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\k.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\l.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\m.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\n.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\o.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\p.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\q.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\r.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\s.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\t.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\u.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\v.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\w.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\x.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\y.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\bb\z.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\a.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\b.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\c.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\d.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\e.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\f.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\g.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\h.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\i.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\j.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\k.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\l.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\m.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\n.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\o.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\p.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\q.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\r.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\s.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\t.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\u.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\v.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\w.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\x.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\y.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\cal\z.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\a.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\b.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\c.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\d.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\e.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\f.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\g.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\h.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\i.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\j.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\k.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\l.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\m.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\n.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\o.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\p.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\q.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\r.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\s.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\t.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\u.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ua.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ub.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uc.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ud.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ue.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uf.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ug.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uh.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ui.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uj.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uk.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ul.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\um.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\un.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uo.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\up.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ur.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\us.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ut.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uu.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uv.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uw.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\ux.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uy.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\uz.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\v.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\w.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\x.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\y.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\frak\z.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\alpha.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\beta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\chi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\delta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\epsilon.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\eta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\gamma.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\iota.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\kappa.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\lambda.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\mu.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\nu.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\omega.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\omicron.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\phi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\pi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\psi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\rho.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\sigma.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\tau.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\theta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\upsilon.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\xi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\lower\zeta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\misc\digamma.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\misc\varepsilon.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\misc\varkappa.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\misc\varphi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\misc\varpi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\misc\varrho.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\misc\varsigma.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\misc\vartheta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\alpha.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\beta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\chi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\delta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\epsilon.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\eta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\gamma.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\iota.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\kappa.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\lambda.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\mu.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\nu.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\omega.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\omicron.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\phi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\pi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\psi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\rho.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\sigma.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\tau.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\theta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\upsilon.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\xi.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\greek\upper\zeta.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\aleph.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\approx.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\ast.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\baifenhao.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\because.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\beth.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\blacksquare.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\cap.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\cdot.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\circ.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\cong.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\cup.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\ddots.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\div.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\downarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\eq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\equiv.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\exists.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\forall.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\geq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\gets.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\gg.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\gt.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\in.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\infty.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\leftrightarrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\leq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\ll.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\lt.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\minus.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\mp.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\neg.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\nexists.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\ni.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\partial.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\plus.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\pm.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\propto.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\sim.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\simeq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\surd.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\tanhao.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\therefore.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\times.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\to.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\uparrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\varnothing.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\math\vdots.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\gneqq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\gnsim.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\lneqq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\lnsim.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nbdash-1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\ncong.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\neq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nequiv.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nexists.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\ngeq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\ngtr.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nleq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nless.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nmid.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\notin.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nparallel.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nprec.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nsim.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nsubseteq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nsucc.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nsupseteq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\ntriangleleft.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\ntrianglelefteq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\ntriangleright.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\ntrianglerighteq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nvdash-1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nvdash-2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nvdash-3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\nvdash.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\precnsim.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\subsetneq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\succnsim.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\not\supsetneq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\a.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\b.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\c.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\d.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\e.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\f.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\g.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\h.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\i.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\j.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\k.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\l.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\m.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\n.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\o.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\p.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\q.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\r.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\s.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\t.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\u.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ua.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ub.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uc.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ud.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ue.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uf.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ug.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uh.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ui.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uj.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uk.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ul.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\um.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\un.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uo.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\up.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uq.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ur.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\us.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ut.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uu.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uv.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uw.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\ux.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uy.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\uz.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\v.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\w.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\x.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\y.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\char\rm\z.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\frac\1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\frac\2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\frac\3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\frac\c1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\frac\c2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\frac\c4.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\frac\c5.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\4.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\5.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\6.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\c1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\c2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\func\c3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\int\1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\int\2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\int\3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\int\4.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\int\5.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\int\6.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\large\1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\large\2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\large\3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\other.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\script\1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\script\2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\script\3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\script\4.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\script\c1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\script\c2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\script\c3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\sqrt\1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\sqrt\2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\sqrt\3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\sqrt\4.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\sqrt\c1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\sqrt\c2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\ys\1.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\ys\2.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\images\toolbar\ys\3.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\styles\base.css" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\styles\page.css" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\styles\scrollbar.css" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\styles\ui.css" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\theme\default\fui.css" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\theme\default\fui.min.css" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\theme\default\images\close.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\theme\default\images\down.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\theme\default\images\open.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\assets\theme\default\images\up.png" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\js\jquery-1.11.0.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\js\kity-formula-parser.all.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\js\kity-formula-render.all.js" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\js\kityformula-editor.all.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\js\kitygraph.all.js" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\loading.gif" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\en.js" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\addimage.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\background.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\button.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\copy.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\deletedisable.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\deleteenable.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\listbackground.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\localimage.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\music.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\en\images\upload.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\zh-cn\images\copy.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\zh-cn\images\music.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\zh-cn\images\upload.png" />
+    <Content Include="Assets\Res\Components\UEditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="Assets\Res\Components\UEditor\net\Bin\Newtonsoft.Json.dll" />
+    <Content Include="Assets\Res\Components\UEditor\net\Bin\Newtonsoft.Json.pdb" />
+    <Content Include="Assets\Res\Components\UEditor\net\Bin\Newtonsoft.Json.xml" />
+    <Content Include="Assets\Res\Components\UEditor\net\net.sln" />
+    <Content Include="Assets\Res\Components\UEditor\net\uploadfiles\image\20160506\20160506084716307.png" />
+    <Content Include="Assets\Res\Components\UEditor\net\uploadfiles\image\20160506\201605060852118109547.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\net\uploadfiles\image\20160506\201605060853597888172.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\net\uploadfiles\image\20160506\201605060854442263766.png" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160505\6359806242081580301341314.gif" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160505\6359806351406733342123088.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160505\6359806509587880794715676.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160505\6359806555033480135564664.gif" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359811776638860841929288.gif" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359811823975168322938842.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359811884553133186305791.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359811905876952835668114.png" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359811948202073699488878.png" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359811962245476935803623.png" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359812035254652819071383.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359812048010082385632740.jpg" />
+    <Content Include="Assets\Res\Components\UEditor\net\upload\image\20160506\6359812406421182323364631.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\css\ueditor.css" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\css\ueditor.min.css" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\dialogbase.css" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\anchor.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\arrow.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\arrow_down.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\arrow_up.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\button-bg.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\charts.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\cursor_h.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\cursor_h.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\cursor_v.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\cursor_v.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\filescan.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\highlighted.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\icons-all.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\icons.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\icons.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\icons备份.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\loaderror.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\loading.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\lock.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\pagebreak.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\scale.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\sortable.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\spacer.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\sparator_v.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\table-cell-align.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\upload.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\videologo.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\word.gif" />
+    <Content Include="Assets\Res\Components\UEditor\themes\default\images\wordpaste.png" />
+    <Content Include="Assets\Res\Components\UEditor\themes\iframe.css" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\codemirror\codemirror.css" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\codemirror\codemirror.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\highcharts.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\data.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\map.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\jquery-1.10.2.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\video-js.css" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\video-js.min.css" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\video-js.swf" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\video.dev.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\video.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.css" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="Assets\Res\Components\UEditor\ueditor.all.js" />
+    <Content Include="Assets\Res\Components\UEditor\ueditor.all.min.js" />
+    <Content Include="Assets\Res\Components\UEditor\ueditor.config.js" />
+    <Content Include="Assets\Res\Components\UEditor\ueditor.parse.js" />
+    <Content Include="Assets\Res\Components\UEditor\ueditor.parse.min.js" />
+    <Content Include="Assets\Res\Components\Watermark\jquery.watermark.css" />
+    <Content Include="Assets\Res\Components\Watermark\jquery.watermark.js" />
+    <Content Include="Assets\Res\Components\Watermark\jquery.watermark.min.js" />
+    <Content Include="Assets\Res\Components\zTree\css\awesomeStyle\awesome.css" />
+    <Content Include="Assets\Res\Components\zTree\css\awesomeStyle\img\loading.gif" />
+    <Content Include="Assets\Res\Components\zTree\css\demo.css" />
+    <Content Include="Assets\Res\Components\zTree\css\metroStyle\img\line_conn.png" />
+    <Content Include="Assets\Res\Components\zTree\css\metroStyle\img\loading.gif" />
+    <Content Include="Assets\Res\Components\zTree\css\metroStyle\img\metro.gif" />
+    <Content Include="Assets\Res\Components\zTree\css\metroStyle\img\metro.png" />
+    <Content Include="Assets\Res\Components\zTree\css\metroStyle\metroStyle.css" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\loading.gif" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Assets\Res\Components\zTree\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.all.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.all.min.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.core.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.core.min.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.excheck.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.excheck.min.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.exedit.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.exedit.min.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.exhide.js" />
+    <Content Include="Assets\Res\Components\zTree\js\jquery.ztree.exhide.min.js" />
+    <Content Include="Assets\Res\Css\global.css" />
+    <Content Include="Assets\Res\Css\img\collapse.png" />
+    <Content Include="Assets\Res\Css\img\expand.png" />
+    <Content Include="Assets\Res\Css\img\loading.gif" />
+    <Content Include="Assets\Res\Css\img\wrong.png" />
+    <Content Include="Assets\Res\Css\login\images\buttonbg.png" />
+    <Content Include="Assets\Res\Css\login\images\cloud.png" />
+    <Content Include="Assets\Res\Css\login\images\leftico.png" />
+    <Content Include="Assets\Res\Css\login\images\leftline.gif" />
+    <Content Include="Assets\Res\Css\login\images\leftmenubg.gif" />
+    <Content Include="Assets\Res\Css\login\images\lefttop.gif" />
+    <Content Include="Assets\Res\Css\login\images\libg.png" />
+    <Content Include="Assets\Res\Css\login\images\light.png" />
+    <Content Include="Assets\Res\Css\login\images\line.gif" />
+    <Content Include="Assets\Res\Css\login\images\list.gif" />
+    <Content Include="Assets\Res\Css\login\images\list1.gif" />
+    <Content Include="Assets\Res\Css\login\images\loginbg1.png" />
+    <Content Include="Assets\Res\Css\login\images\loginbg2.png" />
+    <Content Include="Assets\Res\Css\login\images\loginbg3.png" />
+    <Content Include="Assets\Res\Css\login\images\logininfo.png" />
+    <Content Include="Assets\Res\Css\login\images\loginlogo.png" />
+    <Content Include="Assets\Res\Css\login\images\loginpassword.png" />
+    <Content Include="Assets\Res\Css\login\images\loginsj.png" />
+    <Content Include="Assets\Res\Css\login\images\loginuser.png" />
+    <Content Include="Assets\Res\Css\login\images\loginvercode.png" />
+    <Content Include="Assets\Res\Css\login\images\msg.png" />
+    <Content Include="Assets\Res\Css\login\images\navbg.png" />
+    <Content Include="Assets\Res\Css\login\images\righttop.gif" />
+    <Content Include="Assets\Res\Css\login\images\rlist.gif" />
+    <Content Include="Assets\Res\Css\login\images\sj.png" />
+    <Content Include="Assets\Res\Css\login\images\toolbg.gif" />
+    <Content Include="Assets\Res\Css\login\images\topleft.jpg" />
+    <Content Include="Assets\Res\Css\login\images\topright.jpg" />
+    <Content Include="Assets\Res\Css\login\images\ub1.png" />
+    <Content Include="Assets\Res\Css\login\images\user.png" />
+    <Content Include="Assets\Res\Css\login\login.css" />
+    <Content Include="Assets\Res\Css\login\style.css" />
+    <Content Include="Assets\Res\Css\master\treegridlist.css" />
+    <Content Include="Assets\Res\Css\master\list.css" />
+    <Content Include="Assets\Res\Css\master\show.css" />
+    <Content Include="Assets\Res\Css\master\add.css" />
+    <Content Include="Assets\Res\Css\master\treelist.css" />
+    <Content Include="Assets\Res\Css\qui.css" />
+    <Content Include="Assets\Res\Css\style.css" />
+    <Content Include="Assets\Res\Font\font-awesome\font-awesome-ie7.css" />
+    <Content Include="Assets\Res\Font\font-awesome\font-awesome-ie7.min.css" />
+    <Content Include="Assets\Res\Font\font-awesome\font-awesome.css" />
+    <Content Include="Assets\Res\Font\font-awesome\font-awesome.min.css" />
+    <Content Include="Assets\Res\Images\defaultLeaf.gif" />
+    <Content Include="Assets\Res\Images\folderClose.png" />
+    <Content Include="Assets\Res\Images\folderOpen.png" />
+    <Content Include="Assets\Res\Images\form-icon.png" />
+    <Content Include="Assets\Res\Images\ico\jk.png" />
+    <Content Include="Assets\Res\Images\ico\jk1.png" />
+    <Content Include="Assets\Res\Images\minus.png" />
+    <Content Include="Assets\Res\Images\plus.png" />
+    <Content Include="Assets\Res\Images\bs_con_c.png" />
+    <Content Include="Assets\Res\Images\skin\bg.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg10.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg11.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg12.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg13.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg2.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg3.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg3.png" />
+    <Content Include="Assets\Res\Images\skin\bg4.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg5.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg8.jpg" />
+    <Content Include="Assets\Res\Images\skin\bg9.jpg" />
+    <Content Include="Assets\Res\Images\skin\logcg.png" />
+    <Content Include="Assets\Res\Images\skin\small-bg.jpg" />
+    <Content Include="Assets\Res\Images\skin\small-bg10.jpg" />
+    <Content Include="Assets\Res\Images\skin\small-bg11.jpg" />
+    <Content Include="Assets\Res\Images\skin\small-bg12.jpg" />
+    <Content Include="Assets\Res\Images\skin\small-bg13.jpg" />
+    <Content Include="Assets\Res\Images\skin\small-bg2.jpg" />
+    <Content Include="Assets\Res\Images\skin\small-bg5.jpg" />
+    <Content Include="Assets\Res\Images\skin\small-bg8.jpg" />
+    <Content Include="Assets\Res\Images\skin\small-bg9.jpg" />
+    <Content Include="Assets\Res\Images\avatar.jpg" />
+    <Content Include="Assets\Res\Sound\msg.wav" />
+    <Content Include="Assets\Res\Sound\tips.mp3" />
+    <Content Include="Global.asax" />
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Log\Application.log" />
+    <Content Include="Log\Exception.log" />
+    <Content Include="Config\AppConfig.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Main\Views\CustomerHome\IndexLiger.cshtml" />
+    <Content Include="Areas\Main\Views\Web.config" />
+    <Content Include="Assets\Res\Components\layui\font\iconfont.eot" />
+    <Content Include="Assets\Res\Components\layui\font\iconfont.svg" />
+    <Content Include="Assets\Res\Components\layui\font\iconfont.ttf" />
+    <Content Include="Assets\Res\Components\layui\font\iconfont.woff" />
+    <Content Include="Assets\Res\Font\font-awesome\fontawesome-webfont.eot" />
+    <Content Include="Assets\Res\Font\font-awesome\fontawesome-webfont.svg" />
+    <Content Include="Assets\Res\Font\font-awesome\fontawesome-webfont.ttf" />
+    <Content Include="Assets\Res\Font\font-awesome\fontawesome-webfont.woff" />
+    <Content Include="Assets\Res\Font\font-awesome\FontAwesome.otf" />
+    <Content Include="Assets\Basic\Master\tpl\ListTpl.cshtml" />
+    <Content Include="Assets\Res\Components\zTree\css\awesomeStyle\awesome.less" />
+    <Content Include="Assets\Res\Components\zTree\css\awesomeStyle\fa.less" />
+    <Content Include="Assets\Res\Components\Uploadify\net\DeleteHandler.ashx" />
+    <Content Include="Assets\Res\Components\Uploadify\net\UploadHandler.ashx" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\resource\KF_AMS_BB.woff" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\resource\KF_AMS_CAL.woff" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\resource\KF_AMS_FRAK.woff" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\resource\KF_AMS_MAIN.woff" />
+    <Content Include="Assets\Res\Components\UEditor\kityformula-plugin\kityformula\resource\KF_AMS_ROMAN.woff" />
+    <Content Include="Assets\Res\Components\UEditor\net\config.json" />
+    <Content Include="Assets\Res\Components\UEditor\net\controller.ashx" />
+    <Content Include="Assets\Res\Components\UEditor\net\net.v11.suo" />
+    <Content Include="Assets\Res\Components\UEditor\net\README.md" />
+    <Content Include="Assets\Res\Components\UEditor\net\Web.config" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\jquery-1.10.2.min.map" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\font\vjs.eot" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\font\vjs.svg" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\font\vjs.ttf" />
+    <Content Include="Assets\Res\Components\UEditor\third-party\video-js\font\vjs.woff" />
+    <None Include="Properties\PublishProfiles\IAESRelease.pubxml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Account\Error.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\_Show.cshtml" />
+    <Content Include="Views\Shared\_Add.cshtml" />
+    <Content Include="Views\Shared\_TreeList.cshtml" />
+    <Content Include="Views\Shared\_MainIndex.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Admin\TIndex.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Shared\_TreeColspanList.cshtml" />
+    <Content Include="Views\Shared\_TreeGridList.cshtml" />
+    <Content Include="Views\UserCenter\UserCenter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="UploadFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business.Controller\Business.Controller.csproj">
+      <Project>{1d950934-90c3-451f-828a-4cb40bf1a64e}</Project>
+      <Name>Business.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business.Model\Business.Model.csproj">
+      <Project>{4c2bb1ca-f0e4-4ff5-a7c6-ae590cd599a8}</Project>
+      <Name>Business.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manage.Core\Manage.Core.csproj">
+      <Project>{be94bce9-6070-4af6-8575-bc8f63f01339}</Project>
+      <Name>Manage.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manage.Framework\Manage.Framework.csproj">
+      <Project>{4febbda2-dc51-4c22-8f8d-b1aaf9f47e7d}</Project>
+      <Name>Manage.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\AjaxLogin.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Administrator\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\AppSetting\Setting.cshtml" />
+    <Content Include="Views\CacheManager\List.cshtml" />
+    <Content Include="Views\Dictionary\Add.cshtml" />
+    <Content Include="Views\Dictionary\Edit.cshtml" />
+    <Content Include="Views\Dictionary\List.cshtml" />
+    <Content Include="Views\Dictionary\Show.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\IndexLiger.cshtml" />
+    <Content Include="Views\Menu\Add.cshtml" />
+    <Content Include="Views\Menu\Edit.cshtml" />
+    <Content Include="Views\Menu\List.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Menu\RoleMenuList.cshtml" />
+    <Content Include="Views\Menu\Show.cshtml" />
+    <Content Include="Views\Organization\Add.cshtml" />
+    <Content Include="Views\Organization\Edit.cshtml" />
+    <Content Include="Views\Organization\List.cshtml" />
+    <Content Include="Views\Organization\OrganizationUserList.cshtml" />
+    <Content Include="Views\Organization\Show.cshtml" />
+    <Content Include="Views\Role\Add.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\List.cshtml" />
+    <Content Include="Views\Role\UserRoleList.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_List.cshtml" />
+    <Content Include="Views\User\Add.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\User\Show.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>26152</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9407/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

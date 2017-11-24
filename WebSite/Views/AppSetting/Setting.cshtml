@@ -1,0 +1,388 @@
+﻿@model Manage.Framework.AppConfig
+@{
+    ViewBag.Title = "系统设置";
+    Layout = "~/Views/Shared/_Add.cshtml";
+
+    ViewBag.Modules = "AppSetting";
+    ViewBag.ModulesType = "Manager";
+    ViewBag.Ext = "Add";
+}
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>系统定义</legend>
+</fieldset>
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">系统名称</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.AppName,
+        new
+        {
+            @class = "layui-input",
+            lay_verify = "q-required",
+            placeholder = "请输入系统名称"
+        })
+    </div>
+</div>
+<div class="layui-inline">
+    <label class="layui-form-label add-k">版本号</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Version,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">首页风格</label>
+    <div class="layui-input-inline add-v">
+        @Html.DropDownListFor(c => c.HomeStyle,
+        new SelectList(typeof(HomeStyle).EnumToSelectList(), "Value", "Text", "0"))
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">
+        首页LOGO地址
+    </label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.LogoUrl,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+
+
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>用户参数</legend>
+</fieldset>
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">默认密码</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.DefaultPassword,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>登录相关</legend>
+</fieldset>
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">登录地址</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.LoginAction,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">登录页面</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.LoginPage,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">主页地址</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.IndexAction,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">主页页面</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.IndexPage,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">错误页地址</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.ErrorPageAction,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">未授权页地址</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.UnauthorizedPageAction,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">登录页Logo</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.LoginLogoUrl,
+            new
+            {
+                @class = "layui-input"
+            })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">启用验证码</label>
+    <div class="layui-input-inline add-v border-v">
+        <input type="checkbox" id="UseValidateCode" name="UseValidateCode" lay-skin = "switch" lay-text = "是|否" value="@(Model.UseValidateCode)"/>
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">登录页背景图</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.LoginBackImgUrl,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">启用Cookie</label>
+    <div class="layui-input-inline add-v border-v">
+        <input type="checkbox" id="EnableCookie" name="EnableCookie" 
+            lay-skin = "switch" 
+            lay-text = "是|否" 
+            value="@(Model.EnableCookie)"/>
+    </div>
+</div>
+
+<div class="layui-inline EnableCookie">
+    <label class="layui-form-label add-k">过期时间(天)</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.CookieExpiresTime,
+        new
+        {
+            @class = "layui-input",
+            lay_verify="q-EnableCookie|q-required",
+            placeholder="请输入过期时间"
+        })
+    </div>
+</div>
+
+
+
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>单点登录</legend>
+</fieldset>
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">单点登录</label>
+    <div class="layui-input-inline add-v border-v">
+        <input type="checkbox" id="SSOEnable" name="SSOEnable" lay-skin = "switch" lay-text = "是|否" value="@(Model.SSOEnable)"/>
+    </div>
+</div>
+
+
+<div class="layui-form-item SSOEnable">
+    <div class="layui-block">
+        <label class="layui-form-label add-k">单点模式</label>
+        <div class="layui-input-block add-v border-v">
+            @Html.RadioButtonFor(c => c.SSOType,
+            "1",
+            new
+            {
+                @title = "服务端",
+                @id = "SSOType1"
+            })
+
+            @Html.RadioButtonFor(c => c.SSOType,
+            "2",
+            new
+            {
+                @title = "远程客户端",
+                @id = "SSOType2"
+            })
+
+            @Html.RadioButtonFor(c => c.SSOType,
+            "3",
+            new
+            {
+                @title = "本地客户端",
+                @id = "SSOType3"
+            })
+        </div>
+    </div>
+
+
+</div>
+
+<div class="SSOEnable">
+    <div class="layui-inline SSOType2 SSOType3">
+        <label class="layui-form-label add-k">登录地址</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.SSOServerUrl,
+            new
+            {
+                @class = "layui-input"
+            })
+        </div>
+    </div>
+
+    <div class="layui-inline SSOType2">
+        <label class="layui-form-label add-k">数据地址</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.SSOFactoryUrl,
+            new
+            {
+                @class = "layui-input"
+            })
+        </div>
+    </div>
+
+    <div class="layui-inline SSOType3">
+        <label class="layui-form-label add-k">数据配置文件</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.SSOFactoryConfig,
+            new
+            {
+                @class = "layui-input"
+            })
+        </div>
+    </div>
+
+    <div class="layui-inline">
+        <label class="layui-form-label add-k">系统注册号</label>
+        <div class="layui-input-inline add-v">
+            @Html.TextBoxFor(c => c.SSORegisterID,
+            new
+            {
+                @class = "layui-input"
+            })
+        </div>
+    </div>
+</div>
+
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>日志参数</legend>
+</fieldset>
+
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">启用日志</label>
+    <div class="layui-input-inline add-v border-v">
+        <input type="checkbox" id="LogEnable" name="LogEnable" lay-skin = "switch" lay-text = "是|否" value="@(Model.LogEnable)"/>
+    </div>
+</div>
+
+<div class="layui-inline LogEnable">
+    <label class="layui-form-label add-k">日志类型</label>
+    <div class="layui-input-inline add-v">
+        @Html.DropDownListFor(c => c.LogType,
+        new SelectList(typeof(HomeStyle).EnumToSelectList(), "Value", "Text", "0"))
+    </div>
+</div>
+
+
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>其他设置</legend>
+</fieldset>
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">水印文字</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.Watermark,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">二维码Url</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.QRCodeUrl,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">短信发送企业代码</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.SmsCompanyCode,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">短信发送账号</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.SmsUid,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>
+
+<div class="layui-inline">
+    <label class="layui-form-label add-k">短信发送密码</label>
+    <div class="layui-input-inline add-v">
+        @Html.TextBoxFor(c => c.SmsPassword,
+        new
+        {
+            @class = "layui-input"
+        })
+    </div>
+</div>

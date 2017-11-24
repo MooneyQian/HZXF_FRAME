@@ -1,0 +1,283 @@
+html {
+	overflow:hidden;
+}
+
+body {
+	color:#9ea7b3;
+	font-family:"Open Sans", Arial, sans-serif !important;
+	font-size:13px !important; line-height:20px;
+	overflow:hidden; min-height:100%; z-index:-2;
+	margin:0px !important;
+	-moz-background-size:cover; -webkit-background-size:cover;
+	-o-background-size:cover; background-size:cover;
+}
+
+.qui-body-background {
+    background:url(../Images/skin/bg.jpg) no-repeat top center fixed;
+}
+
+.qui-frame-top {
+	height:60px; border-bottom:none;
+}
+
+#logo {
+	left:19px; position:relative; top:18px; max-width:400px;
+}
+
+#logo h1,#logo-mobile h1 {
+	font-size:24px; font-weight:200; letter-spacing:1px;
+	text-decoration:inherit; text-transform:uppercase; color:#fff;
+}
+
+#logo h1 span,#logo-mobile h1 span {
+	font-size:11px; margin-left:0px; position:relative; top:-1px;
+	background:none 0px 0px repeat scroll rgba(0, 0, 0, 0.2);
+	border-radius:3px; padding:2px 5px;
+}
+
+.qui-frame-mainframe {
+	width:100%; border:none;
+}
+
+.qui-frame-tabmargin {
+	margin-top:4px; margin-left:4px;
+}
+
+.qui-frame-left {
+	height:45px; border-top:1px solid #F9F9F9;
+	border-bottom:1px solid #CCCCCC;
+	font-family:Microsoft Yahei, \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, Arial,
+		Verdana, sans-serif;
+}
+
+.qui-frame-left .submenu i {
+	
+}
+
+.user-photo {
+	margin-bottom:15px;
+}
+
+.user-photo a.img {
+	display:block; width:76px; height:76px; margin:0 auto;
+	margin-bottom:15px;
+}
+
+.user-photo a.img img {
+	display:block; border:none; width:100%; height:100%; border-radius:50%;
+	-webkit-border-radius:50%; -moz-border-radius:50%;
+	border:3px solid #44576b;
+}
+
+.qui-body {
+	overflow:hidden; 
+    background-color:#fff;
+	border-radius:3px;
+    right:8px;
+}
+
+.profit {
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.4);
+    position: relative;
+    margin-bottom: 15px;
+    z-index: 0;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #cdcdcd;
+    margin-right: 30px;
+}
+
+.profit .headline {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+}
+
+.profit .headline h3 {
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 15px;
+}
+
+.profit .headline h3 span {
+    /*background-color: rgb(255, 107, 107);*/
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.profit .headline .titleClose {
+    font-size: 16px;
+    position: absolute;
+    right: 17px;
+    top: 10px;
+}
+
+.gone {
+    color: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.profit .value {
+    letter-spacing: -3px;
+    position: relative;
+    text-align: center;
+    /*color: rgb(255, 107, 107);*/
+    border-radius: 6px;
+    font: 5em "Open Sans";
+    margin:20px auto 6px auto;
+}
+
+.profit .value span {
+    font-size: 60px;
+    margin-right: 10px;
+    position: relative;
+    top: 0px;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.profit .profit-line {
+    text-align: center;
+}
+
+.start-min {
+    font-size: 30px !important;
+    text-indent: 0px;
+}
+
+.tabnobottom {
+	border-bottom:1px solid rgba(0, 0, 0, 0.2);
+	box-shadow:0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.tabtitle { 
+}
+
+.tabtitle i {
+	font-size:14px;
+	margin-right:3px;
+}
+.tabtitle span {
+}
+
+.qui-top-i {
+	margin-left:-10px; margin-right:5px; font-size:14px;
+}
+
+.qui-footer {
+	/*border-top:1px solid #ccc;*/
+	color:#fff;
+	background-color:unset !important;
+	    
+}
+
+.qui-footer p {
+    color: rgba(255, 255, 255, .9);
+    font-size: 14px;
+    background-color: rgba(0,0,0,0.2);
+    margin: 0 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.back-red {
+    background-color:rgb(255, 107, 107);
+}
+.font-red {
+    color:rgb(255, 107, 107);
+}
+
+.back-yellow {
+    background-color:#FFA200;
+}
+.font-yellow {
+    color:#FFA200;
+}
+
+.back-green {
+    background-color:#45B6B0;
+}
+.font-green {
+    color:#45B6B0;
+}
+
+.back-blue {
+    background-color:#65C3DF;
+}
+.font-blue {
+    color:#65C3DF;
+}
+
+.rightcorner {
+    position: absolute;
+    right: 17px;
+    top: 18px;
+}
+
+.qui-btn-normal {
+    background-color:#0DB8DF;
+    opacity:1;
+}
+
+.qui-skin-common .layui-layer-title {
+    background: #f2f2f2;
+    color: #333;
+    border: 1px solid #e6e6e6;
+    border-radius:5px;
+}
+
+.tab-listen {
+    top: 36px;
+    left: 68px;
+}
+
+.info-settings {
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 12px;
+    height: 82px;
+    width: 82px;
+    line-height: 82px;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.qui-select-pics {
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+
+/**** layui fixed start **/
+.layui-layout-admin .layui-header {
+    background-color: unset;
+}
+
+.layui-table tbody tr:hover, .layui-table-click, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool {
+    background-color: #EAF6FE;
+}
+
+.layui-input, .layui-select, .layui-textarea {
+    height: 30px;
+}
+
+.layui-tab-content {
+    padding: 10px 0px 0px 5px;
+}
+
+/**** layui fixed end **/

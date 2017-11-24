@@ -1,0 +1,153 @@
+D:\xc\demo\Business.Controller\obj\Debug\Business.Controller.csprojResolveAssemblyReference.cache
+D:\xc\demo\Business.Controller\bin\Debug\Business.Controller.dll
+D:\xc\demo\Business.Controller\bin\Debug\Business.Controller.pdb
+D:\xc\demo\Business.Controller\bin\Debug\Aspose.Cells.dll
+D:\xc\demo\Business.Controller\bin\Debug\Business.Model.dll
+D:\xc\demo\Business.Controller\bin\Debug\Iesi.Collections.dll
+D:\xc\demo\Business.Controller\bin\Debug\Manage.Core.dll
+D:\xc\demo\Business.Controller\bin\Debug\Manage.Framework.dll
+D:\xc\demo\Business.Controller\bin\Debug\NHibernate.dll
+D:\xc\demo\Business.Controller\bin\Debug\Aspose.Words.dll
+D:\xc\demo\Business.Controller\bin\Debug\log4net.dll
+D:\xc\demo\Business.Controller\bin\Debug\Business.Model.pdb
+D:\xc\demo\Business.Controller\bin\Debug\Manage.Core.pdb
+D:\xc\demo\Business.Controller\bin\Debug\Manage.Core.xml
+D:\xc\demo\Business.Controller\bin\Debug\Manage.Framework.pdb
+D:\xc\demo\Business.Controller\bin\Debug\Manage.Framework.xml
+D:\xc\demo\Business.Controller\obj\Debug\Business.Controller.dll
+D:\xc\demo\Business.Controller\obj\Debug\Business.Controller.pdb
+D:\xc\history\demo\Business.Controller\bin\Debug\Business.Controller.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\Business.Controller.pdb
+D:\xc\history\demo\Business.Controller\bin\Debug\Aspose.Cells.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\Business.Model.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\Iesi.Collections.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\Manage.Core.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\Manage.Framework.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\NHibernate.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\Aspose.Words.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\log4net.dll
+D:\xc\history\demo\Business.Controller\bin\Debug\Business.Model.pdb
+D:\xc\history\demo\Business.Controller\bin\Debug\Manage.Core.pdb
+D:\xc\history\demo\Business.Controller\bin\Debug\Manage.Core.xml
+D:\xc\history\demo\Business.Controller\bin\Debug\Manage.Framework.pdb
+D:\xc\history\demo\Business.Controller\bin\Debug\Manage.Framework.xml
+D:\xc\history\demo\Business.Controller\obj\Debug\Business.Controller.csprojResolveAssemblyReference.cache
+D:\xc\history\demo\Business.Controller\obj\Debug\Business.Controller.dll
+D:\xc\history\demo\Business.Controller\obj\Debug\Business.Controller.pdb
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Business.Controller.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Business.Controller.pdb
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Aspose.Cells.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Business.Model.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Iesi.Collections.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Manage.Core.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Manage.Framework.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\NHibernate.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Aspose.Words.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\log4net.dll
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Business.Model.pdb
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Manage.Core.pdb
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Manage.Core.xml
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Manage.Framework.pdb
+D:\xc\history\HZXF.MVC\Business.Controller\bin\Debug\Manage.Framework.xml
+D:\xc\history\HZXF.MVC\Business.Controller\obj\Debug\Business.Controller.csprojResolveAssemblyReference.cache
+D:\xc\history\HZXF.MVC\Business.Controller\obj\Debug\Business.Controller.dll
+D:\xc\history\HZXF.MVC\Business.Controller\obj\Debug\Business.Controller.pdb
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Business.Controller.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Business.Controller.pdb
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Aspose.Cells.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Business.Model.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Iesi.Collections.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Manage.Core.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Manage.Framework.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\NHibernate.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Aspose.Words.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\log4net.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Business.Model.pdb
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Manage.Core.pdb
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Manage.Core.xml
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Manage.Framework.pdb
+E:\xc\Projects\HZXF.MVC\Business.Controller\bin\Debug\Manage.Framework.xml
+E:\xc\Projects\HZXF.MVC\Business.Controller\obj\Debug\Business.Controller.csprojResolveAssemblyReference.cache
+E:\xc\Projects\HZXF.MVC\Business.Controller\obj\Debug\Business.Controller.dll
+E:\xc\Projects\HZXF.MVC\Business.Controller\obj\Debug\Business.Controller.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Business.Controller.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Business.Controller.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Aspose.Cells.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Business.Model.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Iesi.Collections.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\NHibernate.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Aspose.Words.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\log4net.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Business.Model.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.xml
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.xml
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.csprojResolveAssemblyReference.cache
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Business.Controller.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Business.Controller.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Aspose.Cells.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Business.Model.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\HlSmsApi.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Iesi.Collections.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Newtonsoft.Json.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\NHibernate.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\NPinyin.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Aspose.Words.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\log4net.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Business.Model.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.xml
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.xml
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Newtonsoft.Json.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\bin\Debug\Newtonsoft.Json.xml
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.csprojResolveAssemblyReference.cache
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Business.Controller.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Business.Controller.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Aspose.Cells.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Business.Model.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Iesi.Collections.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\NHibernate.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Aspose.Words.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\log4net.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Business.Model.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Core.xml
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Manage.Framework.xml
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Newtonsoft.Json.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\bin\Debug\Newtonsoft.Json.xml
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.csprojResolveAssemblyReference.cache
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Business.Controller\obj\Debug\Business.Controller.pdb
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Business.Controller.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Business.Controller.pdb
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Aspose.Cells.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Business.Model.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Iesi.Collections.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Manage.Core.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Manage.Framework.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\NHibernate.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Aspose.Words.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\log4net.dll
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Business.Model.pdb
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Manage.Core.pdb
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Manage.Core.xml
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Manage.Framework.pdb
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Manage.Framework.xml
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Newtonsoft.Json.pdb
+F:\project\HZXF_FRAME\Business.Controller\bin\Debug\Newtonsoft.Json.xml
+F:\project\HZXF_FRAME\Business.Controller\obj\Debug\Business.Controller.csprojResolveAssemblyReference.cache
+F:\project\HZXF_FRAME\Business.Controller\obj\Debug\Business.Controller.dll
+F:\project\HZXF_FRAME\Business.Controller\obj\Debug\Business.Controller.pdb

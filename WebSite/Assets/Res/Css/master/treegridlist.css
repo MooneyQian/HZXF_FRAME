@@ -1,0 +1,32 @@
+﻿html {
+    overflow-y:auto;
+}
+
+#editbody {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-top:1px solid #eee;
+}
+
+#treeGridList {
+    margin-bottom: 60px;
+}
+
+.image_hand {
+    margin-top: -3px;
+    margin-right: 5px;
+}
+
+.image_nohand {
+    margin-top: -5px;
+    margin-right: 5px;
+}
+
+.checktdclass {
+    cursor: pointer;
+}

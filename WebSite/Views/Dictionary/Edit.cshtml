@@ -1,0 +1,138 @@
+﻿@model Manage.Core.Models.Dictionary_S
+@{
+    ViewBag.Title = "编辑字典";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section HeadContent{
+    <script type="text/javascript">
+        var CTRL = { art_parent: null, valform: null, dialog: null }
+        $(function () {
+            //验证提示动态代码
+            $("*[datatype]").each(function (index) {
+                $(this).before("<span class='prompt' style='position:relative'><div class='info' onMouseOut='javascript:$(this).hide();'><span class='Validform_checktip'></span><span class='dec'><s class='dec1'>&#9670;</s><s class='dec2'>&#9670;</s></span></div></span>");
+            });
+
+            //验证与提交（可以通过CTRL.valform.check()进行验证）
+            CTRL.valform = $(".valform").Validform({
+                tiptype: tiptype8,
+                tipSweep: false,
+                ajaxPost: true,
+                btnSubmit: "#asave",
+                callback: function () {
+                    CTRL.dialog = $.dialog.tips("数据处理中，请稍候...");
+                    $.post('@Url.Action("_Edit")' + '?randnum=' + Math.random(), $('form').serializeArray()).done(function (data) {
+                        if (CTRL.dialog) CTRL.dialog.close();
+                        $.dialog.alert(data.Message, function () {
+                            if (!data.IsError) {
+                                if (parent.FUNC.afterEdit)
+                                    parent.FUNC.afterEdit(data.Data);
+                            }
+                        });
+                    });
+                },
+                //特殊处理帐号名称的
+                datatype:
+                    {
+                        "DictCode": function (gets, obj, curform, regxp) {/*参数gets是获取到的表单元素值，obj为当前表单元素，curform为当前验证的表单，regxp为内置的一些正则表达式的引用。*/
+                            var msg = "";
+                            if ($("#ParDictID").val() != "0" && gets == "") {
+                                msg = "字典编码不可为空！";
+                            } else if ($("#ParDictID").val() != "0") {
+                                var url = '@Url.Action("_DictCodeIsSuc")';
+                                $.ajax({
+                                    type: "POST",
+                                    url: url,
+                                    async: false,
+                                    data: { ID: $("#ID").val(), DictType: '@(Model.DictType)', DictCode: gets, n: Math.random() },
+                                    success: function (res) {
+                                        if (res == true)
+                                            msg = "该字典编码已存在！";
+                                    }
+                                });
+                            }
+                            if (msg != "")
+                                return msg;
+                            else
+                                return true;
+                        }
+                    }
+            });
+
+            //初始化日期控件
+            //$(".Wdate").each(function () { $(this).focus(function () { WdatePicker(); }) });
+
+            //初始化下拉框样式
+            //$('#UserType').ligerComboBox({ width: "90%" });
+
+        });
+
+    </script>
+}
+@using (Html.BeginForm("", "", FormMethod.Post, new { @class = "valform" }))
+{
+    @Html.HiddenFor(c => c.ID)
+    <div class="pop-page">
+        <div class="formtitle">编辑字典</div>
+        <table class="tableread" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td class="table-title" style="width: 90px;">上级节点：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.DisplayFor(c => c.ParDictName)
+                </td>
+                <td class="table-title" style="width: 90px;">字典类型：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.DisplayFor(c => c.DictType)
+                </td>
+                <td class="table-title" style="width: 90px;">字典名称：
+                </td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.TextBoxFor(c => c.DictName, new { @class = "k-input k-notnull pw90", datatype = "*", nullmsg = "请输入字典名称！", errormsg = "请输入字典名称！" })
+                </td>
+            </tr>
+            <tr>
+                @if (Model.ParDictID != "0")
+                {
+                    <td class="table-title">字典编码：</td>
+                    <td class="table-value">
+                        @Html.TextBoxFor(c => c.DictCode, new { @class = (Model.ParDictID == "0" ? "k-input pw90" : "k-input k-notnull pw90"), datatype = "DictCode" })
+                    </td>
+                }
+                <td class="table-title">排序号：</td>
+                <td class="table-value">
+                    @Html.TextBoxFor(c => c.DictOrder, new { @class = "k-input w50" })
+                </td>
+                <td class="table-title">是否缓存：</td>
+                <td class="table-value">
+                    @if (Model.ParDictID == "0")
+                    {
+                        @Html.CheckBox("IsCache", (Model.IsCache ?? 0) == 1, new { @class = "k-checkbox", value="1" })
+                        @Html.Hidden("IsCache_Old", Model.IsCache ?? 0)                 
+                    }
+                    else
+                    {
+                        @Html.CheckBox("IsCache_2", (Model.IsCache ?? 0) == 1, new { @class = "k-checkbox", @disabled = "disabled", @title = "顶级节点可设置" }) 
+                        @Html.HiddenFor(c => c.IsCache)                 
+                    }
+                </td>
+                @if (Model.ParDictID == "0")
+                {
+                    <td class="table-title">&nbsp;</td>
+                    <td class="table-value">&nbsp;</td>
+                }
+            </tr>
+            <tr>
+                <td class="table-title">字典描述：</td>
+                <td class="table-value" colspan="5">
+                    @Html.TextAreaFor(c => c.DictDesc, 3, 5, new { @class = "k-textarea pw90" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: center; height: 40px; line-height: 40px;">
+                    <a title="重置" class="btn1" href="javascript:$('form').get(0).reset();">重置<i></i></a>
+                    <a title="保存" class="btn2" href="javascript:;" id="asave">保存<i></i></a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="pop-page-bar">
+    </div>
+}

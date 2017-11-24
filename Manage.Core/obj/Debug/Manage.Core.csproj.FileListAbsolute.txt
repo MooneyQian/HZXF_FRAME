@@ -1,0 +1,112 @@
+D:\xc\demo\Manage.Core\bin\Debug\Manage.Core.xml
+D:\xc\demo\Manage.Core\bin\Debug\Manage.Core.dll
+D:\xc\demo\Manage.Core\bin\Debug\Manage.Core.pdb
+D:\xc\demo\Manage.Core\bin\Debug\Aspose.Cells.dll
+D:\xc\demo\Manage.Core\bin\Debug\Aspose.Words.dll
+D:\xc\demo\Manage.Core\bin\Debug\log4net.dll
+D:\xc\demo\Manage.Core\bin\Debug\Manage.Framework.dll
+D:\xc\demo\Manage.Core\bin\Debug\NHibernate.dll
+D:\xc\demo\Manage.Core\bin\Debug\Iesi.Collections.dll
+D:\xc\demo\Manage.Core\bin\Debug\Manage.Framework.pdb
+D:\xc\demo\Manage.Core\bin\Debug\Manage.Framework.xml
+D:\xc\demo\Manage.Core\obj\Debug\Manage.Core.csprojResolveAssemblyReference.cache
+D:\xc\demo\Manage.Core\obj\Debug\Manage.Core.dll
+D:\xc\demo\Manage.Core\obj\Debug\Manage.Core.pdb
+D:\xc\history\demo\Manage.Core\bin\Debug\Manage.Core.xml
+D:\xc\history\demo\Manage.Core\bin\Debug\Manage.Core.dll
+D:\xc\history\demo\Manage.Core\bin\Debug\Manage.Core.pdb
+D:\xc\history\demo\Manage.Core\bin\Debug\Aspose.Cells.dll
+D:\xc\history\demo\Manage.Core\bin\Debug\Aspose.Words.dll
+D:\xc\history\demo\Manage.Core\bin\Debug\log4net.dll
+D:\xc\history\demo\Manage.Core\bin\Debug\Manage.Framework.dll
+D:\xc\history\demo\Manage.Core\bin\Debug\NHibernate.dll
+D:\xc\history\demo\Manage.Core\bin\Debug\Iesi.Collections.dll
+D:\xc\history\demo\Manage.Core\bin\Debug\Manage.Framework.pdb
+D:\xc\history\demo\Manage.Core\bin\Debug\Manage.Framework.xml
+D:\xc\history\demo\Manage.Core\obj\Debug\Manage.Core.csprojResolveAssemblyReference.cache
+D:\xc\history\demo\Manage.Core\obj\Debug\Manage.Core.dll
+D:\xc\history\demo\Manage.Core\obj\Debug\Manage.Core.pdb
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Manage.Core.xml
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Manage.Core.dll
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Manage.Core.pdb
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Aspose.Cells.dll
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Aspose.Words.dll
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\log4net.dll
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Manage.Framework.dll
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\NHibernate.dll
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Iesi.Collections.dll
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Manage.Framework.pdb
+D:\xc\history\HZXF.MVC\Manage.Core\bin\Debug\Manage.Framework.xml
+D:\xc\history\HZXF.MVC\Manage.Core\obj\Debug\Manage.Core.csprojResolveAssemblyReference.cache
+D:\xc\history\HZXF.MVC\Manage.Core\obj\Debug\Manage.Core.dll
+D:\xc\history\HZXF.MVC\Manage.Core\obj\Debug\Manage.Core.pdb
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Manage.Core.xml
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Manage.Core.dll
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Manage.Core.pdb
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Aspose.Cells.dll
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Aspose.Words.dll
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\log4net.dll
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Manage.Framework.dll
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\NHibernate.dll
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Iesi.Collections.dll
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Manage.Framework.pdb
+E:\xc\Projects\HZXF.MVC\Manage.Core\bin\Debug\Manage.Framework.xml
+E:\xc\Projects\HZXF.MVC\Manage.Core\obj\Debug\Manage.Core.csprojResolveAssemblyReference.cache
+E:\xc\Projects\HZXF.MVC\Manage.Core\obj\Debug\Manage.Core.dll
+E:\xc\Projects\HZXF.MVC\Manage.Core\obj\Debug\Manage.Core.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.xml
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Aspose.Cells.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Aspose.Words.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\log4net.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\NHibernate.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Iesi.Collections.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.pdb
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.xml
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.csprojResolveAssemblyReference.cache
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.dll
+D:\web\Equipment inspection system\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.xml
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Aspose.Cells.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Aspose.Words.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\log4net.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\NHibernate.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Iesi.Collections.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.pdb
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.xml
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.csprojResolveAssemblyReference.cache
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.dll
+E:\code\qianhlnew\Equipment inspection system\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.xml
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Core.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Aspose.Cells.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Aspose.Words.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\log4net.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\NHibernate.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Iesi.Collections.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\bin\Debug\Manage.Framework.xml
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.csprojResolveAssemblyReference.cache
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Core\obj\Debug\Manage.Core.pdb
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Manage.Core.xml
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Manage.Core.dll
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Manage.Core.pdb
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Aspose.Cells.dll
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Aspose.Words.dll
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\log4net.dll
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Manage.Framework.dll
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\NHibernate.dll
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Iesi.Collections.dll
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Manage.Framework.pdb
+F:\project\HZXF_FRAME\Manage.Core\bin\Debug\Manage.Framework.xml
+F:\project\HZXF_FRAME\Manage.Core\obj\Debug\Manage.Core.csprojResolveAssemblyReference.cache
+F:\project\HZXF_FRAME\Manage.Core\obj\Debug\Manage.Core.dll
+F:\project\HZXF_FRAME\Manage.Core\obj\Debug\Manage.Core.pdb

@@ -1,0 +1,13 @@
+D:\xc\history\demo\Manage.Framework\bin\Release\Manage.Framework.dll
+D:\xc\history\demo\Manage.Framework\bin\Release\Manage.Framework.pdb
+D:\xc\history\demo\Manage.Framework\bin\Release\Iesi.Collections.dll
+D:\xc\history\demo\Manage.Framework\bin\Release\NHibernate.dll
+D:\xc\history\demo\Manage.Framework\obj\Release\Manage.Framework.dll
+D:\xc\history\demo\Manage.Framework\obj\Release\Manage.Framework.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Release\Manage.Framework.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Release\Manage.Framework.pdb
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Release\Iesi.Collections.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\bin\Release\NHibernate.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\obj\Release\Manage.Framework.csprojResolveAssemblyReference.cache
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\obj\Release\Manage.Framework.dll
+F:\project\城管辅助执法视频综合平台系统\5.开发实现\BS\Manage.Framework\obj\Release\Manage.Framework.pdb

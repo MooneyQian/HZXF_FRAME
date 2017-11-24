@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "树型折叠列表模板页";
+    ViewBag.Master = "TreeColspanList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadCssContent {
+    <link rel="stylesheet" href="@Url.Content("~/Assets/Res/Css/master/treelist.css")" media="all"/>
+    <link rel="stylesheet" href="@Url.Content("~/Assets/Res/Components/zTree/css/metroStyle/metroStyle.css")" media="all"/>
+    @RenderSection("HeadCssContent", required: false)
+}
+<div id="treeList" class="layui-fluid">
+   @RenderBody()
+</div>
+<div class="layui-row listAreas">
+    <table class="layui-table" style="margin: 0px" id="listTable" lay-filter="listTable"></table>
+</div>
+@section HeadContent {
+    <script src="@Url.Content("~/Assets/Res/Components/zTree/js/jquery.ztree.core.js")"></script>
+    <script src="@Url.Content("~/Assets/Res/Components/zTree/js/jquery.ztree.excheck.js")"></script>
+    <script src="@Url.Content("~/Assets/Res/Components/zTree/js/jquery.ztree.exedit.js")"></script>
+    @RenderSection("HeadContent", required: false)
+}
+

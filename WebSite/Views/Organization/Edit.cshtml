@@ -1,0 +1,133 @@
+﻿@model Manage.Core.Models.Organization_S
+@{
+    ViewBag.Title = "编辑分组";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@section HeadContent{
+    <script type="text/javascript">
+        var CTRL = { art_parent: null, valform: null, dialog: null }
+        $(function () {
+            //验证提示动态代码
+            $("*[datatype]").each(function (index) {
+                $(this).before("<span class='prompt' style='position:relative'><div class='info' onMouseOut='javascript:$(this).hide();'><span class='Validform_checktip'></span><span class='dec'><s class='dec1'>&#9670;</s><s class='dec2'>&#9670;</s></span></div></span>");
+            });
+
+            //验证与提交（可以通过CTRL.valform.check()进行验证）
+            CTRL.valform = $(".valform").Validform({
+                tiptype: tiptype8,
+                tipSweep: false,
+                ajaxPost: true,
+                btnSubmit: "#asave",
+                callback: function () {
+                    CTRL.dialog = $.dialog.tips("数据处理中，请稍候...");
+                    $.post('@Url.Action("_Edit")' + '?randnum=' + Math.random(), $('form').serializeArray()).done(function (data) {
+                        if (CTRL.dialog) CTRL.dialog.close();
+                        $.dialog.alert(data.Message, function () {
+                            if (!data.IsError) {
+                                if (parent.FUNC.afterEdit)
+                                    parent.FUNC.afterEdit(data.Data);
+                            }
+                        });
+                    });
+                },
+                //特殊处理帐号名称的
+                datatype:
+                    {
+                        "OrganNO": function (gets, obj, curform, regxp) {/*参数gets是获取到的表单元素值，obj为当前表单元素，curform为当前验证的表单，regxp为内置的一些正则表达式的引用。*/
+                            var msg = "";
+                            if (gets != "") {
+                                var url = '@Url.Action("_OrganNOIsSuc")';
+                                $.ajax({
+                                    type: "POST",
+                                    url: url,
+                                    async: false,
+                                    data: { OrganNO: gets, ID: $("#ID").val(), n: Math.random() },
+                                    success: function (res) {
+                                        if (res == true)
+                                            msg = "该分组编号已存在！";
+                                    }
+                                });
+                            }
+                            if (msg != "")
+                                return msg;
+                            else
+                                return true;
+                        }
+                    }
+            });
+
+            //初始化日期控件
+            $(".Wdate").each(function () { $(this).focus(function () { WdatePicker(); }) });
+
+            //初始化下拉框样式
+            //$('#UserType').ligerComboBox({ width: "90%" });
+
+            //初始化状态控件
+            HS.UI.OnOffBtn($("#RecordStatus"));            
+        });
+    </script>
+}
+@using (Html.BeginForm("", "", FormMethod.Post, new { @class = "valform" }))
+{
+    @Html.HiddenFor(c => c.ID)
+    <div class="pop-page">
+        <div class="formtitle">编辑分组</div>
+        <table class="tableread" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                @*<td class="table-title" style="width: 90px;">上级分组：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.DisplayFor(c => c.ParOrganName)
+                </td>*@
+                <td class="table-title" style="width: 90px;">分组名称：</td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.TextBoxFor(c => c.OrganName, new { @class = "k-input k-notnull pw90", datatype = "*", nullmsg = "请输入分组名称！", errormsg = "请输入分组名称！" })
+                </td>
+                <td class="table-title">联系人：</td>
+                <td class="table-value" >
+                    @Html.TextBoxFor(c => c.Extend2, new { @class = "k-input pw90" })
+                </td>
+                <td class="table-title">联系电话</td>
+                <td class="table-value">
+                    @Html.TextBoxFor(c => c.Extend3, new { @class = "k-input pw90" })
+                </td>
+                @*<td class="table-title" style="width: 90px;">分组编号：
+                </td>
+                <td class="table-value" style="width: 150px;">
+                    @Html.TextBoxFor(c => c.OrganNO, new { @class = "k-input pw90", datatype="OrganNO" })
+                </td>*@
+            </tr>
+             <tr>
+                <td class="table-title" >地址：</td>
+                <td class="table-value" colspan="5">
+                    @Html.TextBoxFor(c => c.Extend1, new { @class = "k-input pw90" })
+                </td>
+                
+            </tr>
+            <tr>
+                <td class="table-title">排序号：</td>
+                <td class="table-value">
+                    @Html.TextBoxFor(c => c.OrganOrder, new { @class = "k-input w50" })
+                </td>
+                <td class="table-title">状态：</td>
+                <td class="table-value">
+                    @Html.TextBox("RecordStatus", Model.RecordStatus)
+                </td>
+                <td class="table-title">&nbsp;</td>
+                <td class="table-value">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="table-title">分组描述：</td>
+                <td class="table-value" colspan="5">
+                    @Html.TextAreaFor(c => c.OrganDesc, 3, 5, new { @class = "k-textarea pw90" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: center; height: 40px; line-height: 40px;">
+                    <a title="重置" class="btn1" href="javascript:$('form').get(0).reset();">重置<i></i></a>
+                    <a title="保存" class="btn2" href="javascript:;" id="asave">保存<i></i></a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="pop-page-bar">
+    </div>
+}

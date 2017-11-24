@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeadContent
+{
+    <script src="@Url.Content("~/Content/HomePage/js/frame.js")"></script>
+    <link href="@Url.Content("~/Content/HomePage/style/frame.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Components/zTree/js/jquery.ztree.core-3.5.min.js")"></script>
+    <link href="@Url.Content("~/Components/zTree/css/zTreeStyle/zTreeStyle.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Components/jQuery.LigerUI/ligerUI/js/plugins/ligerTab.js")"></script>
+    <link href="@Url.Content("~/Components/jQuery.LigerUI/ligerUI/skins/Silvery/css/grid.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")"></script>
+
+    <style type="text/css">
+        body {
+            background: #E5EDEF;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var useCookie = true;
+        var tree;
+        var tab;
+        var tabItems = [];
+        $(function () {
+            //布局
+            $("#layout1").ligerLayout({ leftWidth: 180, height: '100%', heightDiff: -30, space: 4, onHeightChanged: f_heightChanged });
+
+            //Tab
+            tab = $("#framecenter").ligerTab({
+                height: $(".l-layout-center").height(),
+                showSwitchInTab: true,
+                showSwitch: true,
+                dblClickToClose: true,
+                onAfterAddTabItem: function (tabdata) {
+                    tabItems.push(tabdata);
+                    saveTabStatus();
+                },
+                onAfterRemoveTabItem: function (tabid) {
+                    for (var i = 0; i < tabItems.length; i++) {
+                        var o = tabItems[i];
+                        if (o.tabid == tabid) {
+                            tabItems.splice(i, 1);
+                            saveTabStatus();
+                            break;
+                        }
+                    }
+                },
+                onReload: function (tabdata) {
+                }
+            });
+
+            $("#leftcenter").each(function () {
+                $(this).height($(this).parent().height() - $(this).prev().height());
+            });
+
+            //创建菜单树
+            $.ajax({
+                async: false,
+                type: "POST",
+                url: '@Url.Action("GetMenuTree", "Home")',
+                data: {},
+                success: function (res) {
+                    if (res.IsError) return;
+                    tree = $.fn.zTree.init($("#menutree"), {
+                        data: {
+                            simpleData: {
+                                enable: true,  //开启简单数据模式(Array)  
+                                idKey: "id",
+                                pIdKey: "pId",
+                                rootPId: 0
+                            },
+                            key: {
+                                title: "title"
+                            }
+                        },
+                        callback: {
+                            onClick: function (event, treeId, treeNode) {
+                                if (!treeNode.isParent && treeNode.menupath != "")
+                                    f_addTab(treeNode.id, treeNode.name, treeNode.menupath);
+                                else
+                                    tree.expandNode(treeNode);
+                            }
+                        },
+                        view: {
+                            dblClickExpand: false
+                        }
+                    }, res.Data);
+                    if (res.Data.length > 0)
+                        tree.expandNode(tree.getNodes()[0], true);
+                },
+                error: function (e, m) {
+                    alert(e.responseText);
+                }
+            });
+
+
+            //初始化tab,cookie保存tab
+            if (useCookie) {
+                var tabJson = $.cookie('liger-home-tab');
+                if (tabJson) {
+                    var tabitems = JSON2.parse(tabJson);
+                    //添加所有缓存菜单
+                    //for (var i = 0; tabitems && tabitems[i]; i++) {
+                    //    if (tree.getNodeByParam("id", tabitems[i].tabid) != null) 
+                    //        f_addTab(tabitems[i].tabid, tabitems[i].text, tabitems[i].url);
+                    //}
+                    //添加最后一个缓存菜单
+                    var i = tabitems.length - 1;
+                    if (tabitems && tabitems[i] && tree.getNodeByParam("id", tabitems[i].tabid) != null)
+                        f_addTab(tabitems[i].tabid, tabitems[i].text, tabitems[i].url);
+                }
+            }
+
+            //绑定下拉框样式
+            $('#SSORedirect').ligerComboBox({ width: "150px" });
+            //SSO跳转
+            $("#SSORedirect").change(function () {
+                window.top.location = $("#SSORedirect").val();
+            });
+        });
+        function f_heightChanged(options) {
+            if (tab)
+                tab.addHeight(options.diff);
+            $("#leftcenter").each(function () {
+                $(this).height($(this).parent().height() - $(this).prev().height());
+            });
+
+        }
+        function f_addTab(tabid, text, url) {
+            if (url.indexOf("menuid=") < 0)
+                url += (url.indexOf("?") > -1 ? "&" : "?") + "menuid=" + tabid
+            tab.addTabItem({
+                tabid: tabid,
+                text: text,
+                url: url,
+                callback: function () {
+                }
+            });
+        }
+        function saveTabStatus() {
+            if (useCookie)
+                $.cookie('liger-home-tab', JSON2.stringify(tabItems));
+        }
+
+        //退出
+        function f_logoff() {
+            @if (ViewBag.IsAdmin)
+            {
+            <text>
+            location.href = "/Admin/LogOff";
+            </text>
+            }
+            else
+            {
+            <text>
+            location.href = "/Account/LogOff";
+            </text>
+            }
+        }
+        //修改密码
+        function f_changepassword() {
+            @if (ViewBag.IsAdmin)
+            {
+            <text>
+            var url = "/Admin/ChangePassword";
+            </text>
+            }
+            else
+            {
+            <text>
+            var url = "/Account/ChangePassword";
+            </text>
+            }
+            var dialog = $.dialog.open(url, { id: 'hs_change_password_dialog', title: '修改密码', lock: true, height: 250, width: 300, padding: 0 });
+            $.dialog.data('ChangePwd', window);
+        }
+        //管理员登录
+        function f_admin() {
+            location.href = "/Admin/Logon";
+        }
+    </script>
+}
+
+<div id="fm-frame">
+    <div id="fm-top" style="background:url(@(ViewBag.LogoUrl)) repeat-x">
+        <div id="fm-logo">11</div>
+        <div id="fm-link">
+            <span><strong><b>@(ViewBag.UserName)</b></strong> 欢迎您！</span>
+            <dl class="fm-link-sub" id="fm-link-sub">
+                <dt></dt>
+                <dd class="n1"><i></i><a href="javascript:f_changepassword()">修改密码</a></dd>
+                <dd class="n2"><i></i><a href="javascript:f_admin()">系统管理</a></dd>
+                <dd class="n3"><i></i><a href="javascript:f_logoff()">退出</a></dd>
+            </dl>
+        </div>
+        @if (ViewBag.AppRegs != null && ViewBag.AppRegs.Count > 0)
+        { 
+            <div id="fm-redirect">
+                @Html.DropDownList("SSORedirect", new SelectList(ViewBag.AppRegs, "Value", "Text"), "--系统跳转--", new { @class = "k-select w150", @style = "float:right;" })
+            </div>
+        }
+    </div>
+    <div id="layout1" style="width: 99.2%; margin: 0 auto; margin-top: 4px;">
+        <div position="left" title="功能菜单" id="leftcenter" class="l-scroll" style="overflow:auto;">
+            <ul id="menutree" class="ztree"></ul>
+        </div>
+        <div position="center" id="framecenter">
+            <div tabid="home" title="首页" style="height: 300px">
+                <iframe frameborder="0" name="home" id="home" src="about:blank" class="loading"></iframe>
+            </div>
+        </div>
+    </div>
+    <div style="height: 30px; line-height: 30px; text-align: center;">恒生电子股份有限公司</div>
+</div>

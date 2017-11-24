@@ -1,0 +1,20 @@
+﻿.add-v {
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+    border: none;
+}
+
+.border-v {
+    border:1px solid #e6e6e6;
+    border-left:none;
+}
+
+.layui-form .layui-elem-field:first-child {
+    margin-top:10px;
+}
+
+.layui-form .layui-elem-field {
+    margin-top:36px;
+}
+
